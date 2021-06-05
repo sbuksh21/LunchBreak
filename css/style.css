@@ -10,8 +10,7 @@ Theme: LunchBreak Food Ordering System
 
 }
 .container{
-    border: 1px solid brown;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding: 1%;
 }
@@ -25,6 +24,7 @@ Theme: LunchBreak Food Ordering System
 
 .text-right{
     text-align: right;
+    font-size:larger;
 }
 
 .text-center{
@@ -62,7 +62,10 @@ a:hover{
 }
 
 h2{
-    color: #2c3e50;
+    color:rgb(151, 88, 12);
+    font-size: 2.2rem;
+    margin-bottom: 2%;
+    font-style: oblique;
 }
 h3{
     font-size: 1.3rem;
@@ -80,8 +83,9 @@ h3{
 
 .logo{
   
-    width: 10% ;
+    width: 16% ;
     float: left;
+    padding: 0 0;
 }
 
 .menu{
@@ -98,9 +102,19 @@ h3{
     font-weight: bold;
 }
 
+/* CSS for Banner */
+.food-banner{
+    background-image: url(../images/Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+}
+
 /* CSS Categories */
 .categories{
-    padding: 4% 0;
+    padding: 2% 0;
+    
 }
 
 .box-3{
@@ -118,10 +132,80 @@ h3{
 }
 
 .food-menu-box{
-    border: 1px solid black;
-    width: 43%;
+    border: 1px solid white;
+    width: 40%;
     margin: 1%;
-    padding: 2%;
+    padding: 3%;
     float: left;
     background-color: white;
+    border-radius: 15px;
+}
+
+.food-menu-img{
+    width: 21%;
+    float: left;
+}
+
+.food-desc{
+
+    width: 65%;
+    float: left;
+    margin-left: 5%;
+}
+
+.food-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+
+.food-desc2{
+    font-size: 1rem;
+    color:rgba(113, 128, 147,1.0);
+}
+
+/* CSS Social */
+.social ul{
+    list-style-type: none;
+}
+.social ul li{
+    display:inline;
+    padding: 1%;
+}
+
+/* CSS for smaller screen */
+
+@media only screen and (max-width:768px){
+    .logo{
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+    .menu ul{
+        text-align: center;
+    }
+    .categories{
+        padding: 20% 0;
+    }
+
+    .h2{
+        margin-bottom: 10%;
+    }
+
+    .box-3{
+        width: 90%;
+        margin: 4% auto;
+    }
+
+    .food-menu{
+        padding: 20% 0;
+    }
+
+    .food-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .social{
+        padding: 3% 0;
+    }
 }
