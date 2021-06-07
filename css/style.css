@@ -34,6 +34,10 @@ Theme: LunchBreak Food Ordering System
     color:black;
 }
 
+.text-left{
+    text-align: left;
+}
+
 .clearfix{
     clear: both;
     float: none;
@@ -61,6 +65,17 @@ a:hover{
     cursor: pointer;
 }
 
+.btn-primary2{
+    background-color: rgb(138, 91, 30);
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+        color:white;
+        font-style: oblique;
+}
+
 h2{
     color:rgb(151, 88, 12);
     font-size: 2.2rem;
@@ -81,11 +96,21 @@ h3{
     left: 40%;
 }
 
-.fieldset{
-    border: 1px solid white;
+fieldset{
+    border: 1px solid rgb(138, 91, 30);
+    background-color: rgb(240, 205, 160);
     margin: 5%;
     padding: 3%;
     border-radius: 5px;
+    border-width:1rem;
+    border-bottom-color: transparent;
+    border-right-color: transparent;   
+}
+
+legend{
+    color:black;
+    padding: 0 1rem;
+    font-size: 18px;
 }
 /* CSS for Navbar */
 
@@ -121,7 +146,7 @@ h3{
 
 /* CSS Categories */
 .categories{
-    padding: 2% 0;
+    padding: 4% 0;
     
 }
 
@@ -156,13 +181,13 @@ h3{
 
 .food-desc{
 
-    width: 65%;
+    width: 70%;
     float: left;
-    margin-left: 5%;
+    margin-left: 8%;
 }
 
 .food-price{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 2% 0;
 }
 
@@ -199,10 +224,10 @@ h3{
 }
 
 .food-search{
-    background-image: url(../images/Banner.jpg);
+    background-image: url(../Images/Order\ background2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     padding: 7% 0;
 }
 
