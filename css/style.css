@@ -231,6 +231,14 @@ legend{
     padding: 7% 0;
 }
 
+.register{
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding: 7% 0;
+}
+
 /* CSS for smaller screen */
 
 @media only screen and (max-width:768px){
