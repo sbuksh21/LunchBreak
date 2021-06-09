@@ -12,7 +12,8 @@ Theme: LunchBreak Food Ordering System
 .container{
     width: 80%;
     margin: 0 auto;
-    padding: 1%;
+    padding: 1.5%;
+    border: 100%;
 }
 
 .img-responsive{
@@ -29,9 +30,6 @@ Theme: LunchBreak Food Ordering System
 
 .text-center{
     text-align: center;
-}
-.text-white{
-    color:black;
 }
 
 .text-left{
@@ -85,6 +83,7 @@ h2{
 h3{
     font-size: 1.5rem;
     padding:0vw;
+    color:rgba(201, 115, 58, 0.781);
 }
 
 .float-container{
@@ -113,6 +112,10 @@ legend{
     font-size: 18px;
 }
 /* CSS for Navbar */
+
+body{
+    min-height: calc(100vh - 70.06px - 133.94px);
+}
 
 .logo{
   
@@ -202,13 +205,15 @@ legend{
 }
 .social ul li{
     display:inline;
-    padding: 1%;
 }
+
+
 
 /* CSS Order */
 .order{
     width: 50%;
     margin: 0 auto;
+  
 }
 .input-responsive{
     width: 96%;
@@ -223,7 +228,7 @@ legend{
     font-weight: bold;
 }
 
-.food-search{
+.food-order{
     background-image: url(../Images/Order\ background2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -231,12 +236,34 @@ legend{
     padding: 7% 0;
 }
 
+/* CSS Register */
+
 .register{
 
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left;
         padding: 7% 0;
+        margin: 0 auto;
+        padding: 1%;
+        width: 80%;
+        
+}
+
+.login{
+
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+        
+}
+
+/* Footer */
+
+.Footer{
+    text-align: center;
+    background-color: rgb(255, 224, 183);
+    color: black;
 }
 
 /* CSS for smaller screen */

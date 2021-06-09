@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LunchBreak</title>
 
-    <!--- Linking CSS file -->
-    <link rel = "stylesheet" href="css/style.css">
+    <!--CSS File -->
+    <link rel= "stylesheet" href="css/style.css">
+    
 </head>
-
 <body>
+    <!-- Navbar starts here-->
     <section class = "nav-bar">
         <div class = "container">
         <div class ="logo">
@@ -34,7 +36,7 @@
                 </li>
 
                 <li>
-                    <a href="Food Menu.html">Food Categories</a>
+                    <a href="Food Categories.html">Food Categories</a>
                 </li>
 
                 <li>
@@ -48,51 +50,45 @@
     </section>
 
     <!-- Navbar ends here-->
+
     
-    <!--Food Ordering starts here -->
-    <section class = "food-order">
-    <div class = "container">
-    <h1 class = "text-center text-grey"> Fill the form to place your order</h1>
+    <!-- Banner starts here-->
+    <section class="food-banner">
+        <div class ="container">
+        </div>
+    </section>
+    <!-- Banner ends here-->
+<!--Food Categories Section starts here-->
+<section class ="categories">
+<div class = "container">
+    <h2 class = "text-center">Food Categories </h2>
 
-    <form action = "#" class = "order">
-        <fieldset>
-            <legend> <b> Ordered Food </legend> </b>
-            <div class = "food-menu-img">
-                <img src = "images/Rice.jpg" alt= "Chicken Teriyaki Rice" class = "img-responsive img-curve">
-            </div>
-            <div class = "food-desc">
-                <h3> Food Name</h3>
-                <p class = "food-price"> $5</p>
+    <div class = "box-3 float-container">
+        <img src = "images/Rice.jpg" alt="Rice" class = "img-responsive img-curve">
+        <h3>Rice</h3>
 
-                <div class = "order-label"> Quantity </div>
-                <input type = "number" name = "qty" class = "input-responsive" value="1" required>
-            </div>
-        </fieldset>
+    </div>
 
-        <fieldset>
-            <legend> <b> Delivery Details</legend> </b>
-            <div class = "order-label"> Full Name </div>
-            <input type="text" name ="full-name" placeholder="E.g. Sarah John" class = "input-responsive" required>
+    <div class = "box-3 float-container">
+        <img src = "images/Pasta.PNG" alt="Pasta" class = "img-responsive img-curve">
+        <h3>Pasta</h3>
 
-            <div class = "order-label"> Mobile Number </div>
-            <input type="tel" name ="contact" placeholder="E.g. 97455xxxxx" class = "input-responsive" required>
+    </div>
 
-            <div class = "order-label"> Email </div>
-            <input type="email" name ="email" placeholder="E.g. xxx@gmial.com" class = "input-responsive" required>
+    <div class = "box-3 float-container">
+        <img src = "images/Potato Chickpea Stew.jpg" alt="Chickpea" class = "img-responsive img-curve">
+        <h3>Chickpea</h3>
 
-            <div class = "order-label"> Address </div>
-            <textarea name ="address" rows = "10" placeholder="E.g. Zone, Street No. , Area, Floor No." class = "input-responsive" required> </textarea>
+    </div>
 
-            <input type = "submit" name = "submit" value = "Confirm Order" class = "btn btn-primary2">
-
-        </fieldset>
-    </form>
 </div>
-</section>
-     <!--Food Ordering ends here -->
 
-   <!-- Social Media starts here-->
-   <section class = "social">
+</section>
+
+<!--Food Categories Section ends here-->
+
+  <!-- Social Media starts here-->
+  <section class = "social">
     <div class = "container text-center">
         <ul>
             <li>
@@ -118,5 +114,6 @@
 </div>   
 </section>
 <!-- Footer ends here-->
+
 </body>
 </html>
