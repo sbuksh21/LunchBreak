@@ -1,0 +1,315 @@
+/* 
+Theme: LunchBreak Food Ordering System
+*/
+
+/* CSS all */
+
+body{
+    
+    min-height: calc(100vh - 40px);
+
+}
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.5;
+    border: 100%;
+}
+
+.img-responsive{
+    width: 100%;
+}
+.img-curve{
+    border-radius: 15px;
+}
+
+.text-right{
+    text-align: right;
+    font-size:larger;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+a{
+    color: #d35400;
+    text-decoration: none;
+}
+
+a:hover{
+    color:brown;
+}
+
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary{
+    background-color: rgba(248, 194, 145,1.0);
+    color: black;
+    cursor: pointer;
+}
+
+.btn-primary2{
+    background-color: rgb(138, 91, 30);
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+        color:white;
+        font-style: oblique;
+}
+
+h2{
+    color:rgb(151, 88, 12);
+    font-size: 2.2rem;
+    margin-bottom: 2%;
+    font-style: oblique;
+}
+h3{
+    font-size: 1.5rem;
+    padding:0vw;
+    color:rgba(201, 115, 58, 0.781);
+}
+
+.float-container{
+    position: relative;
+}
+.float-text{
+    position:absolute;
+    bottom: 50px;
+    left: 40%;
+}
+
+fieldset{
+    border: 1px solid rgb(138, 91, 30);
+    background-color: rgb(240, 205, 160);
+    margin: 5%;
+    padding: 3%;
+    border-radius: 5px;
+    border-width:1rem;
+    border-bottom-color: transparent;
+    border-right-color: transparent;   
+}
+
+legend{
+    color:black;
+    padding: 0 1rem;
+    font-size: 18px;
+}
+/* CSS for Navbar */
+
+
+.logo{
+  
+    width: 16% ;
+    float: left;
+    padding: 0 0;
+}
+
+.menu{
+    line-height: 60px;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+
+/* CSS for Banner */
+.food-banner{
+    background-image: url(../images/Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+}
+
+/* CSS Categories */
+.categories{
+    padding: 4% 0;
+    
+}
+
+.box-3{
+
+    width: 28%;
+    float: left;
+    margin: 2%;
+}
+
+.box-2{
+
+    width: 28%;
+    float: left;
+    margin: 2%;
+}
+
+/* Food Menu */
+
+.food-menu{
+    background-color:rgb(255, 230, 208);
+    padding: 4% 0;
+}
+
+.food-menu-box{
+    border: 1px solid white;
+    width: 40%;
+    margin: 1%;
+    padding: 3%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.food-menu-img{
+    width: 21%;
+    float: left;
+}
+
+.food-desc{
+
+    width: 70%;
+    float: left;
+    margin-left: 8%;
+}
+
+.food-price{
+    font-size: 1rem;
+    margin: 2% 0;
+}
+
+.food-desc2{
+    font-size: 1rem;
+    color:rgba(113, 128, 147,1.0);
+}
+
+/* CSS Order */
+.order{
+    width: 50%;
+    margin: 0 auto;
+  
+}
+.input-responsive{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.order-label{
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+
+.food-order{
+    background-image: url(../Images/Order\ background2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 7% 0;
+}
+
+/* CSS Register */
+
+.register{
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding: 7% 0;
+        margin: 0 auto;
+        padding: 1%;
+        width: 80%;
+        
+}
+
+.login{
+
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+        
+}
+
+/* Footer */
+
+.Footer{
+    text-align: center;
+    color: black;
+    position: sticky;
+    top: 100%;
+     
+}
+
+.Footer2{
+    
+    text-align:center;
+    color: black;
+    height: 15px;
+    
+}
+/* CSS for smaller screen */
+
+@media only screen and (max-width:768px){
+    .logo{
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+    .menu ul{
+        text-align: center;
+    }
+    .categories{
+        padding: 20% 0;
+    }
+
+    .h2{
+        margin-bottom: 10%;
+    }
+
+    .box-3{
+        width: 90%;
+        margin: 4% auto;
+    }
+
+    .food-menu{
+        padding: 20% 0;
+    }
+
+    .food-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .social{
+        padding: 3% 0;
+    }
+}
