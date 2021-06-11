@@ -3,16 +3,24 @@ Theme: LunchBreak Food Ordering System
 */
 
 /* CSS all */
+
+body{
+    
+    min-height: calc(100vh - 20px);
+
+}
+
 *{
     margin: 0 0;
     padding: 0 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
+
 .container{
     width: 80%;
     margin: 0 auto;
-    padding: 1.5%;
+    padding: 0.5;
     border: 100%;
 }
 
@@ -113,9 +121,6 @@ legend{
 }
 /* CSS for Navbar */
 
-body{
-    min-height: calc(100vh - 70.06px - 133.94px);
-}
 
 .logo{
   
@@ -199,16 +204,6 @@ body{
     color:rgba(113, 128, 147,1.0);
 }
 
-/* CSS Social */
-.social ul{
-    list-style-type: none;
-}
-.social ul li{
-    display:inline;
-}
-
-
-
 /* CSS Order */
 .order{
     width: 50%;
@@ -262,10 +257,11 @@ body{
 
 .Footer{
     text-align: center;
-    background-color: rgb(255, 224, 183);
     color: black;
+    position: sticky;
+    top: 100%;
+    
 }
-
 /* CSS for smaller screen */
 
 @media only screen and (max-width:768px){
