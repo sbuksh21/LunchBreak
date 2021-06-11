@@ -14,7 +14,7 @@
 
 <!--- Main starts here -->
 
-<div class = "main-content">
+<div class = "main-contents">
 
 
 <!--- Menu ends here -->
