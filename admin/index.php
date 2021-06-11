@@ -12,8 +12,12 @@
 </div>
 <!--- Menu ends here -->
 
+<!--- Main starts here -->
+
+<div class = "main-content">
 
 
+<!--- Menu ends here -->
 
 
 
