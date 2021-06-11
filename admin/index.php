@@ -15,9 +15,15 @@
 <!--- Main starts here -->
 
 <div class = "main-contents">
+    Main content goes here
+    </div>
+<!--- Main ends here -->
 
+<!--- Footer starts here -->
+    <div class = "footer">
+        Footer starts here
+<!-- Footer ends here --->
 
-<!--- Menu ends here -->
-
-
+</body>
+</html>
 
