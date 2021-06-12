@@ -12,7 +12,19 @@
         <tr>
             <td>Full Name: </td>
             <td> <input type= "text" name ="full name" placeholder="Enter Full Name" ></td>
-    </table>
+            </tr>
+
+            <tr>
+            <td>Username: </td>
+            <td> <input type= "text" name ="username" placeholder="Enter Username" ></td>
+            </tr>
+
+            <tr>
+            <td>Password: </td>
+            <td> <input type= "password" name ="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></td>
+            </tr>
+
+        </table>
 
 
     </form>
