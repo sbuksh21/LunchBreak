@@ -26,6 +26,10 @@ Theme: LunchBreak Food Ordering System
     clear: both;
 }
 
+.tblfull{
+    width: 100%;
+}
+
 /* CSS for Menu */
 .menu{
     border-bottom: 0px solid black;
