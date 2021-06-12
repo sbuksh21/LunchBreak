@@ -1,35 +1,40 @@
-<html>
-<head>
-    <title> LunchBreak.net - Home </title>
 
-    <link rel = "stylesheet" href="../css/admin.css">
-</head>
-
-<body>
-<!--- Menu starts here -->
-<div class = "menu">
-    <div class = "wrapper">
-    Menu Goes here
-</div>
-</div>
-<!--- Menu ends here -->
+<?php include('fixed/menu.php'); ?>
 
 <!--- Main starts here -->
 
-<div class = "main-contents">
+<div class = "main-content">
 <div class = "wrapper">
-    Main content goes here
+    <h2> Dashboard</h2>
+     <br>
+    <div class = "col-4 text-center">
+    <h2>5</h2>
+    <br>
+    Categories
+</div>
+
+<div class = "col-4 text-center">
+    <h2>5</h2>
+    <br>
+    Categories
+</div>
+
+<div class = "col-4 text-center">
+    <h2>5</h2>
+    <br>
+    Categories
+</div>
+
+<div class = "col-4 text-center">
+    <h2>5</h2>
+    <br>
+    Categories
+</div>
+
+<div class = "clearfix"></div>
+
     </div>
     </div>
 <!--- Main ends here -->
 
-<!--- Footer starts here -->
-    <div class = "footer">
-    <div class = "wrapper">
-    <p class = "text-center"> Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved.<p>
-<!-- Footer ends here --->
-</div>
-</div>
-</body>
-</html>
-
+<?php include('fixed/footer.php') ?>
