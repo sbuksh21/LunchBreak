@@ -3,12 +3,18 @@
 Theme: LunchBreak Food Ordering System
 
 */
+.main-content{
+    
+    min-height: calc(100vh - 40px);
+
+}
 
 *{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .wrapper{
     
@@ -29,9 +35,51 @@ Theme: LunchBreak Food Ordering System
 .tblfull{
     width: 100%;
 }
+.tbl2{
+    width: 30%;
+}
 
-.table tr th {
+table tr th {
     border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: rgb(22, 145, 216);
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-primary:hover{
+    background-color: rgb(15, 110, 165);
+}
+
+.btn-secondary{
+    background-color: rgb(20, 199, 139);
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-secondary:hover{
+    background-color: rgb(21, 184, 83);
+}
+
+.btn-danger{
+    background-color: rgb(216, 53, 53);
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-danger:hover{
+    background-color: rgb(158, 26, 17);
 }
 
 /* CSS for Menu */
