@@ -7,6 +7,15 @@
     <h2> Admin Management</h2>
     <br><br>
 
+    <?php
+    if(isset($_SESSION['add'])); // To check session set or not
+    {
+        echo $_SESSION['add']; //To display session message if set
+        unset($_SESSION['add']); // To revoke session message
+    }
+
+    ?>
+
     <form acton=" " method = "POST">
 
     <table class = "tbl-2">
@@ -57,29 +66,36 @@ if(isset($_POST['submit']))
  $sql = "INSERT INTO tbl_admin SET 
   full_name='$full_name',
   username='$username',
-  passsword='$password'
+  password='$password'
 
  ";
 
 //3.Execute query to save data in database
- $res = mysqli_query($conn, $sql) or die(mysqli_error());
+ $errors = array();
+ $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 //4. Check whether the data is inserted or not and query has been executed
 
 if($res==TRUE)
 {
 //New Admin Registered
-echo "Registered";
+//echo "Registered";
+//Session variable to display message
+$_SESSION['add'] = "New Admin has been added";
+//Redirecting page to admin
+header("location:".SITEURL. 'admin/adminpage.php');
 }
 else
 {
 //New Admin not Registered
-
-echo "Failed to register";
+//echo "Failed to register";
+//Session variable to display message
+$_SESSION['add'] = "Failed to add Admin";
+//Redirecting page to add admin page
+header("location:".SITEURL. 'admin/add-admin.php');
 }
 
 }
-
 
 ?>
 
