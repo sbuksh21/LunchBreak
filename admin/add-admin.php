@@ -8,7 +8,7 @@
 
     <form acton=" " method = "POST">
 
-    <table class = "tbl2">
+    <table class = "tbl-2">
         <tr>
             <td>Full Name: </td>
             <td> <input type= "text" name ="full name" placeholder="Enter Full Name" ></td>
