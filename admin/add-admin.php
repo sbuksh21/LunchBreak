@@ -61,6 +61,23 @@ if(isset($_POST['submit']))
 
  ";
 
+//3.Execute query to save data in database
+ $res = mysqli_query($conn, $sql) or die(mysqli_error());
+
+//4. Check whether the data is inserted or not and query has been executed
+
+if($res==TRUE)
+{
+//New Admin Registered
+echo "Registered";
+}
+else
+{
+//New Admin not Registered
+
+echo "Failed to register";
+}
+
 }
 
 
