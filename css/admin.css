@@ -84,7 +84,8 @@ table tr td{
 }
 
 .success{
-    color:rgba(104, 168, 40, 0.664);
+    color:rgba(60, 110, 9, 0.664);
+    font-weight: bold;
 }
 
 .failed{
