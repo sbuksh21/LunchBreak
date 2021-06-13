@@ -1,5 +1,6 @@
 <?php
 Include('../config/constants.php');
+Include('..../css/admin.css');
 
 //1. To get the ID of Admin User to delete it
  $id = $_GET['id'];
