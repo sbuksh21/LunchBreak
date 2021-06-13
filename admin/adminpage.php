@@ -1,5 +1,6 @@
 <?php include('fixed/menu.php'); ?>
 
+
 <!--- Main starts here -->
 
 <div class = "main-content">
@@ -7,14 +8,6 @@
     <h2> Admin Management</h2>
     <br>  
 
-    <?php
-    error_reporting(0);
-if(isset($_SESSION['add']))
-{
-    echo $_SESSION['add'] ; // To display session message and the "??" to have a fallback if 'add' is not an array, it will use empty string instead
-    unset($_SESSION['add']); // To remove session message 
-}
-    ?>
 <br> <br>
   <!--- Button Add Admin --->
   <br>
