@@ -6,16 +6,14 @@
 <div class = "wrapper">
     <h2> Admin Management</h2>
     <br><br>
+<?php
+if(isset($_SESSION['add']))
+{
+    echo $_SESSION['add'];
+    unset($_SESSION['add']);
+}
 
-    <?php
-    if(isset($_SESSION["add"])); // To check session set or not
-    {
-        echo $_SESSION["add"]; //To display session message if set
-        unset($_SESSION["add"]); // To revoke session message
-    }
-
-    ?>
-
+?>
     <form acton=" " method = "POST">
 
     <table class = "tbl-2">
@@ -81,16 +79,16 @@ if($res==TRUE)
 //New Admin Registered
 //echo "Registered";
 //Session variable to display message
-$_SESSION["add"] = "New Admin has been added";
+$_SESSION['add'] = "New Admin has been added";
 //Redirecting page to admin
-header("location:".SITEURL.'admin/adminpage.php');
+header("location:".SITEURL. 'admin/adminpage.php');
 }
 else
 {
 //New Admin not Registered
 //echo "Failed to register";
 //Session variable to display message
-$_SESSION["add"] = "Failed to add Admin";
+$_SESSION['add'] = "Failed to add Admin";
 //Redirecting page to add admin page
 header("location:".SITEURL. 'admin/add-admin.php');
 }

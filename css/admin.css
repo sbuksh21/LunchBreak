@@ -83,6 +83,15 @@ table tr td{
     background-color: rgb(158, 26, 17);
 }
 
+.success{
+    color:rgba(104, 168, 40, 0.664);
+}
+
+.failed{
+    color:rgba(231, 41, 16, 0.664);
+}
+
+
 /* CSS for Menu */
 .menu{
     border-bottom: 0px solid black;

@@ -7,6 +7,22 @@
 <div class = "wrapper">
     <h2> Admin Management</h2>
     <br>  
+<?php
+// Session for 'add'
+if(isset($_SESSION['add']))
+{
+    echo $_SESSION['add'];
+    unset($_SESSION['add']);
+}
+
+// Session for 'delete'
+if(isset($_SESSION['delete']))
+{
+    echo $_SESSION['delete'];
+    unset($_SESSION['delete']);
+}
+
+?>
 
 <br> <br>
   <!--- Button Add Admin --->
@@ -34,6 +50,8 @@
             //To count the rows to check whether we have data or not in database
             $rows = mysqli_num_rows($res); // To get all the rows in database
 
+            $s = 1; // created a variable and assigned its value as one for serial number in manage admin page
+
             //Checking the num of rows
             if($rows>0)
             {
@@ -49,12 +67,12 @@
                     //Displaying the data from our table in the database
                     ?>
                         <tr>
-                        <td><?php echo $id;?></td>
+                        <td><?php echo $s++; ?></td>
                         <td><?php echo $full_name;?></td>
                         <td><?php echo $username;?></td>
                         <td>
                         <a href = "#" class = "btn-secondary">Update Admin</a> 
-                        <a href = "#" class = "btn-danger">Delete Admin</a> 
+                        <a href = "<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class = "btn-danger">Delete Admin</a> 
                         </td>
                         <tr>
                     <?php
