@@ -16,7 +16,7 @@ if($res==TRUE)
     //Query successful and Admin User deleted
     //echo "Admin User deleted";
     //Session variable created to display message
-    $_SESSION['delete'] = "<div class = 'success'> Admin User deleted successfully.</div>";
+    $_SESSION['delete'] = '<div class = "success"> Admin User deleted successfully.</div>';
     //Redirecting to Admin page
     header('location:' .SITEURL. 'admin/adminpage.php');
 }
