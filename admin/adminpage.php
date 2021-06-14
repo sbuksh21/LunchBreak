@@ -22,6 +22,27 @@ if(isset($_SESSION['delete']))
     unset($_SESSION['delete']);
 }
 
+// Session for 'update'
+if(isset($_SESSION['update']))
+{
+    echo $_SESSION['update'];
+    unset($_SESSION['update']);
+}
+
+
+if(isset($_SESSION['user-not-found']))
+{
+    echo $_SESSION['user-not-found'];
+    unset($_SESSION['user-not-found']);
+}
+
+// Session for 'password changed'
+if(isset($_SESSION['pwd-change']))
+{
+    echo $_SESSION['pwd-change'];
+    unset($_SESSION['pwd-change']);
+}
+
 ?>
 
 <br> <br>
@@ -71,6 +92,7 @@ if(isset($_SESSION['delete']))
                         <td><?php echo $full_name;?></td>
                         <td><?php echo $username;?></td>
                         <td>
+                        <a href = "<?php echo SITEURL;?>admin/change-password.php?id=<?php echo $id; ?>" class = "btn-primary"> Change Password</a>
                         <a href = "<?php echo SITEURL;?>admin/admin-update.php?id=<?php echo $id; ?>" class = "btn-secondary">Update Admin</a> 
                         <a href = "<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class = "btn-danger">Delete Admin</a> 
                         </td>
