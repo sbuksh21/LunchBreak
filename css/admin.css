@@ -139,13 +139,11 @@ table tr td{
 
 .login
 {
-    border: 1px solid rgba(128, 82, 14, 0.658);
-    width: 40% ; 
+    background-color: rgb(247, 237, 226);
+    border: 3px solid rgba(128, 82, 14, 0.658);
+    width: 30% ; 
+    margin: 15% auto;
+    padding: 2.5%;
 }
 
-.footer2{
-    background-color: #944c1c;
-    color:white;
-    min-height: calc(100vh - 40px);
 
-}
