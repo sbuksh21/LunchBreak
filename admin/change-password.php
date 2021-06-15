@@ -90,7 +90,7 @@ $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password ='$current_password'";
                 }
                 else
                 {
-                    $_SESSION['pwd-change'] = "<div class = 'error'> Password Failed to Change. </div>";
+                    $_SESSION['pwd-change'] = "<div class = 'failed'> Password Failed to Change. </div>";
                     // Redirecting
                     header('location:'.SITEURL.'admin/adminpage.php');
                 }
@@ -100,7 +100,7 @@ $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password ='$current_password'";
        else
        {
            // Failed to update admin
-           $_SESSION['user-not-found'] = "<div class = 'error'> User does not exist. </div>";
+           $_SESSION['user-not-found'] = "<div class = 'failed'> User does not exist. </div>";
            // Redirecting
            header('location:'.SITEURL.'admin/adminpage.php');
        }

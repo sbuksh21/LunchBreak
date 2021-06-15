@@ -92,7 +92,7 @@ if(isset ($_POST['submit']))
     else
     {
         // Failed to update admin
-        $_SESSION['update'] = "<div class = 'success'> Failed to update Admin User. </div>";
+        $_SESSION['update'] = "<div class = 'failed'> Failed to update Admin User. </div>";
         // Redirecting
         header('location'.SITEURL. 'admin/adminpage.php');
     }    
