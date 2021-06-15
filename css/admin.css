@@ -137,3 +137,9 @@ table tr td{
     color:white;
 }
 
+.login
+{
+    border: 1px solid rgba(128, 82, 14, 0.658);
+    width: 40% ; 
+}
+
