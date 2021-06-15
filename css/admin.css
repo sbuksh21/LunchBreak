@@ -143,3 +143,9 @@ table tr td{
     width: 40% ; 
 }
 
+.footer2{
+    background-color: #944c1c;
+    color:white;
+    min-height: calc(100vh - 40px);
+
+}
