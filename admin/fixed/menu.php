@@ -1,6 +1,6 @@
 <?php
-include('loginchecking.php');
 include('../config/constants.php');
+include('loginchecking.php');
 ?>
 
 <html>
