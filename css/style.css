@@ -263,10 +263,10 @@ legend{
 
 .Footer{
     text-align: center;
-    color: black;
+    color: white;
     position: sticky;
     top: 100%;
-    background-color: #944c1c;
+    background-color:  rgb(163, 121, 66);
      
 }
 
