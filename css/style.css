@@ -263,16 +263,17 @@ legend{
 
 .Footer{
     text-align: center;
-    background-color: #944c1c;
-    color:white;
+    color: black;
+    position: sticky;
+    top: 100%;
      
 }
 
 .Footer2{
     
     text-align:center;
-    background-color: #944c1c;
-    color:white;
+    color: black;
+    height: 15px;
     
 }
 /* CSS for smaller screen */
