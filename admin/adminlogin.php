@@ -25,7 +25,7 @@
            <b> Username:<br>
             <input type = "text" name = "username" placeholder="Enter Username" required value><br> <br>
             Password:<br>
-            <input type = "text" name = "password" placeholder="Enter Password" required value> <br> <br>
+            <input type = "password" name = "password" placeholder="Enter Password" required value> <br> <br>
             <input type = "submit" name = "submit" value = "Login" class = "btn-primary">
 
     </div>
