@@ -275,7 +275,7 @@ legend{
     text-align:center;
     color: black;
     height: 15px;
-    background-color:  rgb(163, 121, 66);
+    border: rgb(163, 121, 66);
   
 }
 /* CSS for smaller screen */
