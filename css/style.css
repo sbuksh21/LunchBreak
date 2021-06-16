@@ -266,6 +266,7 @@ legend{
     color: black;
     position: sticky;
     top: 100%;
+    background-color: burlywood;
      
 }
 
@@ -274,6 +275,7 @@ legend{
     text-align:center;
     color: black;
     height: 15px;
+  
     
 }
 /* CSS for smaller screen */
