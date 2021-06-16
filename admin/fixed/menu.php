@@ -1,4 +1,7 @@
-<?php include('../config/constants.php');?>
+<?php
+include('loginchecking.php');
+include('../config/constants.php');
+?>
 
 <html>
 <head>

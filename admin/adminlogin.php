@@ -18,6 +18,11 @@
             echo $_SESSION['login'];
             unset($_SESSION['login']);
         }
+        if(isset($_SESSION['no-login-message']))
+        {
+            echo  $_SESSION['no-login-message'];
+            unset ($_SESSION['no-login-message']);
+        }
         ?>
         <br>
             <!---- Login Form --->
@@ -55,6 +60,7 @@ if(isset($_POST['submit']))
     {
         // Admin User exist
         $_SESSION['login'] = "<div class = 'success' > <b>Login Successful.</b></div>";
+        $_SESSION['user'] = $username; // Checking User login or not and logout will make it unset
         //Redirecting to admin home page
         header('location:'.SITEURL.'admin/');
     }
