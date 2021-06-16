@@ -275,18 +275,10 @@ legend{
     text-align:center;
     color: black;
     height: 15px;
-    border: rgb(163, 121, 66);
+    background-color:  rgb(163, 121, 66);
     padding-bottom: 0%;
 }
 
-.Footer_2{
-    
-    text-align:center;
-    color: black;
-    height: 5px;
-    border: rgb(163, 121, 66);
-    padding-bottom: 0%;
-}
 
 /* CSS for smaller screen */
 
