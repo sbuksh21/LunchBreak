@@ -283,19 +283,6 @@ legend{
   
 }
 
-.Footer3{
-
-    padding-bottom: 10% 0 ;
-    text-align:center;
-    color: black;
-    height: 15px;
-    border: rgb(163, 121, 66);
-    width: 80%;
-    margin: 0 auto;
-    padding: 0.5;
-    border: 100%;
-
-}
 /* CSS for smaller screen */
 
 @media only screen and (max-width:768px){
