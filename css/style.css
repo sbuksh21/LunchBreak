@@ -276,11 +276,16 @@ legend{
     color: black;
     height: 15px;
     border: rgb(163, 121, 66);
-    width: 80%;
-    margin: 0 auto;
-    padding: 0.5;
-    border: 100%;
-  
+    padding-bottom: 0%;
+}
+
+.Footer_2{
+    
+    text-align:center;
+    color: black;
+    height: 5px;
+    border: rgb(163, 121, 66);
+    padding-bottom: 0%;
 }
 
 /* CSS for smaller screen */
