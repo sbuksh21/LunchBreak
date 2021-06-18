@@ -1,3 +1,5 @@
+<?php include('fixed/menu.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,28 +49,58 @@
         </div>
     </section>
     <!-- Banner ends here-->
+    <?php
+
+// Taking the values from form for User data and saving it in the database
+
+
+//Checking whether submit is clicked or not
+    if(isset($_POST['submit']))
+    {
+        //Get the user data from form
+         $full_name = $_POST['full_name'];
+         $mobile_number = $_POST['mobile_number'];
+         $email = $_POST['email'];
+         $pass1 = md5($_POST['pass1']);
+
+         //Query to save the data of user in the database
+
+         $sql = "INSERT INTO tbl_user SET
+            full_name = '$full_name' ,
+            mobile_number = '$mobile_number' ,
+            email = '$email' ,
+            pass1 = '$pass1'
+         ";
+         
+         // Executing query and saving user data in database
+            
+            //$re = mysqli_query() or die(mysqli_error());
+         
+    }
+    
+
+?>
 
     <!-- Registration starts here-->
    <div class = "container1">
-        <form action = "#" class ="register">
-            <h2 class = "text-center text-color"> <b>  Register</b></h2>
-            
+        <form action = "#" METHOD = "POST" class ="register">
+            <h2 class = "text-center text-color"> <b>  Register</b></h2>      
         <div class = "design">
             <h4 class = "text-color"> <b> Please enter your data to register and login</h4> </b> <br>
         <div class = "order-label"> Full Name: </div>
-        <input type="text" name ="full-name" placeholder="E.g. Sarah John" class = "input-responsive" required>
+        <input type="text" name ="full_name" placeholder="E.g. Sarah John" class = "input-responsive" required>
 
         <div class = "order-label"> Mobile Number: </div>
-        <input type="tel" name ="contact" placeholder="E.g. 97455xxxxx" class = "input-responsive" required>
+        <input type="tel" name ="mobile_number" placeholder="E.g. 97455xxxxx" class = "input-responsive" required>
 
         <div class = "order-label"> Email: </div>
         <input type="email" name ="email" placeholder="E.g. xxx@gmial.com" class = "input-responsive" required>
 
         <div class = "order-label"> Password: </div>
-        <input type="password" name ="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
+        <input type="password" name ="pass1" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
 
         <div class = "order-label"> Confirm Password: </div>
-        <input type="password" name ="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
+        <input type="password" name ="pass2" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
             <br> <br> <br> 
         <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
         <br><br> <br> <br>
@@ -89,3 +121,5 @@
 
 </body>
 </html>
+
+
