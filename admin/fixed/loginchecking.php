@@ -10,7 +10,7 @@ if(!isset($_SESSION['user'])) // If User is not set (session)
 // Admin User is not login
 
 // Redirecting with message 
-$_SESSION['no-login-message'] = "<div class = 'error text-center'> Please login to access Admin Page.</div>";
+$_SESSION['no-login-message'] = "<div class = 'failed text-center'><b> Please login to access Admin Page.</b></div>";
 
 //Redirecting to login page
 header('location:'.SITEURL.'admin/adminlogin.php');
