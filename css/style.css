@@ -266,7 +266,7 @@ legend{
     color: white;
     position: sticky;
     top: 100%;
-    background-color:  #d35400;
+    background-color: rgb(163, 121, 66);
      
 }
 
@@ -274,7 +274,7 @@ legend{
     
     text-align:center;
     color: black;
-    background-color:  #d35400;
+    background-color:  rgb(163, 121, 66);
 }
 
 /* CSS for smaller screen */
