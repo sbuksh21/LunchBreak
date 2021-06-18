@@ -50,34 +50,38 @@
 
     <!-- Registration starts here-->
    <div class = "container1">
-       <br>
-       <h2 class = "text-center text-color"> Please register to login </h2>
         <form action = "#" class ="register">
-        <div class = "order-label"> Full Name </div>
+            <h2 class = "text-center text-color"> <b>  Register</b></h2>
+            
+        <div class = "design">
+            <h4 class = "text-color"> <b> Please enter your data to register and login</h4> </b> <br>
+        <div class = "order-label"> Full Name: </div>
         <input type="text" name ="full-name" placeholder="E.g. Sarah John" class = "input-responsive" required>
 
-        <div class = "order-label"> Mobile Number </div>
+        <div class = "order-label"> Mobile Number: </div>
         <input type="tel" name ="contact" placeholder="E.g. 97455xxxxx" class = "input-responsive" required>
 
-        <div class = "order-label"> Email </div>
+        <div class = "order-label"> Email: </div>
         <input type="email" name ="email" placeholder="E.g. xxx@gmial.com" class = "input-responsive" required>
 
-        <div class = "order-label"> Password </div>
+        <div class = "order-label"> Password: </div>
         <input type="password" name ="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
 
-        <div class = "order-label"> Confirm Password </div>
+        <div class = "order-label"> Confirm Password: </div>
         <input type="password" name ="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
-            <br> <br>
+            <br> <br> <br> 
         <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
-        <br><br> <br>
-        
+        <br><br> <br> <br>
+    </div>
+    <br> <br>
     </form>
 </div>
 <!-- Registration ends here-->
 
 <!-- Footer starts here-->
+
 <footer class = "Footer">
-        
+   
     <p>Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>
 
    </footer>

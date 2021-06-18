@@ -174,7 +174,7 @@ legend{
 /* Food Menu */
 
 .food-menu{
-    background-color:rgb(255, 230, 208);
+    background-color:blanchedalmond;
     padding: 4% 0;
 }
 
@@ -244,27 +244,43 @@ legend{
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left;
-        padding: 20px;
+        padding: 50px;
         margin: 0 auto;
-        padding: 1%;
-        width: 45%;
+        width: 50%;
         
 }
 
 .container1{
+  
     background-color: blanchedalmond;
-   
+    border-left: 1px solid grey;
+    
+    
 }
 
 .text-color{
     color:rgb(138, 91, 30)
 }
 
+
+.design{
+    border: 1.5px solid rgb(138, 91, 30);
+    background-color: rgb(240, 205, 160);
+    margin: 3%;
+    padding: 5%;
+    border-radius: 10px; 
+}
+
+/* CSS Login */
+
 .login{
 
-    width: 80%;
-    margin: 0 auto;
-    padding: 0.5;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding: 50px;
+        margin: 0 auto;
+        width: 50%;
         
 }
 

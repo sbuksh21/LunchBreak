@@ -18,32 +18,7 @@
         <div class ="logo">
             <img src ="images/Logo.png" alt="Logo" class ="img-responsive">
         </div>
-        <div class="menu text-right">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li> 
-                <li>
-                    <a href="register.html">Register</a>
-                </li> 
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-
-                <li>
-                    <a href="order.html">Order</a>
-                </li>
-
-                <li>
-                    <a href="categories.html">Food Categories</a>
-                </li>
-
-                <li>
-                    <a href="food menu.html">Food Menu</a>
-                </li> 
-
-            </ul>
-        </div>
+        
         <div class = "clearfix"> </div>
     </div>
     </section>
@@ -59,15 +34,19 @@
     <!-- Banner ends here-->
 
     <!-- Login Starts here -->
-    
-        <h1>Please enter your email address and password to login</h1>
-<form action = "" class = "login">
-    <div class = "order-label"> Email </div>
-    <input type="email" name ="email"  class = "input-responsive" required>
-    <div class = "order-label"> Password </div>
-    <input type="password" name ="password" class = "input-responsive" required>
+    <div class = "container1">
+        <form action = "#" class ="login">
+            <h2 class = "text-center text-color"> <b>  Login</b></h2>
+            <div class = "design">
+            <h4 class = "text-color"> <b> Please enter your email address and password to login</h4> </b> <br>
+    <div class = "order-label"> Email: </div>
+    <input type="email" name ="email"  class = "input-responsive" required> <br><br>
+    <div class = "order-label"> Password: </div>
+    <input type="password" name ="password" class = "input-responsive" required> <br> <br> <br> 
     <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
 </form>
+</div>
+
         <!-- Login Ends here -->
         <br> <br>
         <br> <br>
@@ -82,6 +61,6 @@
         </div>
         </section>
         <!-- Footer ends here-->
-    
+    </div>
     </body>
     </html>
