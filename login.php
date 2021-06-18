@@ -48,9 +48,7 @@
 </div>
 
         <!-- Login Ends here -->
-        <br> <br>
-        <br> <br>
-        <br> <br>
+        <br> 
         <br> <br>
 <!-- Footer starts here-->
 <section class = "Footer">

@@ -153,7 +153,8 @@ legend{
 
 /* CSS Categories */
 .categories{
-    padding: 4% 0;
+    
+    padding: 2% 0;
     
 }
 
@@ -166,9 +167,10 @@ legend{
 
 .box-2{
 
-    width: 28%;
+    width: 20%;
     float: left;
     margin: 2%;
+  
 }
 
 /* Food Menu */
@@ -180,9 +182,9 @@ legend{
 
 .food-menu-box{
     border: 1px solid white;
-    width: 40%;
-    margin: 1%;
-    padding: 3%;
+    width: 43%;
+    margin: 2%;
+    padding: 1%;
     float: left;
     background-color: white;
     border-radius: 15px;
