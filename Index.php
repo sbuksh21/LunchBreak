@@ -21,7 +21,7 @@
         <div class="menu text-right">
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li> 
                 <li>
                     <img src="https://img.icons8.com/color/24/000000/edit-user-male--v1.png"/> <a href="register.php"> Register | </a> <img src="https://img.icons8.com/color/22/fa314a/unlock.png"/><a href="login.php"> Login</a>
@@ -77,6 +77,13 @@
             <img src ="images/Potato Chickpea Stew.jpg" alt="Chickpea" class= "img-responsive img-curve">
 
             <h3>Chickpea</h3>
+        </div>
+
+        <a href="#">
+        <div class ="box-3 float-container">
+            <img src ="images/Potato Chickpea Stew.jpg" alt="Chickpea" class= "img-responsive img-curve">
+
+            <h3>Burger</h3>
         </div>
     </a>
        <div class= "clearfix"></div>
