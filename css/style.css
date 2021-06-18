@@ -266,7 +266,7 @@ legend{
     color: white;
     position: sticky;
     top: 100%;
-    background-color:  rgb(163, 121, 66);
+    background-color:  #d35400;
      
 }
 
@@ -274,13 +274,8 @@ legend{
     
     text-align:center;
     color: black;
-    background-color:  rgb(163, 121, 66);
+    background-color:  #d35400;
 }
-
-.Footer3{
-    background-color:  rgb(163, 121, 66);
-}
-
 
 /* CSS for smaller screen */
 
