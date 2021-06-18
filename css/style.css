@@ -244,15 +244,20 @@ legend{
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left;
-        padding: 7% 0;
+        padding: 20px;
         margin: 0 auto;
         padding: 1%;
-        width: 80%;
+        width: 45%;
         
 }
 
 .container1{
     background-color: blanchedalmond;
+   
+}
+
+.text-color{
+    color:rgb(138, 91, 30)
 }
 
 .login{
