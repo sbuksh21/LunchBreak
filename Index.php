@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +22,9 @@
             <ul>
                 <li>
                     <a href="index.html">Home</a>
+                </li> 
+                <li>
+                    <img src="https://img.icons8.com/color/24/000000/edit-user-male--v1.png"/> <a href="register.php"> Register | </a> <img src="https://img.icons8.com/color/22/fa314a/unlock.png"/><a href="login.php"> Login</a>
                 </li> 
 
                 <li>
@@ -51,6 +53,39 @@
         </div>
     </section>
     <!-- Banner ends here-->
+
+    <!-- Categories starts here-->
+    <section class = "categories">
+        <div class = "container">
+        <h2 class = "text-center"> Food Categories</h2>
+        <a href="#">
+        <div class ="box-3 float-container">
+            <img src ="images/Rice.jpg" alt="Rice" class= "img-responsive img-curve">
+
+        <h3> Rice</h3>
+        </div>
+         </a>
+        <a href="#">
+        <div class ="box-3 float-container">
+            <img src ="images/Pasta.PNG" alt="Pasta" class= "img-responsive img-curve">
+
+            <h3>Pasta</h3>
+        </div>
+        </a>
+        <a href="#">
+        <div class ="box-3 float-container">
+            <img src ="images/Potato Chickpea Stew.jpg" alt="Chickpea" class= "img-responsive img-curve">
+
+            <h3>Chickpea</h3>
+        </div>
+    </a>
+       <div class= "clearfix"></div>
+    </div>
+
+    </section>
+
+    <!-- Categories ends here-->
+
     <!-- Food Menu starts here-->
     <section class = "food-menu">
         <div class = "container">
@@ -119,17 +154,14 @@
             <div class = "clearfix"></div>
     </div>
     </section>
-
-
-
-
-
+    <!-- Food Menu ends here-->
+   
 <!-- Footer starts here-->
-    <footer class = "Footer">
+<footer class = "Footer">
         
-        <p>Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>
+    <p>Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>
 
-       </footer>
+   </footer>
 <!-- Footer ends here-->
 
 </body>
