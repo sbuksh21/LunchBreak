@@ -1,5 +1,5 @@
 
-<?php include('config/constants.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +33,23 @@
         <div class ="container">
         
     <!-- Banner ends here-->
+
+    <?php include('config/constants.php'); ?>
+
     <!-- Login Starts here -->
-    <div class = "container1">
-        <form action = "#" class ="login">
+   
+        <form action = "#" METHOD "POST" class ="login">
             <h2 class = "text-center text-color"> <b>  Login</b></h2>
             <div class = "design2">
-            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br>  <br>
+            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br> <br>
+                    <?php
+
+                    if(isset($_SESSION['login']))
+                    {
+                        echo $_SESSION['login'];
+                        unset($_SESSION['login']);
+                    }
+                    ?>
     <div class = "order-label"> Username: </div>
     <input type="text" name ="username"  class = "input-responsive" required> <br><br>
     <div class = "order-label"> Password: </div>
@@ -55,9 +66,10 @@
     if(isset($_POST['submit']))
 
     {
+        // Gettng the data from login
         echo $username = $_POST['username'];
-        echo $pass1 = $_POST['password'];
-    }
+        echo $pass1 = md5($_POST['pass1']);
 
+    }
 
     ?>
