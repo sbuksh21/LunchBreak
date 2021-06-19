@@ -1,4 +1,8 @@
 
+<?php
+include('config/constants.php'); 
+include('fixed-front/login-check.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +39,10 @@
 
                 <li>
                     <a href="food menu.php">Food Menu</a>
+                </li>
+
+                <li>
+                    <a href="user-logout.php">Logout</a>
                 </li> 
 
             </ul>

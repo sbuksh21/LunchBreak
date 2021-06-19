@@ -1,3 +1,7 @@
+<?php
+include('login-check.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +38,10 @@
 
                 <li>
                     <a href="food menu.php">Food Menu</a>
+                </li> 
+
+                <li>
+                    <a href="user-logout.php">Logout</a>
                 </li> 
 
             </ul>

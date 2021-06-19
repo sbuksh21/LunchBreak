@@ -1,4 +1,9 @@
-<?php include('fixed-front/menu.php'); ?>
+<?php 
+
+include('config/constants.php'); 
+include('fixed-front/menu.php'); 
+      
+?>
 
     <!-- Food Menu starts here-->
     <section class = "food-menu">

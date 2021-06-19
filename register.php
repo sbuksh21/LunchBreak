@@ -50,6 +50,7 @@
     <!-- Banner ends here-->
 
     <?php include('config/constants.php'); ?>
+    
 
     <?php
 //Checking whether submit is clicked or not

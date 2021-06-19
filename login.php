@@ -1,5 +1,8 @@
 
-<?php include('config/constants.php'); ?>
+<?php include('config/constants.php'); 
+    
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,15 +36,23 @@
         <div class ="container">
         
     <!-- Banner ends here-->
-    <?php
-        if(isset($_SESSION['login']))
-        {
-            echo $_SESSION['login'];
-            unset($_SESSION['login']);
-        }
 
-    ?>
-   
+    <h2 class = "text-center text-color"> <b>  Login</b></h2>
+            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br>
+    <?php
+                if(isset($_SESSION['login']))
+                {
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+
+                if(isset($_SESSION['no-login-message']))
+                {
+                    echo  $_SESSION['no-login-message'];
+                    unset ($_SESSION['no-login-message']);
+                }
+
+            ?>
 
     <?php
 
@@ -66,13 +77,14 @@
         {
             // User exist 
             $_SESSION['login'] ;
+            $_SESSION['user'] = $username; // Checking whether user is login or not 
             //Rediretcing   
             header("location:".SITEURL);
         }
         else
         {
             // User doesnt exist
-            $_SESSION['login'] = "<h2 class = text-center text-color2 > Login failed.</h2>";
+            $_SESSION['login'] = "<h4 class = text2> Login failed.</h4>";
             //Rediretcing
             header("location:".SITEURL.'login.php');
         }
@@ -81,16 +93,16 @@
     ?> 
     
     <!-- Login Starts here -->
-                
-        <form action = "#" METHOD = "POST" class ="login">
-            <h2 class = "text-center text-color"> <b>  Login</b></h2>
+                     
+            <form action = "#" METHOD = "POST" class ="login">
             <div class = "design2">
-            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br> <br> 
             <div class = "order-label"> Username: </div>
             <input type="text" name ="username"  class = "input-responsive" required> <br><br>
             <div class = "order-label"> Password: </div>
             <input type="password" name ="pass1" class = "input-responsive" required> <br> <br> <br> 
-            <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
+            <input type = "submit" name = "submit" value = "Login" class = "btn btn-primary2">
+            <a class = "r btn btn-primary2" href="register.php">Register Now</a>
+            
         </form>
         </div>
         </div>

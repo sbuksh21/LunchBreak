@@ -47,6 +47,12 @@ body{
     color:rgb(65, 116, 15);
 }
 
+.text2{
+
+    text-align: center;
+    color:red;
+}
+
 .text-left{
     text-align: left;
 }
@@ -59,6 +65,11 @@ body{
 a{
     color: #d35400;
     text-decoration: none;
+}
+
+a.r:hover{
+    
+    color:rgb(243, 243, 243);
 }
 
 a:hover{
@@ -81,6 +92,7 @@ a:hover{
     background-color: rgb(138, 91, 30);
     color: white;
     cursor: pointer;
+    padding: 2%;
 }
 
 h1{
@@ -336,9 +348,6 @@ font-size: larger;
      
 }
 
-.text-color2{
-    color:red;
-}
 
 /* CSS for smaller screen */
 
