@@ -1,3 +1,5 @@
+<?php include('fixed-front/footer.php'); ?>
+
 <?php
 // Start session
 session_start();
@@ -14,7 +16,18 @@ $conn = mysqli_connect(LOCALHOST , DB_USERNAME , DB_PASSWORD, DB_NAME) or die(my
 $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing database
 
 ?>
-<!DOCTYPE html>
+
+   
+    <?php
+    if(isset($_SESSION['add']))
+    {
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+    ?>
+
+    <br>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,15 +57,15 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
                 </li> 
 
                 <li>
-                    <a href="order.html">Order</a>
+                    <a href="order.php">Order</a>
                 </li>
 
                 <li>
-                    <a href="categories.html">Food Categories</a>
+                    <a href="categories.php">Food Categories</a>
                 </li>
 
                 <li>
-                    <a href="food menu.html">Food Menu</a>
+                    <a href="food menu.php">Food Menu</a>
                 </li> 
 
             </ul>
@@ -70,17 +83,6 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
     </section>
 
     <!-- Banner ends here-->
-   
-    <?php
-    if(isset($_SESSION['add']))
-    {
-        echo $_SESSION['add'];
-        unset($_SESSION['add']);
-    }
-    ?>
-
-    <br>
-
     <!-- Categories starts here-->
     <section class = "categories">
         <div class = "container">
@@ -188,17 +190,8 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
             <div class = "clearfix"></div>
     </div>
     </section>
+    <br>
+    <br>
+    <br>
     <!-- Food Menu ends here-->
    
-<!-- Footer starts here-->
-<section class = "Footer">
-    <div class = "container">
-              
-        <p>Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>    
-
-        </div>
-        </section>
-<!-- Footer ends here-->
-
-</body>
-</html>

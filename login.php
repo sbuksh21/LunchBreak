@@ -1,3 +1,5 @@
+
+
 <?php
 // Start session
 session_start();
@@ -45,10 +47,9 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
 
     
     <!-- Banner starts here-->
-    <section class="food-banner">
+    <section class="food-banner2">
         <div class ="container">
-        </div>
-    </section>
+        
     <!-- Banner ends here-->
 
    
@@ -57,7 +58,7 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
     <div class = "container1">
         <form action = "#" class ="login">
             <h2 class = "text-center text-color"> <b>  Login</b></h2>
-            <div class = "design">
+            <div class = "design2">
             <h4 class = "text-color"> <b> Please enter your email address and password to login</h4> </b> <br>
     <div class = "order-label"> Email: </div>
     <input type="email" name ="email"  class = "input-responsive" required> <br><br>
@@ -66,19 +67,10 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
     <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
 </form>
 </div>
-
+</div>
+    </section>
         <!-- Login Ends here -->
         <br> 
         <br> <br>
-<!-- Footer starts here-->
-<section class = "Footer">
-    <div class = "container">
-              
-        <p>Copyright <img src="https://img.icons8.com/emoji/15/000000/copyright-emoji.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>    
-
-        </div>
-        </section>
-        <!-- Footer ends here-->
-    </div>
-    </body>
-    </html>
+        <br>
+        <br>

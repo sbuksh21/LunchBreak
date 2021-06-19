@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LunchBreak</title>
 
-    <!--- Linking CSS file -->
-    <link rel = "stylesheet" href="css/style.css">
+    <!--CSS File -->
+    <link rel= "stylesheet" href="css/style.css">
+    
 </head>
-
 <body>
+    <!-- Navbar starts here-->
     <section class = "nav-bar">
         <div class = "container">
         <div class ="logo">
@@ -22,17 +23,17 @@
                 <li>
                     <a href="index.php">Home</a>
                 </li> 
-                 
+               
                 <li>
-                    <a href="order.html">Order</a>
+                    <a href="order.php">Order</a>
                 </li>
 
                 <li>
-                    <a href="categories.html">Food Categories</a>
+                    <a href="categories.php">Food Categories</a>
                 </li>
 
                 <li>
-                    <a href="food menu.html">Food Menu</a>
+                    <a href="food menu.php">Food Menu</a>
                 </li> 
 
             </ul>
@@ -41,4 +42,13 @@
     </div>
     </section>
 
-       <!-- Navbar ends here-->
+    <!-- Navbar ends here-->
+
+    <!-- Banner starts here-->
+    <section class="food-banner">
+        <div class ="container">
+        </div>
+    </section>
+
+    <!-- Banner ends here-->
+       
