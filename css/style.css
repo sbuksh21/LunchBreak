@@ -158,6 +158,16 @@ legend{
     padding: 7% 0;
 }
 
+.food-banner2{
+    background-image: url(../images/Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10% ;
+    height: 100%;
+    margin: 0;
+    
+}
 /* CSS Categories */
 .categories{
     
@@ -267,14 +277,6 @@ select{
         
 }
 
-.container1{
-  
-    background-color: blanchedalmond;
-    border-left: 1px solid grey;
-    
-    
-}
-
 .text-color{
     color:rgb(138, 91, 30)
 }
@@ -283,6 +285,14 @@ select{
 .design{
     border: 1.5px solid rgb(138, 91, 30);
     background-color: rgb(240, 205, 160);
+    margin: 3%;
+    padding: 5%;
+    border-radius: 10px; 
+}
+
+.design2{
+    border: 1.5px solid rgb(138, 91, 30);
+    background-color: rgb(248, 217, 179);
     margin: 3%;
     padding: 5%;
     border-radius: 10px; 
@@ -310,13 +320,6 @@ select{
     top: 100%;
     background-color: rgb(163, 121, 66);
      
-}
-
-.Footer2{
-    
-    text-align:center;
-    color: black;
-    background-color:  rgb(163, 121, 66);
 }
 
 /* CSS for smaller screen */
