@@ -38,9 +38,9 @@
         <form action = "#" class ="login">
             <h2 class = "text-center text-color"> <b>  Login</b></h2>
             <div class = "design2">
-            <h4 class = "text-color"> <b> Please enter your email address and password to login</h4> </b> <br>
-    <div class = "order-label"> Email: </div>
-    <input type="email" name ="email"  class = "input-responsive" required> <br><br>
+            <h4 class = "text-color text-center"> <b> Please enter your username and password to login</h4> </b> <br>  <br>
+    <div class = "order-label"> Username: </div>
+    <input type="email" name ="username"  class = "input-responsive" required> <br><br>
     <div class = "order-label"> Password: </div>
     <input type="password" name ="password" class = "input-responsive" required> <br> <br> <br> 
     <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
@@ -49,4 +49,9 @@
 </div>
     </section>
         <!-- Login Ends here -->
-       
+    <?php
+
+    //  
+
+
+    ?>

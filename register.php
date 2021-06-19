@@ -1,5 +1,5 @@
 
-<?php include('config/constants.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,11 +50,10 @@
         </div>
     </section>
     <!-- Banner ends here-->
+
+    <?php include('config/constants.php'); ?>
+
     <?php
-
-// Taking the values from form for User data and saving it in the database
-
-
 //Checking whether submit is clicked or not
     if(isset($_POST['submit']))
     {
@@ -62,14 +61,16 @@
          $full_name = $_POST['full_name'];
          $mobile_number = $_POST['mobile_number'];
          $email = $_POST['email'];
+         $username = $_POST['username'];
          $pass1 = md5($_POST['pass1']);
-
+         
          //Query to save the data of user in the database
 
          $sql = "INSERT INTO tbl_user SET
             full_name = '$full_name' ,
             mobile_number = '$mobile_number' ,
             email = '$email' ,
+            username = '$username',
             pass1 = '$pass1'
          ";
          
@@ -79,7 +80,7 @@
         // Checking whether user data is inserted or not
          if($re==TRUE)
          {
-             $_SESSION['add'] = "<div class = 'text'> You are now registered";
+             $_SESSION['add'] ;
              //Redirecting
              header("location:".SITEURL);
          }
@@ -93,7 +94,7 @@
 
     if(isset($_SESSION['add']))
     {
-        echo $_SESSION['add'];
+        //echo $_SESSION['add'];
     }
 ?>
 
@@ -112,11 +113,12 @@
         <div class = "order-label"> Email: </div>
         <input type="email" name ="email" placeholder="E.g. xxx@gmial.com" class = "input-responsive" required>
 
+        <div class = "order-label"> Username: </div>
+        <input type="text" name ="username" placeholder="E.g. Sjohn" class = "input-responsive" required>
+
         <div class = "order-label"> Password: </div>
         <input type="password" name ="pass1" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
 
-        <div class = "order-label"> Confirm Password: </div>
-        <input type="password" name ="pass2" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "At least one number and one uppercase and lowercase letter, and at least 8 or more characters" class = "input-responsive" required>
             <br> <br> <br> 
         <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
         <br><br> <br> <br>

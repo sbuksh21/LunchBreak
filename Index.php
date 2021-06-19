@@ -59,13 +59,6 @@
 
     <!-- Banner ends here-->
 
-    <?php
-    if(isset($_SESSION['add']))
-    {
-        echo $_SESSION['add'];
-        unset($_SESSION['add']);
-    }
-    ?>
     <!-- Categories starts here-->
     <section class = "categories">
         <div class = "container">
@@ -173,9 +166,6 @@
             <div class = "clearfix"></div>
     </div>
     </section>
-    <br>
-    <br>
-    <br>
     <!-- Food Menu ends here-->
    
     <!-- Footer-->
