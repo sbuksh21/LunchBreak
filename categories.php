@@ -4,7 +4,7 @@
 <section class ="categories">
     <div class = "container">
     <h2 class = "text-center">Food Categories </h2>
-    <a href = "food-category.html">
+    <a href = "food-category.php">
     <div class = "box-2 float-container">
         <img src = "images/Rice.jpg" alt="Rice" class = "img-responsive img-curve">
         <h3>Rice</h3>
@@ -34,13 +34,15 @@
     </div>
     </a>
 </div>
+
     </section> 
+   
     <br> <br> <br> <br> <br> <br> <br> <br>
 
 <div class = "clearfix"> </div>
     </div>
     
-    <br> <br> <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br> 
          
 <!-- Footer-->
 <?php include('fixed-front/footer.php'); ?>

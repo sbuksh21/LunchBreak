@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,15 +24,15 @@
                     <a href="index.php">Home</a>
                 </li> 
                 <li>
-                    <a href="order.html">Order</a>
+                    <a href="order.php">Order</a>
                 </li>
 
                 <li>
-                    <a href="categories.html">Food Categories</a>
+                    <a href="categories.php">Food Categories</a>
                 </li>
 
                 <li>
-                    <a href="food menu.html">Food Menu</a>
+                    <a href="food menu.php">Food Menu</a>
                 </li> 
 
             </ul>
@@ -121,13 +119,10 @@
 
             <br> <br> <br> 
         <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
-        <br><br> <br> <br>
+        
     </div>
-    <br> <br>
     </form>
 </div>
-<br>
-<br>
 
 <!-- Registration ends here-->
 
