@@ -1,4 +1,4 @@
-<php include ('fixed-front/menu.php'); ?>
+<?php include('fixed-front/menu.php'); ?>
     
     <!--Food Ordering starts here -->
     <section class = "food-order">
