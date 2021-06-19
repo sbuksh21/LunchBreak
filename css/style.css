@@ -336,6 +336,10 @@ font-size: larger;
      
 }
 
+.text-color2{
+    color:red;
+}
+
 /* CSS for smaller screen */
 
 @media only screen and (max-width:768px){

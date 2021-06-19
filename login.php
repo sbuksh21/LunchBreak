@@ -1,5 +1,5 @@
 
-
+<?php include('config/constants.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,33 +33,16 @@
         <div class ="container">
         
     <!-- Banner ends here-->
+    <?php
+        if(isset($_SESSION['login']))
+        {
+            echo $_SESSION['login'];
+            unset($_SESSION['login']);
+        }
 
-    <?php include('config/constants.php'); ?>
-
-    <!-- Login Starts here -->
+    ?>
    
-        <form action = "#" METHOD "POST" class ="login">
-            <h2 class = "text-center text-color"> <b>  Login</b></h2>
-            <div class = "design2">
-            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br> <br>
-                    <?php
 
-                    if(isset($_SESSION['login']))
-                    {
-                        echo $_SESSION['login'];
-                        unset($_SESSION['login']);
-                    }
-                    ?>
-    <div class = "order-label"> Username: </div>
-    <input type="text" name ="username"  class = "input-responsive" required> <br><br>
-    <div class = "order-label"> Password: </div>
-    <input type="password" name ="pass1" class = "input-responsive" required> <br> <br> <br> 
-    <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
-</form>
-</div>
-</div>
-    </section>
-        <!-- Login Ends here -->
     <?php
 
     //  Check whether submit clicked or not
@@ -67,9 +50,50 @@
 
     {
         // Gettng the data from login
-        echo $username = $_POST['username'];
-        echo $pass1 = md5($_POST['pass1']);
+         $username = $_POST['username'];
+         $pass1 = md5($_POST['pass1']);   
 
+        // SQL query to check username and password exisit or not
+        $sql = "SELECT * FROM tbl_user WHERE username = '$username' AND pass1 = '$pass1'";
+
+         // Executing query
+         $re = mysqli_query($conn,$sql);
+
+        //Counting rows to check whether user exisit or not
+        $count = mysqli_num_rows($re);
+
+        if($count==1)
+        {
+            // User exist 
+            $_SESSION['login'] ;
+            //Rediretcing   
+            header("location:".SITEURL);
+        }
+        else
+        {
+            // User doesnt exist
+            $_SESSION['login'] = "<h2 class = text-center text-color2 > Login failed.</h2>";
+            //Rediretcing
+            header("location:".SITEURL.'login.php');
+        }
     }
 
-    ?>
+    ?> 
+    
+    <!-- Login Starts here -->
+                
+        <form action = "#" METHOD = "POST" class ="login">
+            <h2 class = "text-center text-color"> <b>  Login</b></h2>
+            <div class = "design2">
+            <h4 class = "text-color text-center text-size"> <b> Please enter your username and password to login</h4> </b> <br> <br> 
+            <div class = "order-label"> Username: </div>
+            <input type="text" name ="username"  class = "input-responsive" required> <br><br>
+            <div class = "order-label"> Password: </div>
+            <input type="password" name ="pass1" class = "input-responsive" required> <br> <br> <br> 
+            <input type = "submit" name = "submit" value = "submit" class = "btn btn-primary2">
+        </form>
+        </div>
+        </div>
+            </section>
+        <!-- Login Ends here -->
+    
