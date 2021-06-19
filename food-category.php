@@ -1,6 +1,6 @@
 <?php include('fixed-front/menu.php'); ?>
-<?php include('fixed-front/footer.php'); ?>
 
+<!-- Food Category starts here-->
         <section class = "food-menu">
             <div class = "container">
                 <h2 class = "text-center"> Foods on <a href = "#"> "Category"</a></h2>
@@ -68,4 +68,7 @@
                 <div class = "clearfix"></div>
         </div>
         </section>
+<!-- Food Category starts here-->
       
+<!-- Footer-->
+        <?php include('fixed-front/footer.php'); ?>

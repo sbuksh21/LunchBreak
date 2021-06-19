@@ -1,4 +1,4 @@
-<?php include('fixed-front/footer.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,3 +97,6 @@
 </section>
 
      <!--Food Ordering ends here -->
+
+     <!-- Footer-->
+     <?php include('fixed-front/footer.php'); ?>

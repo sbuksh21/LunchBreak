@@ -1,31 +1,6 @@
-<?php include('fixed-front/footer.php'); ?>
-
-<?php
-// Start session
-session_start();
-
-//Create constants 
-define('SITEURL', 'http://localhost/LunchBreak/');
-define('LOCALHOST', 'localhost'); 
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'lunchbreak');
-
-// Connection 
-$conn = mysqli_connect(LOCALHOST , DB_USERNAME , DB_PASSWORD, DB_NAME) or die(mysqli_error()); // Connect to the database
-$db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing database
-
-?>
+<?php include('config/constants.php'); ?>
 
    
-    <?php
-    if(isset($_SESSION['add']))
-    {
-        echo $_SESSION['add'];
-        unset($_SESSION['add']);
-    }
-    ?>
-
     <br>
     <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +58,14 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
     </section>
 
     <!-- Banner ends here-->
+
+    <?php
+    if(isset($_SESSION['add']))
+    {
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+    ?>
     <!-- Categories starts here-->
     <section class = "categories">
         <div class = "container">
@@ -195,3 +178,5 @@ $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing
     <br>
     <!-- Food Menu ends here-->
    
+    <!-- Footer-->
+    <?php include('fixed-front/footer.php'); ?>

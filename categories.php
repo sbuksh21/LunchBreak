@@ -1,5 +1,4 @@
 <?php include('fixed-front/menu.php'); ?>
-<?php include('fixed-front/footer.php'); ?>
 
 <!--Food Categories Section starts here-->
 <section class ="categories">
@@ -43,7 +42,7 @@
     
     <br> <br> <br> <br> <br> <br> <br> <br>
          
-
-
+<!-- Footer-->
+<?php include('fixed-front/footer.php'); ?>
    
 
