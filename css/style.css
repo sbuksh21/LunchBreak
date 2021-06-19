@@ -40,6 +40,13 @@ body{
     text-align: center;
 }
 
+.text{
+
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(65, 116, 15);
+}
+
 .text-left{
     text-align: left;
 }
@@ -229,6 +236,14 @@ legend{
 .order-label{
     margin-bottom: 1%;
     font-weight: bold;
+}
+
+select{
+    margin-bottom: 1%;
+    font-weight: bold;
+    width: 98%;  
+    padding: 10px 15px;
+    border-radius: 05px;
 }
 
 .food-order{

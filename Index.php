@@ -1,3 +1,19 @@
+<?php
+// Start session
+session_start();
+
+//Create constants 
+define('SITEURL', 'http://localhost/LunchBreak/');
+define('LOCALHOST', 'localhost'); 
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'lunchbreak');
+
+// Connection 
+$conn = mysqli_connect(LOCALHOST , DB_USERNAME , DB_PASSWORD, DB_NAME) or die(mysqli_error()); // Connect to the database
+$db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //Choosing database
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +68,18 @@
         <div class ="container">
         </div>
     </section>
+
     <!-- Banner ends here-->
+   
+    <?php
+    if(isset($_SESSION['add']))
+    {
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+    ?>
+
+    <br>
 
     <!-- Categories starts here-->
     <section class = "categories">
