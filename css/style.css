@@ -170,16 +170,6 @@ legend{
     padding: 7% 0;
 }
 
-.food-banner2{
-    background-image: url(../images/Banner.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 10% ;
-    height: 100%;
-    margin: 0;
-    
-}
 /* CSS Categories */
 .categories{
     
