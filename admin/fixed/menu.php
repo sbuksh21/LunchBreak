@@ -8,6 +8,7 @@ include('loginchecking.php');
     <title> LunchBreak.net - Home </title>
 
     <link rel = "stylesheet" href="../css/admin.css">
+    <link rel = "stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -25,5 +26,13 @@ include('loginchecking.php');
 </div>
 </div>
 
-<img src ="../images/Banner.png" alt="Logo" class ="img-responsive">
+<section class = "nav-bar">
+        <div class = "container">
+        <div class="menu text-right">
+        
+</div>
+</div>
+</div>
+</section>
+
 <!--- Menu ends here -->

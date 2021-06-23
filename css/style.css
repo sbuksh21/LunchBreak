@@ -162,7 +162,7 @@ legend{
 }
 
 /* CSS for Banner */
-.food-banner{
+.banner{
     background-image: url(../images/Banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
