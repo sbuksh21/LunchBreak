@@ -36,3 +36,7 @@ include('loginchecking.php');
 </section>
 
 <!--- Menu ends here -->
+<section class="food-banner">
+        <div class ="container">
+        </div>
+    </section>
