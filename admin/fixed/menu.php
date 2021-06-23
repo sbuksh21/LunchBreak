@@ -25,5 +25,5 @@ include('loginchecking.php');
 </div>
 </div>
 
-<img src ="images/Logo.png" alt="Logo" class ="img-responsive">
+<img src ="../images/Logo.png" alt="Logo" class ="img-responsive">
 <!--- Menu ends here -->
