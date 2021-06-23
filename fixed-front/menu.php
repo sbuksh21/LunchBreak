@@ -53,7 +53,7 @@ include('login-check.php');
     <!-- Navbar ends here-->
 
     <!-- Banner starts here-->
-    <section class="banner">
+    <section class="food-banner">
         <div class ="container">
         </div>
     </section>
