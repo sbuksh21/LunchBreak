@@ -44,8 +44,8 @@
 if(isset($_POST['submit']))
 {
 // To get the data from login form
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $username = mysqli_real_escape_string($conn, trim($_POST['username']));
+    $password = mysqli_real_escape_string($conn, trim(md5($_POST['password'])));
 
     // Check whether username and password exist or not
     $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password'";
@@ -75,5 +75,11 @@ if(isset($_POST['submit']))
 
 ?>
 
-<?php include('fixed/footer.php') ?>
+<!--- Footer starts here -->
+<div class = "footer">
+    <div class = "footer-wrapper">
+    <p class = "text-center"> Copyright <img src="https://img.icons8.com/ios-glyphs/15/ffffff/copyright.png"/> 2021 LunchBreak.net. All rights reserved.<p>
+<!-- Footer ends here --->
+</div>
+</div>
 

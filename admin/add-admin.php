@@ -14,7 +14,7 @@ if(isset($_SESSION['add']))
 }
 
 ?>
-    <form acton=" " method = "POST">
+    <form action=" " method = "POST">
 
     <table class = "tbl-2">
         <tr>
@@ -56,9 +56,9 @@ if(isset($_POST['submit']))
     // Submiited
  //1. Get value from form
 
- $full_name = $_POST['full_name'];
- $username = $_POST['username'];
- $password = md5($_POST['password']); // Password encrypted with MD5
+ $full_name = mysqli_real_escape_string($conn, trim( $_POST['full_name']));
+ $username = mysqli_real_escape_string($conn, trim ($_POST['username']));
+ $password = mysqli_real_escape_string($conn, trim(md5($_POST['password']))); // Password encrypted with MD5
 
  //2. Query to save data into database
  $sql = "INSERT INTO tbl_admin SET 

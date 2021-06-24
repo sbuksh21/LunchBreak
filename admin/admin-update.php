@@ -67,9 +67,9 @@
 if(isset ($_POST['submit']))
 {
     // To get all the values from form to update the admin user
-    $id = $_POST['id'];
-    $full_name = $_POST['full_name'];
-    $username = $_POST['username'];
+    $id = mysqli_real_escape_string($conn, trim($_POST['id']));
+    $full_name = mysqli_real_escape_string($conn, trim($_POST['full_name']));
+    $username = mysqli_real_escape_string($conn, trim($_POST['username']));
 
     // Query to update admin user
     $sql = " UPDATE tbl_admin SET
