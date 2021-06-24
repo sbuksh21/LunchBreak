@@ -1,7 +1,7 @@
 
 <?php
 include('config/constants.php'); 
-include('fixed-front/login-check.php');
+include('fixed - front/login-check.php');
 ?>
 
 <!DOCTYPE html>
@@ -107,4 +107,4 @@ include('fixed-front/login-check.php');
      <!--Food Ordering ends here -->
 
      <!-- Footer-->
-     <?php include('fixed-front/footer.php'); ?>
+     <?php include('fixed - front/footer.php'); ?>

@@ -1,6 +1,6 @@
 <?php include('config/constants.php'); 
 
-include('fixed-front/login-check.php');
+include('fixed - front/login-check.php');
 
 ?>
 
@@ -177,4 +177,4 @@ include('fixed-front/login-check.php');
     <!-- Food Menu ends here-->
    
     <!-- Footer-->
-    <?php include('../fixed-front/footer.php'); ?>
+    <?php include('fixed - front/footer.php'); ?>

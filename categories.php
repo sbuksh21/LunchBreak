@@ -1,6 +1,6 @@
 <?php 
 include('config/constants.php'); 
-include('fixed-front/menu.php'); 
+include('fixed - front/menu.php'); 
 
 ?>
 
@@ -49,6 +49,6 @@ include('fixed-front/menu.php');
     <br> <br> <br> <br> <br> <br> 
          
 <!-- Footer-->
-<?php include('fixed-front/footer.php'); ?>
+<?php include('fixed - front/footer.php'); ?>
    
 

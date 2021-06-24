@@ -1,6 +1,6 @@
 <?php include('config/constants.php'); 
 
- include('fixed-front/menu.php'); 
+ include('fixed - front/menu.php'); 
 
 ?>
 
@@ -75,4 +75,4 @@
 <!-- Food Category starts here-->
       
 <!-- Footer-->
-        <?php include('fixed-front/footer.php'); ?>
+        <?php include('fixed - front/footer.php'); ?>

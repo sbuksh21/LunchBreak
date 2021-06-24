@@ -313,6 +313,14 @@ select{
         
 }
 
+.food-banner2{
+    background-image: url(../images/Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+}
+
 .text-size{
 
 font-size: larger;

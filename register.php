@@ -57,10 +57,10 @@
     if(isset($_POST['submit']))
     {
         //Get the user data from form
-         $full_name = mysqli_real_escape_string($conn, trim$_POST['full_name']));
-         $mobile_number = mysqli_real_escape_string($conn, trim$_POST['mobile_number']));
-         $email = mysqli_real_escape_string($conn, trim$_POST['email']));
-         $username = mysqli_real_escape_string($conn, trim$_POST['username']));
+         $full_name = mysqli_real_escape_string($conn, trim($_POST['full_name']));
+         $mobile_number = mysqli_real_escape_string($conn, trim($_POST['mobile_number']));
+         $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+         $username = mysqli_real_escape_string($conn, trim($_POST['username']));
          $pass1 = mysqli_real_escape_string($conn, trim(md5($_POST['pass1'])));
          
          //Query to save the data of user in the database
@@ -128,5 +128,5 @@
 <!-- Registration ends here-->
 
 <!-- Footer-->
-<?php include('fixed-front/footer.php'); ?>
+<?php include('fixed - front/footer.php'); ?>
 

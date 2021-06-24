@@ -61,8 +61,8 @@
 
     {
         // Gettng the data from login
-         $username = mysqli_real_escape_string($conn, trim$_POST['username']);
-         $pass1 = mysqli_real_escape_string($conn, trimmd5($_POST['pass1'])));   
+         $username = mysqli_real_escape_string($conn, trim($_POST['username']));
+         $pass1 = mysqli_real_escape_string($conn, trim(md5($_POST['pass1'])));   
 
         // SQL query to check username and password exisit or not
         $sql = "SELECT * FROM tbl_user WHERE username = '$username' AND pass1 = '$pass1'";
