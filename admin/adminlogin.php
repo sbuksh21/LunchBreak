@@ -82,4 +82,5 @@ if(isset($_POST['submit']))
 <!-- Footer ends here --->
 </div>
 </div>
-
+</head>
+<body>
