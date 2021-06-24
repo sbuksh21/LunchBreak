@@ -1,10 +1,13 @@
-<?php include('../config/constants.php');?>
+<?php include('../config/constants.php');
+    
+?>
 
 
 <html>
     <head>
         <title> Admin Login - LunchBreak</title>
         <link rel = "stylesheet" href = "../css/admin.css">
+        
     </head>
 
     <body>
@@ -32,7 +35,7 @@
             <input type = "text" name = "username" placeholder="Enter Username" required value><br> <br>
             Password:<br>
             <input type = "password" name = "password" placeholder="Enter Password" required value> <br> <br>
-            <input type = "submit" name = "submit" value = "Login" class = "btn-primary">
+            <input type = "submit" name = "submit" value = "Login" class = "btn btn-primary">
 
     </div>
 
@@ -75,6 +78,10 @@ if(isset($_POST['submit']))
 }
 
 ?>
-
-<?php include('fixed/footer.php') ?>
+<div class = "footer-2">
+    <div class = "footer-wrapper">
+    <p class = "text-center"> Copyright <img src="https://img.icons8.com/ios-glyphs/15/ffffff/copyright.png"/> 2021 LunchBreak.net. All rights reserved.<p>
+<!-- Footer ends here --->
+</div>
+</div>
 

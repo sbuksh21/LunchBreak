@@ -149,6 +149,11 @@ table tr td{
     color:white;
 }
 
+.footer-2{
+    background-color: rgba(207, 177, 129, 0.658);
+    color:white;
+}
+
 .login
 {
     background-color: rgb(228, 197, 171);
