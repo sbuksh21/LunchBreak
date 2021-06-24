@@ -1,5 +1,5 @@
 <?php include('../config/constants.php');?>
-<link rel = "stylesheet" href="../css/style.css">
+
 
 <html>
     <head>
