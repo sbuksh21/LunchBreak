@@ -32,7 +32,7 @@
     <!-- Navbar ends here-->
  
     <!-- Banner starts here-->
-    <section class="food-ban2">
+    <section class="food-banner">
         <div class ="container">
         
     <!-- Banner ends here-->
@@ -100,9 +100,9 @@
             <input type="text" name ="username"  class = "input-responsive" required> <br><br>
             <div class = "order-label"> Password: </div>
             <input type="password" name ="pass1" class = "input-responsive" required> <br> <br> <br> 
-            <input type = "submit" name = "submit" value = "Login" class = "btn btn-primary2">
-            <a class = "r btn btn-primary2" href="register.php">Register Now</a>
-            
+            <input type = "submit" name = "submit" value = "Login" class = "btn btn-primary2"> <br><br>
+            <p class = "text-center"><b> Dont have an account?  <a href="register.php">Register Now</a></b>
+             
         </form>
         </div>
         </div>
