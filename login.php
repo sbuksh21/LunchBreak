@@ -32,7 +32,7 @@
     <!-- Navbar ends here-->
  
     <!-- Banner starts here-->
-    <section class="food-banner2">
+    <section class="food-ban2">
         <div class ="container">
         
     <!-- Banner ends here-->
