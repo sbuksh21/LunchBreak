@@ -1,4 +1,5 @@
 <?php include('../config/constants.php');?>
+<link rel = "stylesheet" href="../css/style.css">
 
 <html>
     <head>
@@ -9,7 +10,7 @@
     <body>
 
     <div class = "login">
-        <h1 class = "text-center"> Admin Login</h1>
+        <h2 class = "text-center"> Admin Login</h2>
         <br>
 
         <?php
@@ -75,12 +76,5 @@ if(isset($_POST['submit']))
 
 ?>
 
-<!--- Footer starts here -->
-<div class = "footer">
-    <div class = "footer-wrapper">
-    <p class = "text-center"> Copyright <img src="https://img.icons8.com/ios-glyphs/15/ffffff/copyright.png"/> 2021 LunchBreak.net. All rights reserved.<p>
-<!-- Footer ends here --->
-</div>
-</div>
-</head>
-<body>
+<?php include('fixed/footer.php') ?>
+

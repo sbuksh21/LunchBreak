@@ -50,10 +50,10 @@ if(isset ($_POST['submit']))
 {
 
 // To get all the values from form to change password of admin user
-$id = $_POST['id'];
-$current_password = md5($_POST['current_password']);
-$new_password = md5($_POST['new_password']);
-$confirm_password = md5($_POST['confirm_password']);
+$id = mysqli_real_escape_string($conn, trim($_POST['id']));
+$current_password = mysqli_real_escape_string($conn, trim(md5($_POST['current_password'])));
+$new_password = mysqli_real_escape_string($conn, trim(md5($_POST['new_password'])));
+$confirm_password = mysqli_real_escape_string($conn, trim(md5($_POST['confirm_password'])));
 
 // Query to change password of admin user
 $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password ='$current_password'";
