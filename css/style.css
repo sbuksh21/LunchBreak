@@ -285,7 +285,6 @@ select{
      
 }
 
-
 .design{
     border: 1.5px solid rgb(138, 91, 30);
     background-color: rgb(240, 205, 160);
@@ -329,7 +328,7 @@ font-size: larger;
 
 /* Footer */
 
-.Footer{
+.footer-1{
     text-align: center;
     color: white;
     position: sticky;
