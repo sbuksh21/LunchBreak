@@ -66,9 +66,9 @@ td {
     font-size: large;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password]   {
     padding: 10px;
-    background-color: rgb(235, 215, 189);
+    background-color: rgb(248, 248, 248);
     font-size: large;
     
 }
@@ -78,7 +78,6 @@ input[type=text], input[type=password] {
     padding: 1%;
     text-decoration: none;
     font-weight: bold;
- 
 }
 
 .btn-primary2{

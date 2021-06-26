@@ -78,7 +78,7 @@ if(isset($_SESSION['pwd-change']))
             {
                 // If we have data in database
                 while($rows=mysqli_fetch_assoc($res))  // Using while loop to get all data in the database
-                //While loop will run as long we have data in our database
+                
                 {
                     //To get the data from database
                     $id=$rows['id'];
@@ -88,7 +88,7 @@ if(isset($_SESSION['pwd-change']))
                     //Displaying the data from our table in the database
                     ?>
                         <tr>
-                        <td><?php echo $s++; ?></td>
+                        <td><?php echo $id; ?></td>
                         <td><?php echo $full_name;?></td>
                         <td><?php echo $username;?></td>
                         <td>
