@@ -16,7 +16,7 @@ if(isset($_SESSION['add']))
 ?>
     <form action=" " method = "POST">
 
-    <table class = "tbl-2">
+    <table>
         <tr>
             <td>Full Name: </td>
             <td> <input type= "text" name ="full_name" placeholder="Enter Full Name" required value ></td>
