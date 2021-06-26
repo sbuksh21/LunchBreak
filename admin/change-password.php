@@ -33,7 +33,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan = "2">
+                <td colspan = "2"> <br>
                    <input type = "hidden" name = "id" value = <?php echo $id;?>>
                     <input type = "submit" name = "submit" value = "Change Password"class = "btn-secondary">
                 </td>

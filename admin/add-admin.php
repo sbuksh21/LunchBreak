@@ -32,8 +32,8 @@ if(isset($_SESSION['add']))
             <td> <input type= "password" name ="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required value></td>
             </tr>
 
-            <tr>
-                <td colspan = "3">
+            <tr> 
+                <td colspan = "3"> <br>
                     <input type = "submit" name = "submit" value ="Add Admin" class = "btn-secondary"> </td>
             </tr> 
 
