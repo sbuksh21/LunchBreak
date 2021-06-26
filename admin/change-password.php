@@ -72,7 +72,6 @@ $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password ='$current_password'";
         //Checking password matched
         if($new_password==$confirm_password)
         {
-                //echo "Password Matched";
                 $sql2 = "UPDATE tbl_admin SET
                 password = '$new_password'
                 WHERE id = $id 

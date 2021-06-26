@@ -23,7 +23,6 @@ if($res==TRUE)
 else{
 
     //Failed to delete Admin user
-    //echo "Failed to delete Admin User";
     //Session variable created to display message
     $_SESSION['delete'] = "<div class = 'failed'> Failed to delete Admin User.</div>";
     //Redirecting to Admin page

@@ -22,10 +22,10 @@
             echo $_SESSION['login'];
             unset($_SESSION['login']);
         }
-        if(isset($_SESSION['no-login-message']))
+        if(isset($_SESSION['no-login']))
         {
-            echo  $_SESSION['no-login-message'];
-            unset ($_SESSION['no-login-message']);
+            echo  $_SESSION['no-login'];
+            unset ($_SESSION['no-login']);
         }
         ?>
         <br>
