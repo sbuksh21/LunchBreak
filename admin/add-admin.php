@@ -33,7 +33,7 @@ if(isset($_SESSION['add']))
             </tr>
 
             <tr>
-                <td colspan = "2">
+                <td colspan = "3">
                     <input type = "submit" name = "submit" value ="Add Admin" class = "btn-secondary"> </td>
             </tr> 
 
