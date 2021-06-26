@@ -53,13 +53,13 @@ h2{
     text-align: left;
 }
 
-table tr th {
-    border-bottom: 1px solid rgb(14, 13, 13);
+table, tr, th {
+    border-bottom: 1px solid rgb(214, 21, 21);
     padding: 3%;
     text-align: left;
 }
 
-table tr td{
+table, tr, td{
     padding: 3%;
 }
 
