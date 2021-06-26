@@ -48,34 +48,39 @@ h2{
     width: 100%;
 }
 
-.tbl-2{
-    width: 35%;
-    border-collapse: ;
-    
-}
-
 table{
     width : 35%;
+    box-sizing: border-box ;
+    background-color: rgb(250, 238, 224);
+    
 }
 
 table tr th {
-    
+    border-bottom: 1px solid rgb(14, 13, 13);
     padding: 1.5%;
     text-align: left;
 }
 
 td {
     padding: 2%;
+    font-size: large;
+}
+
+input[type=text], input[type=password] {
+    padding: 10px;
+    background-color: rgb(235, 215, 189);
+    font-size: large;
+    
 }
 
 
 .btn-primary{
-    background-color: rgb(22, 145, 216);
     padding: 1%;
-    color: white;
     text-decoration: none;
     font-weight: bold;
+ 
 }
+
 .btn-primary2{
     background-color: rgb(80, 150, 97);
     color: white;
@@ -86,29 +91,29 @@ td {
 }
 
 .btn-primary:hover{
-    background-color: rgb(15, 110, 165);
+    background-color:transparent;
 }
 
 .btn-secondary{
     background-color: rgb(20, 199, 139);
     padding: 1%;
-    color: white;
+    color: rgb(20, 18, 18);
     text-decoration: none;
     font-weight: bold;
 }
 .btn-secondary:hover{
-    background-color: rgb(21, 184, 83);
+    background-color: transparent;
 }
 
 .btn-danger{
     background-color: rgb(216, 53, 53);
     padding: 1%;
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bold;
 }
 .btn-danger:hover{
-    background-color: rgb(158, 26, 17);
+    background-color: transparent;
 }
 
 .success{

@@ -14,9 +14,10 @@ if(isset($_SESSION['add']))
 }
 
 ?>
+ 
     <form action=" " method = "POST">
 
-    <table>
+    <table class = "table">
         <tr>
             <td>Full Name: </td>
             <td> <input type= "text" name ="full_name" placeholder="Enter Full Name" required value ></td>
@@ -37,12 +38,13 @@ if(isset($_SESSION['add']))
                     <input type = "submit" name = "submit" value ="Add Admin" class = "btn-secondary"> </td>
             </tr> 
 
-        </table>
-
-
+</table>
+        
     </form>
 </div>
 </div>
+
+
 <?php include('fixed/footer.php') ?>
 
 <?php

@@ -15,7 +15,7 @@
     ?>
 
     <form action =  "" method="POST">
-    <table class = "tbl-2">
+    <table class = "table">
             <tr>
                 <td>Current Password: </td>
                 <td><input type= "password" name ="current_password" placeholder="Current Password">
