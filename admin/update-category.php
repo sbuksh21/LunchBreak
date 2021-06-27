@@ -97,9 +97,12 @@
     </tr>
 
             <tr> 
-                <td colspan = "2"> <br>
+                <td 
+                
                     <input type = "submit" name = "submit" value ="Update Category" class = "btn-secondary"> </td>
-            </tr> 
+
+            
+                </tr> 
 </table>
 </form>
 
@@ -108,11 +111,6 @@
 </div>
 </div>
             
-
-
-
-
-
 
 
 <?php include('fixed/footer.php') ?>
