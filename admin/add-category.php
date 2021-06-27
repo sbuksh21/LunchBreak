@@ -100,7 +100,7 @@ if(isset($_POST['submit']))
             // We will stop this process if we failed to insert the picture so we will not add the data into database
                 die();
         }
-           
+
         }
 
     //Query to insert the data to db

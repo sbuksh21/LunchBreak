@@ -27,7 +27,7 @@
                 $rows = mysqli_fetch_assoc($result);
                 $id = $rows['id'];
                 $cat_name = $rows['cat_name'];
-                $image_name = $rows['image_name'];
+                $current_image = $rows['image_name'];
                 $status = $rows['status'];
                 $cat_date = $rows['cat_date'];
         }
@@ -60,10 +60,20 @@
 
     <tr>
         <td> Current Picture: </td>
+
         <td>
-          Current Picture
-        </td>
+            <?php
+                if($current_image != "")
+                {
+                    ?>
+                    <img src = "<?php echo SITEURL; ?> Images/categories/<?php echo $current_image; ?>"width = "100px" >
+
+                    <?php
+                }
+
+        ?>
     </tr>
+    </td>
 
     <tr>
         <td> New Picture: </td>

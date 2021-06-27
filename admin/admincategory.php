@@ -108,6 +108,7 @@
                           ?>
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
                           <?php
+                          
                         }
                         
                        

@@ -11,12 +11,12 @@ if(isset($_GET['id']) AND isset($_GET['image']))
     $image_name = $_GET['image'];
 
     // Removing the file from category folder
-    if($image_name != "" AND $image_name=="")
+    if($image_name != "")
     {
         //Path of image
-        $path = dirname($_SERVER['SCRIPT_FILENAME'])."../images/categories/".$image_name;
+        $path = "../images/categories/".$image_name;
         //Deleting image from category folder -- Using unlink function to completely delete the file from the folder on success
-        unlink($path);
+        $wipe = unlink($path);
 
 
         //
@@ -27,6 +27,7 @@ if(isset($_GET['id']) AND isset($_GET['image']))
 
             //Redirecting
             header('location:'.SITEURL.'admin/admincategory.php');
+            
 
             //Completely stopping and not moving further
             die();
@@ -44,6 +45,10 @@ if(isset($_GET['id']) AND isset($_GET['image']))
 
         {
             $_SESSION['delete'] = "<div class = 'success'> Successfully removed category.</div>";
+
+            //Deleting image from Images/Categories folder as well
+            unlink($path);
+
             //Redirecting
             header('location:'.SITEURL.'admin/admincategory.php');
         }
