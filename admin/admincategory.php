@@ -16,6 +16,28 @@
       }
 
     ?>
+
+      <?php
+      // Image removal session//
+
+      if(isset($_SESSION['wipe']))
+      {
+          echo $_SESSION['wipe'];
+          unset($_SESSION['wipe']);
+      }
+
+      ?>
+
+    <?php
+      // Image removal session//
+
+      if(isset($_SESSION['delete']))
+      {
+          echo $_SESSION['delete'];
+          unset($_SESSION['delete']);
+      }
+
+      ?>
     <br> <br>
 
 
@@ -79,15 +101,15 @@
                         {
                           echo "<div class = 'failed'><b> Picture is missing. </b></div>";
                         }
-                        ?>
+                        ?> 
                       </td>
                       
                       <td><?php echo $status ?></td>
                       <td><?php echo $cat_date ?></td>
-                   
+                  
                       <td>
-                      <a href = "" class = "btn-secondary">Update Category</a> 
-                      <a href = "delete-category.php" class = "btn-danger">Delete Category</a> 
+                      <a href = "" class = "btn-secondary">Update Category</a>
+                      <a href = "delete-category.php?id=<?php echo $id; ?> &image_name=<?php echo $image_name ; ?>" class = "btn-danger">Delete Category</a> <!-- Using get method to get the value of Id delete it and using the image id as well to remove the image from the folder as well-->
                       </td>
                 </tr>
                 <?php

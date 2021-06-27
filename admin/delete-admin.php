@@ -4,7 +4,7 @@ Include('../config/constants.php');
 //1. To get the ID of Admin User to delete it
  $id = $_GET['id'];
 
-//2. Create query to delete admin User
+//2. Query to delete admin User
 $sql = "DELETE FROM tbl_admin WHERE id=$id";
 
 //3. Run the query
