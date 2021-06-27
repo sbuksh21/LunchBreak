@@ -38,6 +38,18 @@
       }
 
       ?>
+
+      <?php
+      // Update category session//
+
+      if(isset($_SESSION['no-category-available']))
+      {
+          echo $_SESSION['no-category-available'];
+          unset($_SESSION['no-category-available']);
+      }
+
+      ?>
+
     <br> <br>
 
 
@@ -97,7 +109,7 @@
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
                           <?php
                         }
-                        else
+                        elseif($image_name=="")
                         {
                           echo "<div class = 'failed'><b> Picture is missing. </b></div>";
                         }
@@ -108,8 +120,8 @@
                       <td><?php echo $cat_date ?></td>
                   
                       <td>
-                      <a href = "" class = "btn-secondary">Update Category</a>
-                      <a href = "delete-category.php?id=<?php echo $id; ?> &image_name=<?php echo $image_name ; ?>" class = "btn-danger">Delete Category</a> <!-- Using get method to get the value of Id delete it and using the image id as well to remove the image from the folder as well-->
+                      <a href = "update-category.php?id=<?php echo $id; ?>" class = "btn-secondary">Update Category</a>
+                      <a href = "delete-category.php?id=<?php echo $id; ?> &image=<?php echo $image_name ; ?>" class = "btn-danger">Delete Category</a> <!-- Using get method to get the value of Id delete it and using the image id as well to remove the image from the folder as well-->
                       </td>
                 </tr>
                 <?php

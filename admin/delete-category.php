@@ -3,18 +3,18 @@
 
 Include('../config/constants.php');
 
-if(isset($_GET['id']) AND isset($_GET['image_name']))
+if(isset($_GET['id']) AND isset($_GET['image']))
 {
     //Getting the values and deleting it 
 
     $id = $_GET['id'];
-    $image_name = $_GET['image_name'];
+    $image_name = $_GET['image'];
 
     // Removing the file from category folder
     if($image_name != "")
     {
         //Path of image
-        $path = "../Images/categories/".$image_name;
+        $path = "../images/categories/".$image_name;
         //Deleting image from category folder -- Using unlink function to completely delete the file from the folder on success
         $wipe = unlink($path);
 

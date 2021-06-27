@@ -94,7 +94,7 @@ if(isset($_POST['submit']))
         if($upload==false)
         {
             //Display the message on failure
-            $_SESSION['upload_image'] = "<div class = 'failed'><b> Uploading Failed.</b> </div>";
+            $_SESSION['upload_image'] = "<div class = 'failed'><b> Please choose and insert picture as well to add new category.</b> </div>";
             header('location:'.SITEURL.'admin/add-category.php');
             
             // We will stop this process if we failed to insert the picture so we will not add the data into database
