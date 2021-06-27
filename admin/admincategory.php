@@ -109,10 +109,8 @@
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
                           <?php
                         }
-                        elseif($image_name=="")
-                        {
-                          echo "<div class = 'failed'><b> Picture is missing. </b></div>";
-                        }
+                        
+                       
                         ?> 
                       </td>
                       

@@ -11,12 +11,12 @@ if(isset($_GET['id']) AND isset($_GET['image']))
     $image_name = $_GET['image'];
 
     // Removing the file from category folder
-    if($image_name != "")
+    if($image_name != "" AND $image_name=="")
     {
         //Path of image
-        $path = "../images/categories/".$image_name;
+        $path = dirname($_SERVER['SCRIPT_FILENAME'])."../images/categories/".$image_name;
         //Deleting image from category folder -- Using unlink function to completely delete the file from the folder on success
-        $wipe = unlink($path);
+        unlink($path);
 
 
         //
@@ -31,6 +31,7 @@ if(isset($_GET['id']) AND isset($_GET['image']))
             //Completely stopping and not moving further
             die();
         }
+
     }
 
         //Query to delete the data

@@ -30,7 +30,7 @@
     <tr>
         <td> Category Name : </td>
         <td>
-           <input type="text" name = "cat_name" placeholder = "Category Name">
+           <input type="text" name = "cat_name" placeholder = "Category Name" required value>
         </td>
     </tr>
 
@@ -44,8 +44,8 @@
     <tr>
         <td> Status: </td>
         <td>
-           <input type="radio" name = "status" value = "Available"> Available
-           <input type="radio" name = "status" value = "Not Available"> Not Available
+           <input type="radio" name = "status" value = "Available" required value> Available
+           <input type="radio" name = "status" value = "Not Available" required value> Not Available
         </td>
     </tr>
 
