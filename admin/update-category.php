@@ -92,7 +92,7 @@
         <td> Status: </td>
         <td>
            <input <?php if($status=="Available"){echo "checked";} ?> type="radio" name = "status" value = "Available"> Available
-           <input <?php if($status=="Unavailable"){echo "checked";} ?>type="radio" name = "status" value = "NotAvailable"> Unavailable
+           <input <?php if($status=="Unavailable"){echo "checked";} ?> type="radio" name = "status" value = "Unavailable">Unavailable
         </td>
     </tr>
 
