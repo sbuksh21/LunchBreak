@@ -63,12 +63,18 @@
 
         <td>
             <?php
+
+            // To get the current image from database and displaying it 
                 if($current_image != "")
                 {
                     ?>
-                    <img src = "<?php echo SITEURL; ?> Images/categories/<?php echo $current_image; ?>"width = "100px" >
+                    <img src = "<?php echo SITEURL; ?>Images/categories/<?php echo $current_image; ?>"width = "200px" >
 
                     <?php
+                }
+                else
+                {
+                    echo "<div class 'error' Image file not found.</div>";
                 }
 
         ?>
@@ -85,8 +91,8 @@
     <tr>
         <td> Status: </td>
         <td>
-           <input type="radio" name = "status" value = "Available"> Available
-           <input type="radio" name = "status" value = "Not Available"> Not Available
+           <input <?php if($status=="Available"){echo "checked";} ?> type="radio" name = "status" value = "Available"> Available
+           <input <?php if($status=="Unavailable"){echo "checked";} ?>type="radio" name = "status" value = "NotAvailable"> Unavailable
         </td>
     </tr>
 

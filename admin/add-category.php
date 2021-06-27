@@ -45,7 +45,7 @@
         <td> Status: </td>
         <td>
            <input type="radio" name = "status" value = "Available" required value> Available
-           <input type="radio" name = "status" value = "Not Available" required value> Not Available
+           <input type="radio" name = "status" value = "Unavailable" required value> Unavailable
         </td>
     </tr>
 
@@ -75,7 +75,7 @@ if(isset($_POST['submit']))
     else
     {
         // Setting the value as default 
-        $status = "Not Available";
+        $status = "Unavailable";
     }
 
 
