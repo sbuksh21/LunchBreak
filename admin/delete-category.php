@@ -56,7 +56,7 @@ if(isset($_GET['id']) AND isset($_GET['image']))
         else
         {
             // On failure message 
-            $_SESSION['delete'] = "div class = 'failed'> Failed to remove category.</div>";
+            $_SESSION['delete'] = "<div class = 'failed'> Failed to remove category.</div>";
         }
 }
 else

@@ -40,12 +40,19 @@
       ?>
 
       <?php
-      // Update category session//
+      // category checking session//
 
       if(isset($_SESSION['no-category-available']))
       {
           echo $_SESSION['no-category-available'];
           unset($_SESSION['no-category-available']);
+      }
+
+      // Update category session//
+      if(isset($_SESSION['update']))
+      {
+          echo $_SESSION['update'];
+          unset($_SESSION['update']);
       }
 
       ?>
