@@ -65,7 +65,7 @@
             <?php
 
             // To get the current image from database and displaying it 
-                if($current_picture != "")
+                if($current_picture!="")
                 {
                     ?>
                     <img src = "<?php echo SITEURL; ?>Images/categories/<?php echo $current_picture; ?>"width = "200px" >
@@ -84,7 +84,7 @@
     <tr>
         <td> New Picture: </td>
         <td>
-           <input type="file" name = "image">
+           <input type="file" name = "image_name">
         </td>
     </tr>
 
@@ -117,11 +117,11 @@ if(isset($_POST['submit']))
     $status = $_POST['status'];
     
     // For Image updating 
-    if(isset($_FILES['image']['name']))
+    if(isset($_FILES['image_name']['name']))
     {
-                $image_name = $_FILES['image']['name'];
+                $image_name = $_FILES['image_name']['name'];
 
-                if($image_name != "")
+                if($image_name!="")
                 {
 
                 //To upload the picture (to upload image path should be included)
@@ -143,10 +143,10 @@ if(isset($_POST['submit']))
                 }
 
                     //To remove and replace the current image of category, creating path for removal
-                    if($current_picture!="")
+                    if($current_picture!="" && $current_picture=="")
                    { 
-                       $path_replace = "../Images/categories/".$current_picture;
-                       $replace = unlink($path_replace);
+                       $replace_path = "/Images/categories/".$current_picture;
+                       $replace = unlink($replace_path);
                     
                         //On failure, to display message
                         if($replace==false)
@@ -155,7 +155,14 @@ if(isset($_POST['submit']))
                         header('location:'.SITEURL.'admin/admincategory.php');
                         die(); // stoping further processing
                         }
+
+                        else
+                    {
+                        $image_name = $current_picture;
                     }
+
+                    }
+                    
                 }
                 else
                 {
@@ -166,7 +173,7 @@ if(isset($_POST['submit']))
     //Updating the data in the database 
     $sql1= "UPDATE tbl_category SET
     cat_name='$cat_name' ,
-    image_name = '$image_name' ,
+    image_name= '$image_name' ,
     status='$status' ,
     cat_date = NOW() 
     WHERE id =$id
@@ -180,6 +187,7 @@ if(isset($_POST['submit']))
     {
         $_SESSION['update'] = "<div class = 'success'><b> Updating Successful.</b></div>";
         header('location:'.SITEURL.'admin/admincategory.php');
+        unlink($replace);
     }
 
     else
