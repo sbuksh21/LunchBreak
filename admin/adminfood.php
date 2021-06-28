@@ -5,13 +5,9 @@
 <div class = "main-content">
 <div class = "wrapper">
     <h2> Food Management</h2>
-<br> <br>
 
 
-  <!--- Button Add Food --->
-  <a href = "<?php echo SITEURL;?>admin/food-add.php" class = "btn-primary">Add Food</a> 
-  
-        <?php
+<?php
             
             if(isset($_SESSION['add']))
             {
@@ -20,8 +16,11 @@
             }
             
             ?>
+<br> <br>
+  <!--- Button Add Food --->
+  <a href = "<?php echo SITEURL;?>admin/food-add.php" class = "btn-primary">Add Food</a> 
 
-  <br>  <br>  <br>
+  <br>  <br>  <br> <br>
 
     <table class = "tblfull">
         <tr>
