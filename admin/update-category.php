@@ -74,7 +74,7 @@
                         }
                         else
                         {
-                            echo "<div class 'error' Image file not found.</div>";
+                            echo "<div class 'error'>Image file not found.</div>";
                         }
                 ?>
                 </tr>
@@ -140,9 +140,9 @@ if(isset($_POST['submit']))
                         die();
                 }
                     //To remove and replace the current image of category, creating path for removal
-                    if($current_picture!="" && $current_picture=="")
+                    if($current_picture!="" && $current_picture == "")
                    { 
-                       $replace_path = "../Images/categories/".$current_picture;
+                       $replace_path = "/images/categories/".$current_picture;
                        $replace = unlink($replace_path);
                     
                         //On failure, to display message

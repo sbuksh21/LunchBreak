@@ -126,17 +126,15 @@
                         <?php 
                         
                         // Query to check image and display it 
-                        if($image_name!=="")
+                        if($image_name!="")
 
                         {
                           // To display the image, by going inside siteurl--images folder--categorires folder -- to fetch the image and display it
                           ?>
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
-                          <?php
-                          
+                          <?php 
                         }
                         
-                       
                         ?> 
                       </td>
                       

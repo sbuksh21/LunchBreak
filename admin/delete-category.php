@@ -11,7 +11,7 @@ if(isset($_GET['id']) AND isset($_GET['image']))
     $image_name = $_GET['image'];
 
     // Removing the file from category folder
-    if($image_name != "" && $image_name == "")
+    if($image_name != "" && $image_name =="")
     {
         //Path of image
         $path = "../images/categories/".$image_name;
@@ -63,7 +63,10 @@ else
 {
     //Redirecting
     header('location:' .SITEURL. 'admin/admincategory.php');
+
+    mysqli_close($conn); // closing connection
 }
 
 
 ?>
+
