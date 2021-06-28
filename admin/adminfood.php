@@ -7,24 +7,19 @@
     <h2> Food Management</h2>
 <br> <br>
 
-<?php
-    
-    if(isset($_SESSION['upload']))
-    {
-        echo $_SESSION['upload'];
-        unset($_SESSION['upload']);
-    }
-
-    if(isset($_SESSION['add']))
-    {
-        echo $_SESSION['add'];
-        unset($_SESSION['add']);
-    }
-    
-    ?>
 
   <!--- Button Add Food --->
-  <a href = "<?php echo SITEURL;?>admin/food-add.php" class = "btn-primary">Add Food</a>  
+  <a href = "<?php echo SITEURL;?>admin/food-add.php" class = "btn-primary">Add Food</a> 
+  
+        <?php
+            
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+            
+            ?>
 
   <br>  <br>  <br>
 

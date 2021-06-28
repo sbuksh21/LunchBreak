@@ -5,9 +5,15 @@
 <div class = "main-content">
 <div class = "wrapper">
     <h2> Add Food</h2>
-
-
-
+    <?php
+            
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+            
+            ?>
 <br> <br>
 
 <form action ="" method = "POST" enctype = "multipart/form-data">  
@@ -166,7 +172,7 @@ if(isset($_POST['submit']))
     else
     {
         $SESSION['add'] = "<div class = 'failed'><b> Failed to add new food.</b></div>";
-        header('location:'.SITEURL.'admin/adminfood.php'); // Redirecting to admin food page
+        header('location:'.SITEURL.'admin/food-add.php'); // Redirecting to admin food page
     }
 
 }
