@@ -51,57 +51,56 @@
  <form action = "" method = "POST" enctype="multipart/form-data">
 
     <table class = "table">
-    <tr>
-        <td> Category Name : </td>
-        <td>
-           <input type="text" name="cat_name" value="<?php echo $cat_name;?>">
-        </td>
-    </tr>
-
-    <tr>
-        <td> Current Picture: </td>
-
-        <td>
-            <?php
-
-            // To get the current image from database and displaying it 
-                if($current_picture!="")
-                {
-                    ?>
-                    <img src = "<?php echo SITEURL; ?>Images/categories/<?php echo $current_picture; ?>"width = "200px" >
-
-                    <?php
-                }
-                else
-                {
-                    echo "<div class 'error' Image file not found.</div>";
-                }
-
-        ?>
-    </tr>
-    </td>
-
-    <tr>
-        <td> New Picture: </td>
-        <td>
-           <input type="file" name = "image_name">
-        </td>
-    </tr>
-
-    <tr>
-        <td> Status: </td>
-        <td>
-           <input <?php if($status=="Available"){echo "checked";} ?> type="radio" name = "status" value = "Available"> Available
-           <input <?php if($status=="Unavailable"){echo "checked";} ?> type="radio" name = "status" value = "Unavailable">Unavailable
-        </td>
-    </tr>
-
-            <tr> 
+            <tr>
+                <td> Category Name : </td>
                 <td>
-                    <input type = "hidden" name = "current_picture" value ="<?php echo $current_picture; ?>"> 
-                    <input type = "hidden" name = "id" value ="<?php echo $id; ?>"> 
-                    <input type = "submit" name = "submit" value ="Update Category" class = "btn-secondary"> 
-                </td> 
+                <input type="text" name="cat_name" value="<?php echo $cat_name;?>">
+                </td>
+            </tr>
+
+            <tr>
+                <td> Current Picture: </td>
+
+                <td>
+                <?php
+
+                    // To get the current image from database and displaying it 
+                        if($current_picture!="")
+                        {
+                            ?>
+                            <img src = "<?php echo SITEURL; ?>Images/categories/<?php echo $current_picture; ?>"width = "200px" >
+
+                            <?php
+                        }
+                        else
+                        {
+                            echo "<div class 'error' Image file not found.</div>";
+                        }
+                ?>
+                </tr>
+                </td>
+
+                <tr>
+                    <td> New Picture: </td>
+                    <td>
+                    <input type="file" name = "image_name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Status: </td>
+                        <td>
+                        <input <?php if($status=="Available"){echo "checked";} ?> type="radio" name = "status" value = "Available"> Available
+                        <input <?php if($status=="Unavailable"){echo "checked";} ?> type="radio" name = "status" value = "Unavailable">Unavailable
+                        </td>
+                </tr>
+
+                <tr> 
+                        <td>
+                            <input type = "hidden" name = "current_picture" value ="<?php echo $current_picture; ?>"> 
+                            <input type = "hidden" name = "id" value ="<?php echo $id; ?>"> 
+                            <input type = "submit" name = "submit" value ="Update Category" class = "btn-secondary"> 
+                        </td> 
                 </tr> 
 </table>
 </form>
@@ -125,7 +124,6 @@ if(isset($_POST['submit']))
                 {
 
                 //To upload the picture (to upload image path should be included)
-        
                 $sourcepath = $_FILES['image_name']['tmp_name']; 
                 $destinationpath = "../Images/categories/".$image_name;
                            
@@ -141,11 +139,10 @@ if(isset($_POST['submit']))
                     // We will stop this process if we failed to insert the picture so we will not add the data into database
                         die();
                 }
-
                     //To remove and replace the current image of category, creating path for removal
                     if($current_picture!="" && $current_picture=="")
                    { 
-                       $replace_path = "/Images/categories/".$current_picture;
+                       $replace_path = "../Images/categories/".$current_picture;
                        $replace = unlink($replace_path);
                     
                         //On failure, to display message
@@ -160,9 +157,7 @@ if(isset($_POST['submit']))
                     {
                         $image_name = $current_picture;
                     }
-
-                    }
-                    
+                    }      
                 }
                 else
                 {
@@ -179,7 +174,6 @@ if(isset($_POST['submit']))
     WHERE id =$id
     ";
 
-
     //QUERY execution
     $result1 = mysqli_query($conn,$sql1);
 
@@ -187,7 +181,7 @@ if(isset($_POST['submit']))
     {
         $_SESSION['update'] = "<div class = 'success'><b> Updating Successful.</b></div>";
         header('location:'.SITEURL.'admin/admincategory.php');
-        unlink($replace);
+        
     }
 
     else
@@ -199,7 +193,6 @@ if(isset($_POST['submit']))
 }
 
 ?>
-
 
 </div>
 </div>
