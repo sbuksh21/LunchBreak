@@ -5,16 +5,8 @@
 <div class = "main-content">
 <div class = "wrapper">
     <h2> Add Food</h2>
-    <?php
-            
-            if(isset($_SESSION['add']))
-            {
-                echo $_SESSION['add'];
-                unset($_SESSION['add']);
-            }
-            
-            ?>
-<br> <br>
+   
+<br>
 
 <form action ="" method = "POST" enctype = "multipart/form-data">  
 
@@ -93,8 +85,8 @@
     <tr>
         <td> Status: </td>
         <td>
-           <input type="radio" name = "status" value = "Available" required value> Available
-           <input type="radio" name = "status" value = "Unavailable" required value> Unavailable
+           <input type="radio" name = "status" value = "Available" > Available
+           <input type="radio" name = "status" value = "Unavailable" > Unavailable
         </td>
     </tr>
 
@@ -115,7 +107,7 @@ if(isset($_POST['submit']))
     $food_name = $_POST['food_name'];
     $food_description = $_POST['desc'];
     $price = $_POST['price'];
-    $food_category = $_POST['category'];
+    $category = $_POST['category'];
 
     if(isset($_POST['status'])) // Checking the status option
     {
@@ -156,29 +148,30 @@ if(isset($_POST['submit']))
     desc = '$food_description',
     price = $price , 
     image_name = '$image_name',
-    category_id = $food_category,
+    category_id = $category,
     status = '$status',
     cat_date = NOW()
     ";
+
+
 
     //Query Execution
     $res1 = mysqli_query($conn, $sql1);
 
     if($res1==true)
     {
-        $SESSION['add'] = "<div class = 'success'><b> New Food added successfuly.</b></div>";
+        $_SESSION['add'] = "<div class = 'success'><b> New Food added successfuly.</b></div>";
         header('location:'.SITEURL.'admin/adminfood.php'); // Redirecting to admin food page
     }
     else
     {
-        $SESSION['add'] = "<div class = 'failed'><b> Failed to add new food.</b></div>";
-        header('location:'.SITEURL.'admin/food-add.php'); // Redirecting to admin food page
+        $_SESSION['add'] = "<div class = 'failed'><b> Failed to add new food.</b></div>";
+        header('location:'.SITEURL.'admin/adminfood.php'); // Redirecting to admin food page
     }
 
 }
 
 ?>
-
 
 </div>
 </div>  
