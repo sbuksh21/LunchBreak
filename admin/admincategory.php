@@ -55,6 +55,24 @@
           unset($_SESSION['update']);
       }
 
+      if(isset($_SESSION['upload']))
+      {
+          echo $_SESSION['upload'];
+          unset($_SESSION['upload']);
+      }
+
+      if(isset($_SESSION['failed_replace']))
+      {
+          echo $_SESSION['failed_replace'];
+          unset($_SESSION['failed_replace']);
+      }
+
+      if(isset($_SESSION['upload_failed']))
+      {
+          echo $_SESSION['upload_failed'];
+          unset($_SESSION['upload_failed']);
+      }
+      
       ?>
 
     <br> <br>
