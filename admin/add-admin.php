@@ -91,6 +91,7 @@ else
 $_SESSION['add'] = "<div class = 'failed'>Failed to add Admin";
 //Redirecting page to add admin page
 header("location:".SITEURL. 'admin/add-admin.php');
+mysqli_close($conn); // closing connection
 }
 
 }

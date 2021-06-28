@@ -189,6 +189,7 @@ if(isset($_POST['submit']))
         //On failure, redirecting with message
         $_SESSION['update'] = "<div class = 'failed'> <b> Failed to Update.</b> </div>";
         header('location:'.SITEURL.'admin/admincategory.php');
+        
     }
 }
 
@@ -197,11 +198,4 @@ if(isset($_POST['submit']))
 </div>
 </div>
             
-
-
-
-
-
-
-
 <?php include('fixed/footer.php') ?>

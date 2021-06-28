@@ -128,23 +128,14 @@ if(isset($_POST['submit']))
         $_SESSION['add'] = "<div class = 'failed'><b> Failed to Add. </b></div>";
         //Redirecting
         header('location:'.SITEURL. 'admin/add-category.php');
+        
 
     }
 }
 
-
 ?>
-
-
 
 </div>
 </div>
             
-
-
-
-
-
-
-
 <?php include('fixed/footer.php') ?>
