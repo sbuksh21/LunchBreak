@@ -132,7 +132,7 @@ if(isset($_POST['submit']))
                 // Removing the current image
                  if($current_picture!="")
                  {
-                       $replace_path = "/images/categories/".$current_picture;
+                       $replace_path = "../Images/categories/".$current_picture;
                        $replace = unlink($replace_path);
                     
                         //On failure, to display message

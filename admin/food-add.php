@@ -21,7 +21,7 @@
     <tr>
         <td>Food Description:</td>
         <td>
-            <textarea name = "desc" cols = "21" rows = "6" placeholder = "Food Description"> </textarea>
+            <textarea name = "description" cols = "21" rows = "6" placeholder = "Food Description"> </textarea>
         </td>
     </tr>
 
@@ -54,7 +54,6 @@
 
             if($count>0)
             {
-
                 while($rows=mysqli_fetch_assoc($res))
                 {
                     $id = $rows['id'];
@@ -62,7 +61,7 @@
                     
                     ?>
 
-                    <option value = "<?php echo $id; ?>"> <?php echo $food_name; ?> </option>
+                    <option value = "<?php echo $id; ?>"><?php echo $food_name; ?> </option>
 
                     <?php
                 }
@@ -76,7 +75,6 @@
             }
 
             ?>
-
         </select>     
         </td>
     </tr>
@@ -96,6 +94,7 @@
 if(isset($_POST['submit']))
 {
     $food_name = $_POST['food_name'];
+    $description = $_POST['description'];
     $price = $_POST['price'];
     $category = $_POST['category'];
 
@@ -107,7 +106,9 @@ if(isset($_POST['submit']))
 
         if($image_name !="") //Checking whether Image is selected
         {
-            $src = $_FILES['image']['tmp_name'];
+            $extension = end(explode('.', $image_name));
+            $image_name = "Food_".rand(0000,5555).".".$extension;
+            $src =$_FILES['image']['tmp_name'];
             $dst = "../Images/food/".$image_name;
             $upload = move_uploaded_file($src, $dst);
 
@@ -119,22 +120,22 @@ if(isset($_POST['submit']))
                 die(); // Stoping further processing
             }
         }
-    }
-    else
-    {
-        $image_name = "";
-    }
+        }
+        else
+        {
+            $image_name = "";
+        }
 
     // Query to add New food 
     $sql1 = "INSERT INTO tbl_food SET 
     food_name = '$food_name',
     price = $price ,
-    image_name = '$image_name'
-    category_id = $category
-
+    desc = '$description',
+    image_name = '$image_name' ,
+    category_id = $category ,
+    cat_date = NOW()
      ";
    
-
     //Query Execution
     $res1 = mysqli_query($conn, $sql1);
 
