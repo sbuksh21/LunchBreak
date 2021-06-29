@@ -2,12 +2,12 @@
 
 Include('../config/constants.php');
 
-if(isset($_GET['id']) AND isset($_GET['image'])) // Checking whether the values are set or not
+if(isset($_GET['id']) AND isset($_GET['image_name'])) // Checking whether the values are set or not
 {
 
     // Getting the food id and image
     $id = $_GET['id'];
-    $image_name = $_GET['image'];
+    $image_name = $_GET['image_name'];
 
     if($image_name != "")
     {
@@ -31,10 +31,10 @@ if(isset($_GET['id']) AND isset($_GET['image'])) // Checking whether the values 
         $sql = "DELETE FROM tbl_food WHERE id =$id";
 
         //Running the query
-        $result = mysqli_query($conn, $sql);
+        $result1 = mysqli_query($conn, $sql);
 
           // Checking the condition
-          if($result == true)
+          if($result1 == true)
 
           {
               $_SESSION['delete'] = "<div class = 'success'><b> Successfully removed food item.</b></div>";

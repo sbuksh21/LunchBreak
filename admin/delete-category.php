@@ -41,9 +41,6 @@ if(isset($_GET['id']) AND isset($_GET['image'])) // Checking whether the values 
         {
             $_SESSION['delete'] = "<div class = 'success'> Successfully removed category.</div>";
 
-            //Deleting image from Images/Categories folder as well
-            unlink($path);
-
             //Redirecting
             header('location:'.SITEURL.'admin/admincategory.php');
         }
