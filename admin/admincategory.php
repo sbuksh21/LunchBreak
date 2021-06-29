@@ -125,7 +125,7 @@
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
                           <?php 
                         }
-                        else
+                        else // If image is not added with new category addition, new category will be added and below message will be displayed in the display section 
                         {
                           echo "<div class = 'failed'><b> Picture not added for new category.</b></div>";
                         }

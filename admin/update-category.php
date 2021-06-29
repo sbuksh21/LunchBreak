@@ -62,7 +62,7 @@
                 <?php
 
                     // To get the current image from database and displaying it 
-                        if($current_picture!="")
+                        if($current_picture != "")
                         {
                             ?>
                             <img src = "<?php echo SITEURL; ?>Images/categories/<?php echo $current_picture; ?>"width = "200px" >
@@ -71,7 +71,7 @@
                         }
                         else
                         {
-                            echo "<div class 'error'>Image file not found.</div>";
+                            echo "<div class 'failed'>Image file not found.</div>";
                         }
                 ?>
                 </tr>
