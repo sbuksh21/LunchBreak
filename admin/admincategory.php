@@ -129,7 +129,7 @@
                         else
                         {
                           // When no image
-                          echo "<div class = 'error' >Image not available.</div>";
+                          echo "<div class = 'failed' >Image not available.</div>";
                         }
                         
                         ?> 
