@@ -14,6 +14,18 @@
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
             }
+
+            if(isset($_SESSION['wipe']))
+            {
+                echo $_SESSION['wipe'];
+                unset($_SESSION['wipe']);
+            }
+
+            if(isset($_SESSION['delete']))
+            {
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
+            }
             
             ?>
 <br> <br>
@@ -57,7 +69,7 @@
                     <tr>
                     <td><?php echo $sn++ ; ?></td>
                     <td><?php echo $food_name; ?></td>
-                    <td><?php echo $price; ?></td>
+                    <td>$<?php echo $price; ?></td>
                     <td>
                     <?php  
                         if($image_name=="")
@@ -79,7 +91,7 @@
                     <td><?php echo $food_date ?></td>
                     <td>
                         <a href = "#" class = "btn-secondary">Update Food</a> 
-                        <a href = "#" class = "btn-danger">Delete Food</a> 
+                        <a href ="<?php echo SITEURL; ?>admin/food-delete.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>" class = "btn-danger">Delete Food</a> 
                     </td>
                     <tr>
                     <?php

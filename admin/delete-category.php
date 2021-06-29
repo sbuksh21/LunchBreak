@@ -50,7 +50,8 @@ if(isset($_GET['id']) AND isset($_GET['image'])) // Checking whether the values 
         else
         {
             // On failure message 
-            $_SESSION['delete'] = "<div class = 'failed'> Failed to remove category.</div>";
+            $_SESSION['delete'] = "<div class = 'failed'><b>Failed to remove category.</b></div>";
+            header('location:'.SITEURL.'admin/admincategory.php');
         }
 }
 else
