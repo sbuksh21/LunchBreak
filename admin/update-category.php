@@ -7,7 +7,7 @@
     <h2> Update Category</h2>
     
     <?php
-
+// To get the data of selected id and checking whether id value is set or not
     if(isset($_GET['id']))
     {
 
@@ -18,14 +18,12 @@
         $result = mysqli_query($conn, $sql);
 
         //Counting rows 
-
         $count=mysqli_num_rows($result);
 
         if($count==1)
         {
-                // To get all the data
+                // To get all the data of category
                 $rows = mysqli_fetch_assoc($result);
-                $id = $rows['id'];
                 $cat_name = $rows['cat_name'];
                 $current_picture = $rows['image_name'];
                 $cat_date = $rows['cat_date'];
@@ -131,7 +129,7 @@ if(isset($_POST['submit']))
                         die();
                 }
                     //To remove and replace the current image of category, creating path for removal
-                    if($current_picture!="" && $current_picture == "")
+                    if($current_picture!="")
                    { 
                        $replace_path = "/images/categories/".$current_picture;
                        $replace = unlink($replace_path);
@@ -144,11 +142,13 @@ if(isset($_POST['submit']))
                         die(); // stoping further processing
                         }
 
-                        else
+                   
+                    }  
+                    
+                         else
                     {
                         $image_name = $current_picture;
                     }
-                    }      
                 }
                 else
                 {

@@ -63,6 +63,12 @@ if(isset($_POST['submit']))
      {
          //To upload the picture (to upload image path should be included)
         $image_name =$_FILES['image_name']['name']; 
+
+        if($image_name != "")
+        {
+
+        $extension = end(explode('.', $image_name)); // To avoid replacing of image if the same image has been used twice
+        $image_name = "Category_".rand(000,555).'.'.$extension; // Renaming image name 
         $sourcepath = $_FILES['image_name']['tmp_name']; 
         $destinationpath = "../Images/categories/".$image_name;
     
@@ -70,21 +76,22 @@ if(isset($_POST['submit']))
         $upload= move_uploaded_file($sourcepath, $destinationpath);
     
         if($upload==false)
-        {
+            {
             //Display the message on failure
-            $_SESSION['upload_image'] = "<div class = 'failed'><b> Please choose and insert picture as well to add new category.</b> </div>";
+            $_SESSION['upload_image'] = "<div class = 'failed'><b> Uploading image failed.</b> </div>";
             header('location:'.SITEURL.'admin/add-category.php');
             
             // We will stop this process if we failed to insert the picture so we will not add the data into database
                 die();
+            }
+
+        }
         }
         else
         {
             $image_name = "";
         }
-
-    }
-
+    
     //Query to insert the data to db
     $sql= "INSERT INTO tbl_category SET
     cat_name='$cat_name' ,
@@ -110,7 +117,6 @@ if(isset($_POST['submit']))
         //Redirecting
         header('location:'.SITEURL. 'admin/add-category.php');
         
-
     }
 }
 
