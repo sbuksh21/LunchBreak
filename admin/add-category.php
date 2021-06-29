@@ -41,14 +41,6 @@
         </td>
     </tr>
 
-    <tr>
-        <td> Status: </td>
-        <td>
-           <input type="radio" name = "status" value = "Available" required value> Available
-           <input type="radio" name = "status" value = "Unavailable" required value> Unavailable
-        </td>
-    </tr>
-
     <tr> 
                 <td colspan = "2"> <br>
                     <input type = "submit" name = "submit" value ="Add Category" class = "btn-secondary"> </td>
@@ -65,26 +57,12 @@ if(isset($_POST['submit']))
     // Getting the data from form
     $cat_name = mysqli_real_escape_string($conn, trim($_POST['cat_name']));
 
-
-    // Checking whether radio selection is chosen or not to avoid error
-    if(isset($_POST['status']))
-    {
-        $status = $_POST['status'];
-    }
-
-    else
-    {
-        // Setting the value as default 
-        $status = "Unavailable";
-    }
-
-
         //Image choosen or not
      if(isset($_FILES['image_name']['name']))
 
      {
          //To upload the picture (to upload image path should be included)
-        $image_name =$_FILES['image_name']['name'];
+        $image_name =$_FILES['image_name']['name']; 
         $sourcepath = $_FILES['image_name']['tmp_name']; 
         $destinationpath = "../Images/categories/".$image_name;
     
@@ -100,14 +78,18 @@ if(isset($_POST['submit']))
             // We will stop this process if we failed to insert the picture so we will not add the data into database
                 die();
         }
+    
+        }
 
+        else
+        {
+            $image_name = "";
         }
 
     //Query to insert the data to db
     $sql= "INSERT INTO tbl_category SET
     cat_name='$cat_name' ,
-    image_name = '$image_name' ,
-    status='$status' , 
+    image_name = '$image_name' , 
     cat_date = NOW()
     ";
 

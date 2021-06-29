@@ -28,7 +28,6 @@
                 $id = $rows['id'];
                 $cat_name = $rows['cat_name'];
                 $current_picture = $rows['image_name'];
-                $status = $rows['status'];
                 $cat_date = $rows['cat_date'];
         }
 
@@ -87,14 +86,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td> Status: </td>
-                        <td>
-                        <input <?php if($status=="Available"){echo "checked";} ?> type="radio" name = "status" value = "Available"> Available
-                        <input <?php if($status=="Unavailable"){echo "checked";} ?> type="radio" name = "status" value = "Unavailable">Unavailable
-                        </td>
-                </tr>
-
                 <tr> 
                         <td>
                             <input type = "hidden" name = "current_picture" value ="<?php echo $current_picture; ?>"> 
@@ -113,7 +104,7 @@ if(isset($_POST['submit']))
     $id = $_POST['id'];
     $cat_name =$_POST['cat_name'];
     $current_picture = $_POST['current_picture'];
-    $status = $_POST['status'];
+   
     
     // For Image updating 
     if(isset($_FILES['image_name']['name']))
@@ -169,7 +160,6 @@ if(isset($_POST['submit']))
     $sql1= "UPDATE tbl_category SET
     cat_name='$cat_name' ,
     image_name= '$image_name' ,
-    status='$status' ,
     cat_date = NOW() 
     WHERE id =$id
     ";
