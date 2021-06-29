@@ -71,7 +71,7 @@
                         }
                         else
                         {
-                            echo "<div class 'failed'>Image file not found.</div>";
+                            echo "<div class =  'failed'> <b>Picture not found.</b> </div>";
                         }
                 ?>
                 </tr>
@@ -103,34 +103,35 @@ if(isset($_POST['submit']))
     $cat_name =$_POST['cat_name'];
     $current_picture = $_POST['current_picture'];
    
-    
-    // For Image updating 
     if(isset($_FILES['image_name']['name']))
     {
-                $image_name = $_FILES['image_name']['name'];
+        // To get the details of the picture
+        $image_name = $_FILES['image_name']['name'];
 
-                if($image_name!="")
-                {
+        if($image_name != "")
+        {
 
-                //To upload the picture (to upload image path should be included)
-                $sourcepath = $_FILES['image_name']['tmp_name']; 
-                $destinationpath = "../Images/categories/".$image_name;
-                           
-                //Successfully uploading the picture
-                $upload= move_uploaded_file($sourcepath, $destinationpath);
-            
-                if($upload==false)
+            $extension = end(explode('.', $image_name)); // To avoid replacing of image if the same image has been used twice
+            $image_name = "Category_".rand(000,555).'.'.$extension; // Renaming image name 
+            $sourcepath = $_FILES['image_name']['tmp_name']; 
+            $destinationpath = "../Images/categories/".$image_name;
+        
+            //Successfully uploading the picture
+            $upload= move_uploaded_file($sourcepath, $destinationpath);
+        
+            if($upload==false)
                 {
-                    //Display the message on failure
-                    $_SESSION['upload_failed'] = "<div class = 'failed'><b> Failed to upload.</b> </div>";
-                    header('location:'.SITEURL.'admin/admincategory.php');
-                    
-                    // We will stop this process if we failed to insert the picture so we will not add the data into database
-                        die();
+                //Display the message on failure
+                $_SESSION['upload_failed'] = "<div class = 'failed'><b> Failed to upload.</b> </div>";
+                header('location:'.SITEURL.'admin/admincategory.php');
+                
+                // We will stop this process if we failed to insert the picture so we will not add the data into database
+                    die();
                 }
-                    //To remove and replace the current image of category, creating path for removal
-                    if($current_picture!="")
-                   { 
+
+                // Removing the current image
+                 if($current_picture!="")
+                 {
                        $replace_path = "/images/categories/".$current_picture;
                        $replace = unlink($replace_path);
                     
@@ -141,21 +142,18 @@ if(isset($_POST['submit']))
                         header('location:'.SITEURL.'admin/admincategory.php');
                         die(); // stoping further processing
                         }
-
-                   
-                    }  
-                    
-                         else
-                    {
-                        $image_name = $current_picture;
-                    }
-                }
-                else
-                {
-                    $image_name = $current_picture;
-                }
+                 }                      
+            }
+            else
+            {
+                $image_name = $current_picture;
+            }
     }
-           
+    else // If picture is not selected, than picture will set to current image
+    {
+        $image_name = $current_picture;
+    }
+        
     //Updating the data in the database 
     $sql1= "UPDATE tbl_category SET
     cat_name='$cat_name' ,
