@@ -126,12 +126,8 @@
                           <img src="<?php echo SITEURL;?>Images/categories/<?php echo $image_name; ?>" width = "100px"> 
                           <?php 
                         }
-                        else
-                        {
-                          // When no image
-                          echo "<div class = 'failed' >Image not available.</div>";
-                        }
                         
+                      
                         ?> 
                       </td>
                       

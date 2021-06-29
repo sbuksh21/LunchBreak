@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
 
         else
         {
-            $image_name = "";
+            $image_name == "";
         }
 
     //Query to insert the data to db
