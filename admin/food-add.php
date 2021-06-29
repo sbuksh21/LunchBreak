@@ -46,7 +46,7 @@
 
             // Displaying categories from db
             // Displaying only available categories
-            $sql = "SELECT * FROM tbl_category WHERE status='Available' ";
+            $sql = "SELECT * FROM tbl_category";
 
             $res = mysqli_query($conn, $sql);
 
@@ -65,7 +65,6 @@
                     <option value = "<?php echo $id; ?>"> <?php echo $food_name; ?> </option>
 
                     <?php
-
                 }
             }
             else
@@ -79,14 +78,6 @@
             ?>
 
         </select>     
-        </td>
-    </tr>
-
-    <tr>
-        <td> Status: </td>
-        <td>
-           <input type="radio" name = "status" value = "Available" > Available
-           <input type="radio" name = "status" value = "Unavailable" > Unavailable
         </td>
     </tr>
 
@@ -105,19 +96,11 @@
 if(isset($_POST['submit']))
 {
     $food_name = $_POST['food_name'];
-    $food_description = $_POST['desc'];
     $price = $_POST['price'];
     $category = $_POST['category'];
 
-    if(isset($_POST['status'])) // Checking the status option
-    {
-        $status = $_POST['status'];
-    }
-    else
-    {
-        $status = "Unavailable";
-    }
 
+    // Image Selection part
     if(isset($_FILES['image']['name']))
     {
         $image_name = $_FILES['image']['name'];
@@ -145,15 +128,12 @@ if(isset($_POST['submit']))
     // Query to add New food 
     $sql1 = "INSERT INTO tbl_food SET 
     food_name = '$food_name',
-    desc = '$food_description',
-    price = $price , 
-    image_name = '$image_name',
-    category_id = $category,
-    status = '$status',
-    cat_date = NOW()
-    ";
+    price = $price ,
+    image_name = '$image_name'
+    category_id = $category
 
-
+     ";
+   
 
     //Query Execution
     $res1 = mysqli_query($conn, $sql1);
