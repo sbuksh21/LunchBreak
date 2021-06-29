@@ -78,13 +78,12 @@ if(isset($_POST['submit']))
             // We will stop this process if we failed to insert the picture so we will not add the data into database
                 die();
         }
-    
-        }
-
         else
         {
-            $image_name == "";
+            $image_name = "";
         }
+
+    }
 
     //Query to insert the data to db
     $sql= "INSERT INTO tbl_category SET
