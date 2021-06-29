@@ -21,7 +21,7 @@
     <tr>
         <td>Food Description:</td>
         <td>
-            <textarea name = "description" cols = "21" rows = "6" placeholder = "Food Description"> </textarea>
+            <textarea name="description" cols="21" rows="5" placeholder = "Food Description"> </textarea>
         </td>
     </tr>
 
@@ -94,7 +94,7 @@
 if(isset($_POST['submit']))
 {
     $food_name = $_POST['food_name'];
-    $description = $_POST['description'];
+    $description = trim($_POST['description']);
     $price = $_POST['price'];
     $category = $_POST['category'];
 
@@ -129,11 +129,11 @@ if(isset($_POST['submit']))
     // Query to add New food 
     $sql1 = "INSERT INTO tbl_food SET 
     food_name = '$food_name',
+    food_description ='$description',
     price = $price ,
-    desc = '$description',
-    image_name = '$image_name' ,
-    category_id = $category ,
-    cat_date = NOW()
+    image_name = '$image_name',
+    category_id = $category,
+    food_date = NOW()
      ";
    
     //Query Execution
