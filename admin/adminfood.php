@@ -26,6 +26,26 @@
                 echo $_SESSION['delete'];
                 unset($_SESSION['delete']);
             }
+
+            if(isset($_SESSION['upload_failed']))
+            {
+                echo $_SESSION['upload_failed'];
+                unset($_SESSION['upload_failed']);
+            }
+
+            if(isset($_SESSION['failed_replace']))
+            {
+                echo $_SESSION['failed_replace'];
+                unset($_SESSION['failed_replace']);
+            }
+
+            if(isset($_SESSION['update']))
+            {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
+
+            
             
             ?>
 <br> <br>
@@ -90,7 +110,7 @@
                     </td>
                     <td><?php echo $food_date ?></td>
                     <td>
-                        <a href = "#" class = "btn-secondary">Update Food</a> 
+                        <a href = "<?php echo SITEURL; ?>admin/food-update.php?id=<?php echo $id; ?>" class = "btn-secondary">Update Food</a> 
                         <a href ="<?php echo SITEURL; ?>admin/food-delete.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>" class = "btn-danger">Delete Food</a> 
                     </td>
                     <tr>

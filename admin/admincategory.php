@@ -75,7 +75,7 @@
       
       ?>
 
-    <br> 
+    <br> <br>
 
       <!--- Button Add Category --->
   <a href = "add-category.php" class = "btn-primary">Add Category</a>  
