@@ -171,7 +171,7 @@ if(isset($_POST['submit']))
             }
 
             //Replacing the current picture if the current picture is available
-            if($current_picture!="")
+            if($current_picture != "")
             {
                 $replace_path = "../Images/food/".$current_picture ;
                 $replace = unlink($replace_path);
@@ -182,24 +182,30 @@ if(isset($_POST['submit']))
                    header('location:'.SITEURL.'admin/adminfood.php'); 
                    die();
                 }
+               
             }
+        
         }
+            else
+            {
+                $image_name = $current_picture;
+            }   
     }
-    else
+   
+    else // If picture is not selected, than picture will set to current image
     {
         $image_name = $current_picture;
     }
-
     //Query to update the food 
 
         $sql4 = "UPDATE tbl_food SET
         food_name = '$food_name' , 
-        food_description = 'food_description' ,
-        price = $price '
+        food_description = '$description' ,
+        price = $price ,
         image_name = '$image_name' ,
-        category_id = '$category' , 
+        category_id = $category , 
         food_date = NOW()
-        WHERE id = $id ;   
+        WHERE id =$id 
         ";
 
     // To run the query 
