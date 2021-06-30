@@ -104,7 +104,48 @@ if(isset($_FILES['image_name']['name']))
         $image_name = $current_picture;
     }
 
+-------------------------------------------------------------
 
+ //Updating the data in the database 
+ $sql3= "UPDATE tbl_food SET
+ food_name='$food_name' ,
+ food_description = '$description' ,
+ price = $price , 
+ image_name = '$image_name' ,
+ category_id = '$category' ,
+ food_date = NOW() 
+ WHERE id =$id
+ ";
+
+ //QUERY execution
+ $result1 = mysqli_query($conn,$sql3);
+
+ if($result1==true)
+ {
+     $_SESSION['update'] = "<div class = 'success'><b> Updating Successful.</b></div>";
+     header('location:'.SITEURL.'admin/adminfood.php');
+     
+ }
+
+ else
+ {
+     //On failure, redirecting with message
+     $_SESSION['update'] = "<div class = 'failed'> <b> Failed to Update.</b> </div>";
+     header('location:'.SITEURL.'admin/adminfood.php');        
+ }
+
+}
+
+}
+
+?>
+
+</div>
+</div>
+
+<!--- Main ends here -->
+
+<?php include('fixed/footer.php') ?>
 
 
 
