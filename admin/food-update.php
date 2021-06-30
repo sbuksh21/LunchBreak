@@ -142,15 +142,81 @@ if(isset($_POST['submit']))
 
 {
     $id = $_POST['id'];
-    $food_name =$_POST['food_name'];
+    $food_name = $_POST['food_name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
     $current_picture = $_POST['current_picture'];
     $category = $_POST['category'];
 
-  
+    if(isset($_FILES['image_name']['name']))
+    {
+        $image_name = $_FILES['image_name']['name'];
 
-    
+        if($image_name != "")
+        {
+            $extension = end(explode('.', $image_name)); // 
+            $image_name = "Food_".rand(0000,5555).'.'.$extension; //Renaming the image
+
+            $source_path = $_FILES['image_name']['tmp_name'];
+            $destination_path = "../Images/food/".$image_name;
+
+            //Successfully uploading the image
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            if($upload==false)
+            {
+                $_SESSION['upload_failed'] = "<div class = 'failed'> <b> Failed to upload.</b></div>";
+                header('location:'.SITEURL.'admin/adminfood.php');
+                die(); // Stopping the process 
+            }
+
+            //Replacing the current picture if the current picture is available
+            if($current_picture!="")
+            {
+                $replace_path = "../Images/food/".$current_picture ;
+                $replace = unlink($replace_path);
+
+                if($replace==false)
+                {
+                   $_SESSION['failed_replace'] = "<div class = 'failed'> <b> Failed to replace current picture.</b></div>";
+                   header('location:'.SITEURL.'admin/adminfood.php'); 
+                   die();
+                }
+            }
+        }
+    }
+    else
+    {
+        $image_name = $current_picture;
+    }
+
+    //Query to update the food 
+
+        $sql4 = "UPDATE tbl_food SET
+        food_name = '$food_name' , 
+        food_description = 'food_description' ,
+        price = $price '
+        image_name = '$image_name' ,
+        category_id = '$category' , 
+        food_date = NOW()
+        WHERE id = $id ;   
+        ";
+
+    // To run the query 
+    $result4 = mysqli_query($conn, $sql4);
+
+    if($result4==true)
+
+    {
+        $_SESSION['update'] = "<div class = 'success'><b> Updating Successful.</b></div>";
+        header('location:'.SITEURL.'admin/adminfood.php');
+    }
+    else
+    {
+        $_SESSION['update'] = "<div class = 'failed'><b> Failed to Update.</b></div>";
+        header('location:'.SITEURL.'admin/adminfood.php');  
+    }
+}
 
 ?>
 
