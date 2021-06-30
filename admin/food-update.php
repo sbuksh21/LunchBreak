@@ -18,38 +18,24 @@
 
         $result = mysqli_query($conn, $sql1);
 
-        //Counting rows 
-        $count=mysqli_num_rows($result);
-
         //Getting the values of each from selected food
 
-        if($count==1)
-        {
-                // To get all the data of food
-                $rows = mysqli_fetch_assoc($result);
-                $food_name = $rows['food_name'];
-                $description =$rows['food_description'];
-                $price = $rows['price'];
-                $current_picture = $rows['image_name'];
-                $current_category = $rows['category_id'];
-                $food_date = $rows['food_date'];
-               
-        }
+        $rows = mysqli_fetch_assoc($result);
 
-        else
-        {
-            //Redirecting
-            $_SESSION['no-food-available'] = "<div class = 'failed'><b> No Food available.</b></div>";
-            header('location:'.SITEURL.'admin/adminfood.php');
-        }
+         $food_name = $rows['food_name'];
+         $description =$rows['food_description'];
+         $price = $rows['price'];
+         $current_picture = $rows['image_name'];
+         $current_category = $rows['category_id'];
+         $food_date = $rows['food_date'];
+           
     }
-    else
+    else 
     {
-        header('location:'.SITEURL.'admin/adminfood.php');
+        header('location:'.SITEURL.'admin/adminfood.php'); // If random id User tries to pass, user will be redirected to adminfood page
     }
 
     ?>
-
 
 <form action = "" method = "POST" enctype="multipart/form-data">
 
@@ -81,20 +67,19 @@
                 <?php
 
                     // To get the current image from database and displaying it 
-                        if($current_picture != "")
+                        if($current_picture == "")
                         {
-                            ?>
-                            <img src = "<?php echo SITEURL; ?>Images/food/<?php echo $current_picture; ?>"width = "200px" >
-
-                            <?php
+                            echo "<div class =  'failed'> <b>Picture not found.</b> </div>"; 
                         }
                         else
                         {
-                            echo "<div class =  'failed'> <b>Picture not found.</b> </div>";
+                            ?>
+                            <img src = "<?php echo SITEURL; ?>Images/food/<?php echo $current_picture; ?>"width = "200px" >
+                            <?php
                         }
                     ?>
                 </td>
-
+            </tr>
             
                 <tr>
                     <td> New Picture: </td>
@@ -111,9 +96,9 @@
 
                     // Displaying categories from db
                     // Displaying all the categories
-                    $sql = "SELECT * FROM tbl_category";
+                    $sql2 = "SELECT * FROM tbl_category";
 
-                    $res = mysqli_query($conn, $sql);
+                    $res = mysqli_query($conn, $sql2);
 
                     $count = mysqli_num_rows($res); 
 
@@ -163,15 +148,13 @@ if(isset($_POST['submit']))
     $current_picture = $_POST['current_picture'];
     $category = $_POST['category'];
 
-
     if(isset($_FILES['image_name']['name']))
     {
-         // To get the details of the picture
-         $image_name = $_FILES['image_name']['name'];
 
-         // To check whether image is available or not
-         if($image_name != "")
-         {
+        $image_name = $_FILES['image_name']['name'];
+
+        if($image_name!="")
+        {
             $extension = end(explode('.', $image_name)); // To avoid replacing of image if the same image has been used twice
             $image_name = "Food_".rand(000,555).'.'.$extension; // Renaming image name 
             $sourcepath = $_FILES['image_name']['tmp_name']; 
@@ -181,18 +164,18 @@ if(isset($_POST['submit']))
             $upload= move_uploaded_file($sourcepath, $destinationpath);
 
             if($upload==false)
-                {
-                //Display the message on failure
-                $_SESSION['upload_failed'] = "<div class = 'failed'><b> Failed to upload.</b> </div>";
-                header('location:'.SITEURL.'admin/adminfood.php');
-                
-                // We will stop this process if we failed to insert the picture so we will not add the data into database
-                    die();
-              }
+            {
+            //Display the message on failure
+            $_SESSION['upload_failed'] = "<div class = 'failed'><b> Failed to upload.</b> </div>";
+            header('location:'.SITEURL.'admin/adminfood.php'); 
+            // We will stop this process if we failed to insert the picture so we will not add the data into database
+            die();
+            }
 
-              if($current_picture!="")
-              {
-                $replace_path = "../Images/food/".$current_picture;
+            //Replacing the picture
+            if($current_picture!="")
+            { 
+                $replace_path ="../Images/food/".$current_picture;
                 $replace = unlink($replace_path);
 
                 //On failure, to display message
@@ -203,22 +186,27 @@ if(isset($_POST['submit']))
                 die(); // stoping further processing
                 }
 
-              }
-         }
+             }   
+       
     }
     else
     {
         $image_name = $current_picture;
     }
-    
+
     //Updating the data in the database 
-    $sql2= "UPDATE tbl_food SET
-    food_name='$food_name'
+    $sql3= "UPDATE tbl_food SET
+    food_name='$food_name' ,
+    food_description = '$description' ,
+    price = $price , 
+    image_name = '$image_name' ,
+    category_id = '$category' ,
+    food_date = NOW() 
     WHERE id =$id
     ";
 
     //QUERY execution
-    $result1 = mysqli_query($conn,$sql2);
+    $result1 = mysqli_query($conn,$sql3);
 
     if($result1==true)
     {
@@ -233,6 +221,8 @@ if(isset($_POST['submit']))
         $_SESSION['update'] = "<div class = 'failed'> <b> Failed to Update.</b> </div>";
         header('location:'.SITEURL.'admin/adminfood.php');        
     }
+
+}
 
 }
 
