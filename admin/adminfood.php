@@ -96,7 +96,7 @@
                         {
 
                             //If there is no picture, below message will be displayed
-                            echo "<div class = 'failed' Food picture not available.</div>";
+                            echo "<div class = 'failed'><b> Food picture not available.<b></div>";
                         }
                         else
                         {
@@ -120,7 +120,8 @@
             }
             else // Message to show if there is no food to display
             {
-                echo "<tr> <td> colspan='6' class = 'failed' ><b> No food to display </b></td></tr>";
+                echo "<tr> <td colspan='6'> <div class = 'failed'><b> No food to display </b></td></tr>";
+             
             }
 
         ?>
