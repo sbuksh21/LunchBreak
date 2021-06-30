@@ -14,7 +14,7 @@
     <tr>
         <td>Food Name:</td>
         <td>
-            <input type ="text" name = "food_name" placeholder = "Food Title">
+            <input type ="text" name = "food_name" placeholder = "Food Name">
         </td>
     </tr>
 
@@ -42,39 +42,35 @@
         <td> 
         <select name = "category">
 
-            <?php
+                    <?php
 
-            // Displaying categories from db
-            // Displaying only available categories
-            $sql = "SELECT * FROM tbl_category";
+                    // Displaying categories from db
+                    // Displaying all the categories
+                    $sql = "SELECT * FROM tbl_category";
 
-            $res = mysqli_query($conn, $sql);
+                    $res = mysqli_query($conn, $sql);
 
-            $count = mysqli_num_rows($res); 
+                    $count = mysqli_num_rows($res); 
 
-            if($count>0)
-            {
-                while($rows=mysqli_fetch_assoc($res))
-                {
-                    $id = $rows['id'];
-                    $food_name = $rows['cat_name'];
-                    
+                    if($count>0)
+                    {
+                        while($rows=mysqli_fetch_assoc($res))
+                        {
+                            $id = $rows['id'];
+                            $food_name = $rows['cat_name'];
+                            
+
+                        echo "<option value = '$id'>$food_name</option>" ;
+                        
+                        }
+                    }
+                    else
+                    {
+                        echo "<option value='0'> No Category Available </option>";
+                    }
+
                     ?>
 
-                    <option value = "<?php echo $id; ?>"><?php echo $food_name; ?> </option>
-
-                    <?php
-                }
-            }
-            else
-            {
-                ?>
-                <option value="0"> No Category Available </option>
-
-                <?php
-            }
-
-            ?>
         </select>     
         </td>
     </tr>
