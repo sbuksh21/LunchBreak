@@ -106,21 +106,22 @@
                     {
                         while($rows=mysqli_fetch_assoc($res))
                         {
-                            $id = $rows['id'];
-                            $food_name = $rows['cat_name'];
+                            $cat_name = $rows['cat_name'];
+                            $cat_id = $rows['id'];
                             
-                            if($current_category==$id)  // To show the selected category in category dropdown menu
-                            {
-                                echo "selected" ,"<option value = '$id'>$food_name</option>" ;
-                            }
-                        
+                              // To show the selected category in category dropdown menu
+                            ?>
+                               <option <?php if($current_category==$cat_id){echo "selected";}?> value ="<?php echo $cat_id;?>"><?php echo $cat_name; ?></option>
+                            
+                            <?php
                         }
+                        
                     }
                     else
                     {
                         echo "<option value='0'> No Category Available </option>";
                     }
-            ?>
+                ?>
 
             </select>
             </td>
@@ -198,7 +199,7 @@ if(isset($_POST['submit']))
     }
     //Query to update the food 
 
-        $sql4 = "UPDATE tbl_food SET
+        $sql= "UPDATE tbl_food SET
         food_name = '$food_name' , 
         food_description = '$description' ,
         price = $price ,
@@ -208,8 +209,12 @@ if(isset($_POST['submit']))
         WHERE id =$id 
         ";
 
+
+UPDATE `tbl_food` SET `id`='[value-1]',`food_name`='[value-2]',`food_description`='[value-3]',`price`='[value-4]',`image_name`='[value-5]',
+`category_id`='[value-6]',`food_date`='[value-7]' WHERE 1
+
     // To run the query 
-    $result4 = mysqli_query($conn, $sql4);
+    $result4 = mysqli_query($conn, $sql);
 
     if($result4==true)
 
