@@ -3,7 +3,6 @@
 include('fixed - front/login-check.php');
 
 ?>
-
    
     <br>
     <!DOCTYPE html>
@@ -40,11 +39,11 @@ include('fixed - front/login-check.php');
                 </li>
 
                 <li>
-                    <a href="categories.php">Food Categories</a>
+                    <a href="<?php echo SITEURL; ?>categories.php">Food Categories</a>
                 </li>
 
                 <li>
-                    <a href="food menu.php">Food Menu</a>
+                    <a href="<?php echo SITEURL; ?>food-menu.php">Food Menu</a>
                 </li> 
 
                 <li>
