@@ -94,7 +94,7 @@ include('fixed - front/login-check.php');
                             <?php
                                 if($image_name=="") // To check for those categories which dont have picture added  
                                 {
-                                    echo "<div class = 'failed'> Picture not available</div>";
+                                    echo "<div class = 'failure'> Picture not available</div>";
                                 }
                                 else
                                 {

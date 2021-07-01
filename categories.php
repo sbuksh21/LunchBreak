@@ -30,7 +30,7 @@ include('fixed - front/menu.php');
                             <?php
                                 if($image_name=="") // To check for those categories which dont have picture added  
                                 {
-                                    echo "<div class = 'failed'> Picture not available</div>";
+                                    echo "<div class = 'failure'> <b> Picture not available </b></div>";
                                 }
                                 else
                                 {
