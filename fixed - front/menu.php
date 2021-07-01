@@ -35,7 +35,7 @@ include('login-check.php');
                 </li>
 
                 <li>
-                    <a href="<?php echo SITEURL; ?> categories.php">Food Categories</a>
+                    <a href="<?php echo SITEURL;?>categories.php">Food Categories</a>
                 </li>
 
                 <li>

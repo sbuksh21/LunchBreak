@@ -8,40 +8,55 @@ include('fixed - front/menu.php');
 <section class ="categories">
     <div class = "container">
     <h2 class = "text-center">Food Categories </h2>
-    <a href = "food-category.php">
-    <div class = "box-2 float-container">
-        <img src = "images/Rice.jpg" alt="Rice" class = "img-responsive img-curve">
-        <h3>Rice</h3>
-    </div>
-    </a>
+  
 
-    <a href = "#">
-    <div class = "box-2 float-container">
-        <img src = "images/Pasta.PNG" alt="Pasta" class = "img-responsive img-curve">
-        <h3>Pasta</h3>
+    <?php 
+            // Query to display the categories from the database
+            $sql = "SELECT * FROM tbl_category";
+            $result = mysqli_query($conn, $sql); // Running the query
+            $count = mysqli_num_rows($result); // Counting the rows to check the availability of categories in database to display it
 
-    </div>
-    </a>
+            if($count>0)
+            {
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    $id = $row['id'];
+                    $cat_name = $row['cat_name'];
+                    $image_name = $row['image_name'];
+                    ?>
+                        <a href="food-category.php">
+                        <div class ="box-3 float-container">
 
-    <a href = "#">
-    <div class = "box-2 float-container">
-        <img src = "images/Potato Chickpea Stew.jpg" alt="Chickpea" class = "img-responsive img-curve">
-        <h3>Chickpea</h3>
-    </div>
-    </a>
+                            <?php
+                                if($image_name=="") // To check for those categories which dont have picture added  
+                                {
+                                    echo "<div class = 'failed'> Picture not available</div>";
+                                }
+                                else
+                                {
+                                    ?>
+                                        <img src ="<?php echo SITEURL; ?>images/categories/<?php echo $image_name ?>" alt="Rice" class= "img-responsive img-curve">
+                                    <?php
+                                }
 
-    <a href = "#">
-    <div class = "box-2 float-container">
-        <img src = "images/burger.jpg" alt="Burger" class = "img-responsive img-curve">
-        <h3>Rice</h3>
+                            ?>
 
-    </div>
-    </a>
+                        <h3> <?php echo $cat_name ;?></h3>
+                        </a> </div>
+
+                    <?php
+                }
+            }
+            else
+            {
+                echo "<div class = 'failed'> No Catgories Available to display.</div>";
+            }
+
+        ?>
+
 </div>
-
     </section> 
    
-    <br> <br> <br> <br> <br> <br> <br> <br>
 
 <div class = "clearfix"> </div>
     </div>
