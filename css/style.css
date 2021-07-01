@@ -138,6 +138,10 @@ legend{
     padding: 0 1rem;
     font-size: 18px;
 }
+
+.failed{
+    color:rgba(231, 41, 16, 0.664);
+}
 /* CSS for Navbar */
 
 
@@ -232,9 +236,6 @@ legend{
     color:rgba(113, 128, 147,1.0);
 }
 
-.failed{
-    color:rgba(231, 41, 16, 0.664);
-}
 
 /* CSS Order */
 .order{
