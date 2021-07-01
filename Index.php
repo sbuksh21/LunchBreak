@@ -88,7 +88,7 @@ include('fixed - front/login-check.php');
                     $cat_name = $row['cat_name'];
                     $image_name = $row['image_name'];
                     ?>
-                        <a href="food-category.php">
+                        <a href="<?php echo SITEURL; ?>food-category.php?category_id=<?php echo $id;?>">
                         <div class ="box-3 float-container">
 
                             <?php
