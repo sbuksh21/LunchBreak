@@ -1,6 +1,7 @@
 <?php
-include('login-check.php');
+
 include('config/constants.php'); 
+include('login-check.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +35,11 @@ include('config/constants.php');
                 </li>
 
                 <li>
-                    <a href="<?php echo SITEURL; ?>categories.php">Food Categories</a>
+                    <a href="<?php echo SITEURL; ?> categories.php">Food Categories</a>
                 </li>
 
                 <li>
-                    <a href="food menu.php">Food Menu</a>
+                    <a href="food-menu.php">Food Menu</a>
                 </li> 
 
                 <li>

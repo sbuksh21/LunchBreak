@@ -37,7 +37,7 @@ include('fixed - front/login-check.php');
                 </li>
 
                 <li>
-                    <a href="food menu.php">Food Menu</a>
+                    <a href="food-menu.php">Food Menu</a>
                 </li>
 
                 <li>

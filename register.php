@@ -1,3 +1,4 @@
+<?php include('config/constants.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +33,7 @@
                 </li>
 
                 <li>
-                    <a href="food menu.php">Food Menu</a>
+                    <a href="food-menu.php">Food Menu</a>
                 </li> 
 
             </ul>
@@ -48,9 +49,6 @@
         </div>
     </section>
     <!-- Banner ends here-->
-
-    <?php include('config/constants.php'); ?>
-    
 
     <?php
 //Checking whether submit is clicked or not
