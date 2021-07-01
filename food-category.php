@@ -1,4 +1,4 @@
-<?php include('config/constants.php'); 
+<?php 
 
  include('fixed - front/menu.php'); 
 

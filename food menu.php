@@ -1,6 +1,5 @@
 <?php 
 
-include('config/constants.php'); 
 include('fixed - front/menu.php'); 
       
 ?>

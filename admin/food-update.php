@@ -104,24 +104,23 @@
 
                     if($count>0)
                     {
-                        while($row=mysqli_fetch_assoc($res))
+                        while($rows=mysqli_fetch_assoc($res))
                         {
-                            $cat_name = $row['cat_name'];
-                            $cat_id = $row['id'];
+                            $cat_id = $rows['id'];
+                            $cat_name = $rows['cat_name'];
                             
-                              // To show the selected category in category dropdown menu
-                            ?>
-                               <option <?php if($current_category==$cat_id){echo "selected";}?> value="<?php echo $cat_id; ?>"><?php echo $cat_name; ?></option>
-                            
-                            <?php
-                        }
+                            if($current_category==$cat_id)  // To show the selected category in category dropdown menu
+                            {
+                                echo "selected" ,"<option value = $cat_id>$cat_name</option>" ;
+                            }
                         
+                        }
                     }
                     else
                     {
                         echo "<option value='0'> No Category Available </option>";
                     }
-                ?>
+            ?>
 
             </select>
             </td>
@@ -208,6 +207,9 @@ if(isset($_POST['submit']))
         food_date = NOW()
         WHERE id =$id 
         ";
+
+
+
 
     // To run the query 
     $result4 = mysqli_query($conn, $sql);
