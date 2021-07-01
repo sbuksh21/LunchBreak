@@ -26,7 +26,7 @@ include('config/constants.php');
         <div class="menu text-right">
             <ul>
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="<?php echo SITEURL; ?>">Home</a>
                 </li> 
                
                 <li>
@@ -34,7 +34,7 @@ include('config/constants.php');
                 </li>
 
                 <li>
-                    <a href="categories.php">Food Categories</a>
+                    <a href="<?php echo SITEURL; ?>categories.php">Food Categories</a>
                 </li>
 
                 <li>
