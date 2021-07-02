@@ -1,13 +1,37 @@
 <?php 
 
  include('fixed - front/menu.php'); 
-
 ?>
 
+<?php
+        //To check whether the ID for category id is passed ot not
+        if(isset($GET['id']))
+        {
+            //Getting the id
+            $category_id = $_GET['id'];
+            //Get the title as per the selected category
+            $sql1 = "SELECT cat_name FROM tbl_category WHERE id =$category_id";
+            //To run the query
+            $result1 = mysqli_query($conn, $sql1);
+            //Getting the data from database
+            $row = mysqli_fetch_assoc($result1);
+            $category_name = $row['cat_name'];
+
+        }
+   else // If id is not passed, redirecting to home page
+      {
+       header('location:'.SITEURL);
+      }
+
+     ?>
+
 <!-- Food Category starts here-->
+
         <section class = "food-menu">
             <div class = "container">
-                <h2 class = "text-center"> Foods on <a href = "#"> "Category"</a></h2>
+
+                <h2 class = "text-center"> Foods on <a href = "#"> "<?php echo $category_name; ?>" </a></h2>
+                
                 <div class = "food-menu-box">
                     <div class = "food-menu-img">
                         <img src="images/Chicken Rice.jpg" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
