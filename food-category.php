@@ -25,10 +25,10 @@
 
      ?>
 
-<!-- Food Category starts here-->
+<!-- Food Menu as per Category starts here-->
 
-        <section class = "food-menu">
-            <div class = "container">
+<section class = "food-menu">
+        <div class = "container">
 
                 <h2 class = "text-center"> Foods on <a href = "#"> "<?php echo $category_name; ?>" </a></h2>
                 
@@ -72,17 +72,16 @@
     
                                   ?>
                            
-                                </div>
+                                </div> 
                                 <div class = "food-desc">
                                 <h3><?php echo $food_name ;?></h3>
                                 <p class = "food-price"> $ <?php echo $price ;?></p>
                                 <p class = "food-desc2"> <?php echo $description ;?></p> <br>
                                 <br>
                                 <a href = "#" class ="btn btn-primary"> Place Order</a>
-                                </div>
+                                </div>  
                                     
-                                </div>
-    
+                                </div>        
                         <?php
                     }
     
@@ -93,20 +92,16 @@
                     echo "<div class = 'failure'><b> No Food Available to display.</b></div>";
                  }
     
-            ?>
-                    
-                <div class = "clearfix"></div>
-    
-        </div>
-        </section>
+            ?>        
+                       
+                <div class = "clearfix">  </div>
+                <br>
+                </section>       
+       </div>
+     
+<!-- Food Menu as per Category ends here-->
 
-<!-- Footer-->
-<section class = "footer-1">
-    <div class = "container">
-              
-        <p>Copyright <img src="https://img.icons8.com/material-sharp/19/ffffff/copyright.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>    
-
-        </div>
-        </section>
-
- 
+        <!-- Footer-->
+        
+        <?php include('fixed - front/footer.php'); ?>
+        

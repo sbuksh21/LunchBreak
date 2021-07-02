@@ -58,8 +58,6 @@ include('fixed - front/login-check.php');
 
     <!-- Navbar ends here-->
 
-
-
     <!-- Banner starts here-->
     <section class="food-banner">
         <div class ="container">
@@ -186,7 +184,7 @@ include('fixed - front/login-check.php');
                         Roasted broccoli with lemon and feeta cheese
                     </p>
                     <br>
-                    <a href = "#" class = "btn btn-primary"> Order Now </a>
+                    <a href ="order.php" class = "btn btn-primary"> Place Order </a>
                 </div>
             </div>
             <div class = "clearfix"></div>
