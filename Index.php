@@ -66,6 +66,21 @@ include('fixed - front/login-check.php');
 
     <!-- Banner ends here-->
 
+    <!-------   --->
+
+    <br> <br>
+    <div class = "container">
+    <h3+p class = "text-center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3> </div>
+
     <!-- Categories starts here-->
     <section class = "categories">
         <div class = "container">
@@ -122,74 +137,7 @@ include('fixed - front/login-check.php');
 
     <!-- Categories ends here-->
 
-    <!-- Food Menu starts here-->
-    <section class = "food-menu">
-        <div class = "container">
-            <h2 class = "text-center"> Food Menu </h2>
-            <div class = "food-menu-box">
-                <div class = "food-menu-img">
-                    <img src="images/Chicken Rice.jpg" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
-                </div>
-                <div class = "food-desc">
-                    <h4>Chicken Rice</h4>
-                    <p class = "food-price"> $ 5 </p>
-                    <p class = "food-desc2">
-                        Teriyaki sauce rice with chicken and mixed vegetables
-                    </p>
-                    <br>
-                    <a href = "#" class ="btn btn-primary"> Order Now </a>
-                </div>
-                <div class = "clearfix"></div>
-            </div>
-
-            <div class = "food-menu-box">
-                <div class = "food-menu-img">
-                    <img src="images/Shrimp Pasta.jpg" alt= "Shrimp Pasta" class="img-responsive img-curve">
-                </div>
-                <div class = "food-desc">
-                    <h4>Shrimp Pasta</h4>
-                    <p class = "food-price"> $ 10</p>
-                    <p class = "food-desc2">
-                        Pesto shrimp pasta with grated parmesan
-                    </p>
-                    <br>
-                    <a href = "#" class ="btn btn-primary"> Order Now </a>
-                </div>
-                <div class = "clearfix"></div>
-            </div>
-
-            <div class = "food-menu-box">
-                <div class = "food-menu-img">
-                    <img src="images/Chickpea Salad.jpg" alt= "Pesto Chickpea Salad" class="img-responsive img-curve">
-                </div>
-                <div class = "food-desc">
-                    <h4>Pesto Chickpea Salad</h4>
-                    <p class = "food-price"> $ 6 </p>
-                    <p class = "food-desc2">
-                        Creamy pesto chickpea salad with crackers 
-                    </p>
-                    <br>
-                    <a href = "#" class ="btn btn-primary"> Order Now </a>
-                </div>
-                <div class = "clearfix"></div>
-            </div>
-            <div class = "food-menu-box">
-                <div class = "food-menu-img">
-                    <img src ="images/Broccoli Pasta.jpg " alt = "Broccoli Pasta" class= "img-responsive img-curve">
-                </div>
-                <div class= "food-desc">
-                    <h4> Broccoli Pasta</h4>
-                    <p class= "food-price"> $ 11 </p>
-                    <p class = "food-desc2">
-                        Roasted broccoli with lemon and feeta cheese
-                    </p>
-                    <br>
-                    <a href ="order.php" class = "btn btn-primary"> Place Order </a>
-                </div>
-            </div>
-            <div class = "clearfix"></div>
-    </div>
-    </section>
+    
     <!-- Food Menu ends here-->
    
     <!-- Footer-->
