@@ -36,7 +36,7 @@ include('fixed - front/menu.php');
 
                                 if($food_picture=="") // To check for those food which dont have picture added  
                                 {
-                                  echo "<div class = 'failure'><b> Picture not available </b></div>";
+                                  echo "<div class = 'fail'><b> Picture not available </b></div>";
                                 }
 
                                 else
@@ -71,11 +71,8 @@ include('fixed - front/menu.php');
                 echo "<div class = 'failed'> No Food Available to display.</div>";
              }
 
-
-
         ?>
-           
-            
+                
             <div class = "clearfix"></div>
 
     </div>

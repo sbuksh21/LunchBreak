@@ -5,16 +5,16 @@
 
 <?php
         //To check whether the ID for category id is passed ot not
-        if(isset($GET['id']))
+        if(isset($_GET['category_id']))
         {
             //Getting the id
-            $category_id = $_GET['id'];
+            $category_id = $_GET['category_id'];
             //Get the title as per the selected category
-            $sql1 = "SELECT cat_name FROM tbl_category WHERE id =$category_id";
+            $sql = "SELECT cat_name FROM tbl_category WHERE id =$category_id";
             //To run the query
-            $result1 = mysqli_query($conn, $sql1);
+            $result = mysqli_query($conn, $sql);
             //Getting the data from database
-            $row = mysqli_fetch_assoc($result1);
+            $row = mysqli_fetch_assoc($result);
             $category_name = $row['cat_name'];
 
         }
@@ -32,71 +32,77 @@
 
                 <h2 class = "text-center"> Foods on <a href = "#"> "<?php echo $category_name; ?>" </a></h2>
                 
-                <div class = "food-menu-box">
-                    <div class = "food-menu-img">
-                        <img src="images/Chicken Rice.jpg" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
-                    </div>
-                    <div class = "food-desc">
-                        <h4>Chicken Rice</h4>
-                        <p class = "food-price"> $ 5 </p>
-                        <p class = "food-desc2">
-                            Teriyaki sauce rice with chicken and mixed vegetables
-                        </p>
-                        <br>
-                        <a href = "#" class ="btn btn-primary"> Order Now </a>
-                    </div>
-                    <div class = "clearfix"></div>
-                </div>
+            <?php
+
+            // Query to get the category-id assigned on each food item in table tbl_food in db
+                $sql1 = "SELECT * FROM tbl_food WHERE category_id=$category_id";
+                $result1 = mysqli_query($conn, $sql1);
+                $count1 = mysqli_num_rows($result1);
+
+                if($count1>0) // Check whether there is any food avaiable as per the assigned category id
+                {
+                    while($row=mysqli_fetch_assoc($result1))
+                    {
+                        $food_name = $row['food_name'];
+                        $description =$row['food_description'];
+                        $price = $row['price'];
+                        $food_picture = $row['image_name'];
+                        $current_category = $row['category_id'];
     
-                <div class = "food-menu-box">
-                    <div class = "food-menu-img">
-                        <img src="images/Shrimp Pasta.jpg" alt= "Shrimp Pasta" class="img-responsive img-curve">
-                    </div>
-                    <div class = "food-desc">
-                        <h4>Shrimp Pasta</h4>
-                        <p class = "food-price"> $ 10</p>
-                        <p class = "food-desc2">
-                            Pesto shrimp pasta with grated parmesan
-                        </p>
-                        <br>
-                        <a href = "#" class ="btn btn-primary"> Order Now </a>
-                    </div>
-                    <div class = "clearfix"></div>
-                </div>
+                        ?>
     
-                <div class = "food-menu-box">
-                    <div class = "food-menu-img">
-                        <img src="images/Chickpea Salad.jpg" alt= "Pesto Chickpea Salad" class="img-responsive img-curve">
-                    </div>
-                    <div class = "food-desc">
-                        <h4>Pesto Chickpea Salad</h4>
-                        <p class = "food-price"> $ 6 </p>
-                        <p class = "food-desc2">
-                            Creamy pesto chickpea salad with crackers 
-                        </p>
-                        <br>
-                        <a href = "#" class ="btn btn-primary"> Order Now </a>
-                    </div>
-                    <div class = "clearfix"></div>
-                </div>
-                <div class = "food-menu-box">
-                    <div class = "food-menu-img">
-                        <img src ="images/Broccoli Pasta.jpg " alt = "Broccoli Pasta" class= "img-responsive img-curve">
-                    </div>
-                    <div class= "food-desc">
-                        <h4> Broccoli Pasta</h4>
-                        <p class= "food-price"> $ 11 </p>
-                        <p class = "food-desc2">
-                            Roasted broccoli with lemon and feeta cheese
-                        </p>
-                        <br>
-                        <a href = "#" class = "btn btn-primary"> Order Now </a>
-                    </div>
-                </div>
+                              <div class = "food-menu-box">
+                              <div class = "food-menu-img">
+    
+                                  <?php
+    
+                                    if($food_picture=="") // To check for those food which dont have picture added  
+                                    {
+                                      echo "<div class = 'fail'><b> Picture not available </b></div>";
+                                    }
+    
+                                    else
+                                    {
+                                        ?>
+                                            
+                                            <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
+    
+                                        <?php
+                                    }
+    
+                                  ?>
+                           
+                                </div>
+                                <div class = "food-desc">
+                                <h3><?php echo $food_name ;?></h3>
+                                <p class = "food-price"> $ <?php echo $price ;?></p>
+                                <p class = "food-desc2"> <?php echo $description ;?></p> <br>
+                                <br>
+                                <a href = "#" class ="btn btn-primary"> Place Order</a>
+                                </div>
+                                    
+                                </div>
+    
+                        <?php
+                    }
+    
+                 }
+    
+                 else
+                 {
+                    echo "<div class = 'failed'> No Food Available to display.</div>";
+                 }
+    
+            ?>
+                    
                 <div class = "clearfix"></div>
+    
         </div>
         </section>
-<!-- Food Category starts here-->
-      
+   
+     
+                    
 <!-- Footer-->
-        <?php include('fixed - front/footer.php'); ?>
+        <?php include('fixed - front/footer.php');?>
+
+ 

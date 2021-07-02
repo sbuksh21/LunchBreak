@@ -23,8 +23,11 @@ include('fixed - front/menu.php');
                     $id = $row['id'];
                     $cat_name = $row['cat_name'];
                     $image_name = $row['image_name'];
+
                     ?>
-                        <a href="food-category.php">
+
+                        <a href="<?php echo SITEURL; ?>food-category.php?category_id=<?php echo $id;?>">
+                        
                         <div class ="box-3 float-container">
 
                             <?php
@@ -49,7 +52,7 @@ include('fixed - front/menu.php');
             }
             else
             {
-                echo "<div class = 'failed'> No Catgories Available to display.</div>";
+                echo "<div class = 'failure'> No Catgories Available to display.</div>";
             }
 
         ?>
