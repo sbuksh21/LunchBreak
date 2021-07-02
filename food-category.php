@@ -65,7 +65,7 @@
                                     {
                                         ?>
                                             
-                                            <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
+                                            <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" class="img-responsive img-curve">
     
                                         <?php
                                     }
@@ -88,9 +88,9 @@
     
                  }
     
-                 else
+                 else // If No food added in the selected category
                  {
-                    echo "<div class = 'failed'> No Food Available to display.</div>";
+                    echo "<div class = 'failure'><b> No Food Available to display.</b></div>";
                  }
     
             ?>
@@ -99,10 +99,14 @@
     
         </div>
         </section>
-   
-     
-                    
+
 <!-- Footer-->
-        <?php include('fixed - front/footer.php');?>
+<section class = "footer-1">
+    <div class = "container">
+              
+        <p>Copyright <img src="https://img.icons8.com/material-sharp/19/ffffff/copyright.png"/> 2021 LunchBreak.net. All rights reserved. <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a> <a href = "#"><img src="https://img.icons8.com/fluent/48/000000/snapchat.png"/></a> <a href = "#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v4.png"/></a></p>    
+
+        </div>
+        </section>
 
  

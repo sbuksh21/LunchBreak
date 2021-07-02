@@ -43,7 +43,7 @@ include('fixed - front/menu.php');
                                 {
                                     ?>
                                         
-                                        <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" alt= "Chicken Teriyaki Rice" class="img-responsive img-curve">
+                                        <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" class="img-responsive img-curve">
 
                                     <?php
                                 }
@@ -68,7 +68,7 @@ include('fixed - front/menu.php');
 
              else
              {
-                echo "<div class = 'failed'> No Food Available to display.</div>";
+                echo "<div class = 'failure'><b> No Food Available to display.<b></div>";
              }
 
         ?>
