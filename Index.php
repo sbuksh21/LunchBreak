@@ -69,6 +69,14 @@ include('fixed - front/login-check.php');
     <!-------   --->
 
     <br> <br>
+<?php
+            // Session for 'delete'
+        if(isset($_SESSION['order']))
+        {
+            echo $_SESSION['order'];
+            unset($_SESSION['order']);
+        }
+?>
     <div class = "container">
     <h3 class = "p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 

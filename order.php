@@ -3,6 +3,37 @@ include('config/constants.php');
 include('fixed - front/login-check.php');
 ?>
 
+<?php
+        //Checking whether id is set or not for the selected food
+        if(isset($_GET['food_id']))
+       {
+            $food_id = $_GET['food_id'];
+
+            // query to get the data of the selected food item
+            $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
+            $result = mysqli_query($conn, $sql);
+            $count=mysqli_num_rows($result); 
+
+            if($count==1)
+            {
+                $row= mysqli_fetch_assoc($result); // Getting the data of the selected food item from database
+
+                $food_name = $row['food_name'];
+                $price = $row['price'];
+                $food_picture = $row['image_name'];
+            }
+            else
+            {
+                header('location:'.SITEURL);
+            }
+       }
+        else
+       {
+            header('location:'.SITEURL);
+        }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,38 +81,57 @@ include('fixed - front/login-check.php');
     </div>
     </section>
 
-       <!-- Navbar ends here-->
+    <!-- Navbar ends here-->
     
     <!--Food Ordering starts here -->
     <section class = "food-order">
     <div class = "container">
     <h1 class = "text-center text-grey"> Fill the form to place your order</h1>
 
-    <form action = "#" class = "order">
+    <form action = "" method = "POST" class = "order">
+
+         <!-- Ordered food details starts here-->
+
         <fieldset>
             <legend> <b> Ordered Food </legend> </b>
             <div class = "food-menu-img">
-                <img src = "images/Rice.jpg" alt= "Chicken Teriyaki Rice" class = "img-responsive img-curve">
+               
+                <?php
+
+                    if($food_picture=="") // To check for those food which dont have picture added  
+                    {
+                      echo "<div class = 'fail'><b> Picture not available </b></div>";
+                    }
+                    else
+                    {
+                        ?>
+                            
+                            <img src=" <?php echo SITEURL; ?>images/food/<?php echo $food_picture; ?>" class="img-responsive img-curve">
+
+                        <?php
+                    }   
+                ?>
             </div>
+
             <div class = "food-desc">
-                <h3> Food Name</h3>
-                <p class = "food-price"> $5</p>
+                <h3> <?php echo $food_name; ?></h3>
+                <input type="hidden" name="food" value="<?php echo $food_name; ?>">
+
+                <p class = "food-price"> $ <?php echo $price; ?></p>
+                <input type="hidden" name="price" value="<?php echo $price; ?>">
+
 
                 <div class = "order-label"> Quantity </div>
                 <input type = "number" name = "qty" class = "input-responsive" value="1" required>
             </div>
         </fieldset>
+                         <!-- Ordered food details ends here-->
+
+
+        <!-- Delivery details starts here-->
 
         <fieldset>
             <legend> <b> Delivery Details</legend> </b>
-            <div class = "order-label"> Full Name: </div>
-            <input type="text" name ="full-name" placeholder="E.g. Sarah John" class = "input-responsive" required>
-
-            <div class = "order-label"> Mobile Number: </div>
-            <input type="tel" name ="contact" placeholder="E.g. 97455xxxxx" class = "input-responsive" required>
-
-            <div class = "order-label"> Email: </div>
-            <input type="email" name ="email" placeholder="E.g. xxx@gmial.com" class = "input-responsive" required>
 
             <div class = "order-label"> Department: </div>
             <textarea name ="department" rows = "2" class = "input-responsive" required> </textarea>
@@ -89,19 +139,60 @@ include('fixed - front/login-check.php');
             <div class = "order-label"> Floor Number: </div>
             <textarea name ="floor" rows = "2" class = "input-responsive" required> </textarea>
 
-            <div class = "order-label"> Payment: </div>
-            <select name = "select">
-                    <option value = "" row = "2">Select</option>
-                    <option value = "Cash on Delivery" >Cash on Delivery</option>
-            </select>
             <br> <br> <br>
 
             <input type = "submit" name = "submit" value = "Confirm Order" class = "btn btn-primary2">
 
         </fieldset>
+
+             <!-- Delivery details ends here-->
+
     </form>
+
+        <?php
+        // When order is submitted
+            if(isset($_POST['submit']))
+            {
+                $food = $_POST['food'];
+                $price = $_POST['price'];
+                $qty = $_POST['qty'];
+
+                $total = $price * $qty;
+
+                $order_status = "Ordered";
+
+                $customer_name = "SELECT full_name FROM tbl_user WHERE username = '". $_SESSION['user']. "'" ;
+
+                $department = ['department'];
+
+                $floor = ['floor'];
+
+            // Query to insert the data to database 
+
+            $sql1 = "INSERT INTO tbl_order SET 
+           
+            customer_name = '$customer_name' 
+             
+            ";
+
+                $res = mysqli_query($conn, $sql1);
+
+                if($res==true)
+                {
+                    $_SESSION['order'] = "<div class = 'success'> Food Ordered successfully.</div>" ;
+                }
+                else
+                {
+                    header('location:'.SITEURL);
+                }
+            }
+
+
+        ?>
+
 </div>
 </section>
+
 
      <!--Food Ordering ends here -->
 

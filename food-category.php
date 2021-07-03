@@ -43,6 +43,7 @@
                 {
                     while($row=mysqli_fetch_assoc($result1))
                     {
+                        $id = $row['id'];
                         $food_name = $row['food_name'];
                         $description =$row['food_description'];
                         $price = $row['price'];
@@ -78,7 +79,7 @@
                                 <p class = "food-price"> $ <?php echo $price ;?></p>
                                 <p class = "food-desc2"> <?php echo $description ;?></p> <br>
                                 <br>
-                                <a href = "#" class ="btn btn-primary"> Place Order</a>
+                                <a href = "<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class ="btn btn-primary"> Place Order</a>
                                 </div>  
                                     
                                 </div>        
