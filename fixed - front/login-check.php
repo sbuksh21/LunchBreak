@@ -1,5 +1,6 @@
 <?php
 
+
 //Checking whether user is login or not
 if(!isset($_SESSION['user']))  // If user session is not set
 {

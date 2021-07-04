@@ -150,6 +150,9 @@ include('fixed - front/login-check.php');
     </form>
 
         <?php
+
+           
+    
         // When order is submitted
             if(isset($_POST['submit']))
             {
@@ -161,7 +164,7 @@ include('fixed - front/login-check.php');
 
                 $order_status = "Ordered";
 
-                $customer_name = "SELECT full_name FROM tbl_user WHERE username = '". $_SESSION['user']. "'" ;
+                
 
                 $department = ['department'];
 
@@ -169,11 +172,14 @@ include('fixed - front/login-check.php');
 
             // Query to insert the data to database 
 
-            $sql1 = "INSERT INTO tbl_order SET 
-           
-            customer_name = '$customer_name' 
-             
-            ";
+            if(isset($_SESSION['user']))
+            {
+                $name = $_SESSION['full_name'];
+                $email = $_SESSION['email'];
+                
+                echo $name ; 
+            }
+         
 
                 $res = mysqli_query($conn, $sql1);
 

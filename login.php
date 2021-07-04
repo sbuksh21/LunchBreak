@@ -60,7 +60,7 @@
     {
         // Gettng the data from login
          $username = mysqli_real_escape_string($conn, trim($_POST['username']));
-         $pass1 = mysqli_real_escape_string($conn, trim(md5($_POST['pass1'])));   
+         $pass1 = mysqli_real_escape_string($conn, trim(md5($_POST['pass1']))); 
 
         // SQL query to check username and password exisit or not
         $sql = "SELECT * FROM tbl_user WHERE username = '$username' AND pass1 = '$pass1'";
@@ -76,6 +76,7 @@
             // User exist 
             $_SESSION['login'] ;
             $_SESSION['user'] = $username; // Checking whether user is login or not 
+          
             //Rediretcing   
             header("location:".SITEURL);
         }
