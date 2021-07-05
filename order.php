@@ -21,6 +21,7 @@ include('fixed - front/login-check.php');
                 $food_name = $row['food_name'];
                 $price = $row['price'];
                 $food_picture = $row['image_name'];
+                $description = $row['food_description'];
             }
             else
             {
@@ -120,7 +121,6 @@ include('fixed - front/login-check.php');
                 <p class = "food-price"> $ <?php echo $price; ?></p>
                 <input type="hidden" name="price" value="<?php echo $price; ?>">
 
-
                 <div class = "order-label"> Quantity </div>
                 <input type = "number" name = "qty" class = "input-responsive" value="1" required>
             </div>
@@ -139,6 +139,10 @@ include('fixed - front/login-check.php');
             <div class = "order-label"> Floor Number: </div>
             <textarea name ="floor" rows = "2" class = "input-responsive" required> </textarea>
 
+            <div class = "order-label"> Payment:</div>
+            <select id = "payment" name = "payment">
+            <option value = "payment" selected>By Cash</option>
+            </select>
             <br> <br> <br>
 
             <input type = "submit" name = "submit" value = "Confirm Order" class = "btn btn-primary2">
@@ -151,49 +155,62 @@ include('fixed - front/login-check.php');
 
         <?php
 
-           
+            //To fetch the data of the login User to insert it in the order table when the User makes an order
+            $user = $_SESSION["user"];
+            $query = mysqli_query($conn,"SELECT * FROM tbl_user WHERE username = '$user'");
+            $row=mysqli_fetch_array($query);
+            $first_name = $row['full_name'];
+            $mobile = $row['mobile_number'];
+            $email = $row['email'];
+
     
         // When order is submitted
             if(isset($_POST['submit']))
             {
+                
                 $food = $_POST['food'];
                 $price = $_POST['price'];
-                $qty = $_POST['qty'];
+                $quantity = $_POST['qty'];
+                $total = $price * $qty ; 
+                $payment = $_POST['payment'];
+                $status = "Order Confirmed";
+                $customer_name = $first_name;
+                $customer_phone = $mobile ;
+                $customer_email = $email ;
+                $department = $_POST['department'];
+                $floor = $_POST['floor'];
 
-                $total = $price * $qty;
+                //Inserting the data into order table 
+              $sql1 = "INSERT INTO tbl_order SET 
+              food = '$food' ,
+              price = $price ,
+              qty = $qty , 
+              total = $total ,
+              order_date = NOW() , 
+              status = '$status' , 
+              customer_name = '$customer_name',
+              customer_phone = '$customer_phone' ,
+              customer_email = '$customer_email' , 
+              department = '$department' , 
+              floor = '$floor'
+              ";
+            
+            //Running the query
+              $res2 = mysqli_query($conn, $sql1) ;
 
-                $order_status = "Ordered";
-
-                
-
-                $department = ['department'];
-
-                $floor = ['floor'];
-
-            // Query to insert the data to database 
-
-            if(isset($_SESSION['user']))
+            // To check the query run successfully or not
+            if($res2 == true) 
             {
-                $name = $_SESSION['full_name'];
-                $email = $_SESSION['email'];
-                
-                echo $name ; 
+                $_SESSION['order'] = "<div class = 'success' Food Ordered Successfully. </div>";
+                header('location:'.SITEURL);
             }
-         
-
-                $res = mysqli_query($conn, $sql1);
-
-                if($res==true)
-                {
-                    $_SESSION['order'] = "<div class = 'success'> Food Ordered successfully.</div>" ;
-                }
-                else
-                {
-                    header('location:'.SITEURL);
-                }
+            else
+            {
+                $_SESSION['order'] = "<div class = 'failure' Failed to place order. </div>";
+                header('location:'.SITEURL);
             }
 
-
+            }   
         ?>
 
 </div>

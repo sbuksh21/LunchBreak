@@ -70,6 +70,8 @@
             username = '$username',
             pass1 = '$pass1'
          ";
+
+     
          
          // Executing query and saving user data in database
             $re = mysqli_query($conn,$sql) or die(mysqli_error($conn));
