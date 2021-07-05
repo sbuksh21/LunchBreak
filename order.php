@@ -121,6 +121,9 @@ include('fixed - front/login-check.php');
                 <p class = "food-price"> $ <?php echo $price; ?></p>
                 <input type="hidden" name="price" value="<?php echo $price; ?>">
 
+                <p class = "food-desc2"> <?php echo $description ;?></p> <br>
+                <input type="hidden" name="description" value="<?php echo $description; ?>">
+
                 <div class = "order-label"> Quantity </div>
                 <input type = "number" name = "qty" class = "input-responsive" value="1" required>
             </div>
@@ -140,9 +143,8 @@ include('fixed - front/login-check.php');
             <textarea name ="floor" rows = "2" class = "input-responsive" required> </textarea>
 
             <div class = "order-label"> Payment:</div>
-            <select id = "payment" name = "payment">
-            <option value = "payment" selected>By Cash</option>
-            </select>
+            <input type = "radio" name = "payment" value = "Cash on Delivery"> Cash on Delivery
+        
             <br> <br> <br>
 
             <input type = "submit" name = "submit" value = "Confirm Order" class = "btn btn-primary2">
@@ -171,12 +173,10 @@ include('fixed - front/login-check.php');
                 $food = $_POST['food'];
                 $price = $_POST['price'];
                 $quantity = $_POST['qty'];
-                $total = $price * $qty ; 
+                $description = $_POST['description'];
                 $payment = $_POST['payment'];
+                $total = $price * $quantity ; 
                 $status = "Order Confirmed";
-                $customer_name = $first_name;
-                $customer_phone = $mobile ;
-                $customer_email = $email ;
                 $department = $_POST['department'];
                 $floor = $_POST['floor'];
 
@@ -184,22 +184,25 @@ include('fixed - front/login-check.php');
               $sql1 = "INSERT INTO tbl_order SET 
               food = '$food' ,
               price = $price ,
-              qty = $qty , 
+              qty = $quantity , 
+              food_description = '$description' , 
               total = $total ,
-              order_date = NOW() , 
+              payment = '$payment' ,
               status = '$status' , 
-              customer_name = '$customer_name',
-              customer_phone = '$customer_phone' ,
-              customer_email = '$customer_email' , 
+              customer_name = '$first_name',
+              customer_phone = '$mobile' ,
+              customer_email = '$email' , 
               department = '$department' , 
-              floor = '$floor'
+              floor = '$floor' ,
+              order_date = NOW() 
               ";
             
+            echo $sql1; die();
             //Running the query
-              $res2 = mysqli_query($conn, $sql1) ;
+              $result1 = mysqli_query($conn, $sql1) ;
 
             // To check the query run successfully or not
-            if($res2 == true) 
+            if($result1 == true) 
             {
                 $_SESSION['order'] = "<div class = 'success' Food Ordered Successfully. </div>";
                 header('location:'.SITEURL);
