@@ -27,7 +27,7 @@ include('fixed - front/login-check.php');
             {
                 header('location:'.SITEURL);
             }
-       }
+        }
         else
        {
             header('location:'.SITEURL);
@@ -173,7 +173,6 @@ include('fixed - front/login-check.php');
                 $food = $_POST['food'];
                 $price = $_POST['price'];
                 $quantity = $_POST['qty'];
-                $description = $_POST['description'];
                 $payment = $_POST['payment'];
                 $total = $price * $quantity ; 
                 $status = "Order Confirmed";
@@ -181,35 +180,35 @@ include('fixed - front/login-check.php');
                 $floor = $_POST['floor'];
 
                 //Inserting the data into order table 
-              $sql1 = "INSERT INTO tbl_order SET 
-              food = '$food' ,
-              price = $price ,
-              qty = $quantity , 
-              food_description = '$description' , 
-              total = $total ,
-              payment = '$payment' ,
-              status = '$status' , 
-              customer_name = '$first_name',
-              customer_phone = '$mobile' ,
-              customer_email = '$email' , 
-              department = '$department' , 
-              floor = '$floor' ,
-              order_date = NOW() 
-              ";
+                    $sql1 = "INSERT INTO tbl_order SET 
+                    food = '$food' ,
+                    price = $price ,
+                    qty = $quantity , 
+                    food_description = '$description' , 
+                    total = $total ,
+                    payment = '$payment' ,
+                    order_date = NOW() ,
+                    order_status = '$status' , 
+                    customer_name = '$first_name',
+                    customer_phone = $mobile ,
+                    customer_email = '$email' , 
+                    department = '$department' , 
+                    floor = '$floor'  
+                    ";
             
-            echo $sql1; die();
+           // echo $sql1; die();
             //Running the query
               $result1 = mysqli_query($conn, $sql1) ;
 
             // To check the query run successfully or not
             if($result1 == true) 
             {
-                $_SESSION['order'] = "<div class = 'success' Food Ordered Successfully. </div>";
+                $_SESSION['order'] = "<div class = 'text-center'success'> Food Ordered Successfully. </div>";
                 header('location:'.SITEURL);
             }
             else
             {
-                $_SESSION['order'] = "<div class = 'failure' Failed to place order. </div>";
+                $_SESSION['order'] = "<div class = 'failure'> Failed to place order. </div>";
                 header('location:'.SITEURL);
             }
 

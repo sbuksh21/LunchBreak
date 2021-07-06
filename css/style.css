@@ -246,6 +246,11 @@ legend{
     color:rgba(231, 41, 16, 0.664);
 }
 
+.success{
+    color:rgba(81, 116, 47, 0.664);
+    font-weight: bold;
+}
+
 /* CSS Order */
 .order{
     width: 50%;
