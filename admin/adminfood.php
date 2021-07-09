@@ -43,9 +43,7 @@
             {
                 echo $_SESSION['update'];
                 unset($_SESSION['update']);
-            }
-
-            
+            } 
             
             ?>
 <br> <br>

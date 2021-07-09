@@ -178,6 +178,7 @@ include('fixed - front/login-check.php');
                 $status = "Order Confirmed";
                 $department = $_POST['department'];
                 $floor = $_POST['floor'];
+                
 
                 //Inserting the data into order table 
                     $sql1 = "INSERT INTO tbl_order SET 
@@ -195,15 +196,21 @@ include('fixed - front/login-check.php');
                     department = '$department' , 
                     floor = '$floor'  
                     ";
+                    
             
            // echo $sql1; die();
             //Running the query
               $result1 = mysqli_query($conn, $sql1) ;
+              //$from = "sarah_im@hotmail.com";
+              $message = 'Your order has been placed successfully.';
+
+              $order_id = mysqli_insert_id($conn); // To get the id of the requested order 
 
             // To check the query run successfully or not
             if($result1 == true) 
             {
-                $_SESSION['order'] = "<div class = 'text-center'success'> Food Ordered Successfully. </div>";
+                $_SESSION['order'] = "<div class = 'text-center success'> Your food has been Ordered Successfully and your order id is $order_id </div>" ;
+                $mail_sent = @mail($email,$message, $food);
                 header('location:'.SITEURL);
             }
             else
