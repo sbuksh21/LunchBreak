@@ -7,7 +7,15 @@
     <h2> Order Management</h2>
 
   <br>  
+    <?php
+        if(isset($_SESSION['order_update']))
+        {
+            echo $_SESSION['order_update'];
+            unset($_SESSION['order_update']);
+        }
 
+    ?>
+<br>
     <table class = "tblfull">
         <tr>
             <th>Order No.</th>
@@ -46,6 +54,7 @@
             $customer_phone = $row['customer_phone'];
             $department = $row['department'];
             $floor = $row['floor'];
+            $waitress = $row['waitress'];
 
             ?>
         <tr>
@@ -60,9 +69,10 @@
             <td><?php echo $customer_phone ; ?></td>
             <td><?php echo $department ; ?></td>
             <td><?php echo $floor ; ?></td>
+            
             <td></td>
             <td>
-            <a href = "<?php echo SITEURL; ?>admin/order-update.php" class = "btn-secondary">Update</a>  
+            <a href = "<?php echo SITEURL; ?>admin/order-update.php?id=<?php echo $id; ?>" class = "btn-secondary">Update</a>  
             </td>
         </tr>
 
