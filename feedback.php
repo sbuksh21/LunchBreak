@@ -1,9 +1,31 @@
 
-<?php include('fixed - front/menu.php'); 
-include('fixed - front/login-check.php');
-?> 
+<?php include('fixed - front/menu.php'); ?> 
 
+<?php
 
+if(isset($_GET['id']))
+    {
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM tbl_feedback WHERE id=$id";
+        $result = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($result);
+
+        if($count==1)
+        {
+            $row = mysqli_fetch_assoc($result);
+
+            $status = $row['feedback'];
+        }
+        else
+        {
+            header('location:'.SITEURL.'feedback.php');
+        }
+        }
+        else
+        {
+            header('location:'.SITEURL.'feedback.php');
+        }
+?>
 
 <div class = "container1"> 
 <div style = "text-align: center"> <br>
@@ -61,12 +83,12 @@ include('fixed - front/login-check.php');
                 {
          
                  $_SESSION['feedback'] = "<div class = 'success' >Thanks for your feedback.</div>";
-                 header('location:'.SITEURL.'admin/feedback.php');
+                 header('location:'.SITEURL.'feedback.php');
                 }
                 else
                 {
                  $_SESSION['feedback'] = "<div class = 'failed' >Failed to send your feedback.</div>";
-                 header('location:'.SITEURL.'admin/feedback.php');
+                 header('location:'.SITEURL.'feedback.php');
                 }
              }
 
@@ -82,8 +104,6 @@ include('fixed - front/login-check.php');
     </form>
     <br> <br> 
 </div>
-
-
 
 <!-- Footer starts here-->
 
