@@ -1,35 +1,23 @@
+<?php 
 
-<?php include('fixed - front/menu.php'); ?> 
-
-<?php
-
-if(isset($_GET['id']))
-    {
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM tbl_feedback WHERE id=$id";
-        $result = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($result);
-
-        if($count==1)
-        {
-            $row = mysqli_fetch_assoc($result);
-
-            $status = $row['feedback'];
-        }
-        else
-        {
-            header('location:'.SITEURL.'feedback.php');
-        }
-        }
-        else
-        {
-            header('location:'.SITEURL.'feedback.php');
-        }
+include('fixed - front/menu.php'); 
+      
 ?>
+
 
 <div class = "container1"> 
 <div style = "text-align: center"> <br>
-        <span class = "emoji ">😍😁😶🙁🤬</span> </div>
+        <span class = "emoji ">😍😁😶🙁🤬</span> </div> <br><br>
+
+        <?php
+                
+                if(isset($_SESSION['feedback']))
+                {
+                    echo $_SESSION['feedback'];
+                    unset($_SESSION['feedback']);
+                }
+    
+            ?>
 
         <form action = "#" METHOD = "POST" class ="register">
             <h3 class = "text-center text-color"> <b> We Love to hear from you</b></h3>   
@@ -39,11 +27,13 @@ if(isset($_GET['id']))
 
         <label><b> Select Type: </b></label> <br> <br>
         <select name = "feedback">
-            <option <?php if($feedback=="Food Categories"){echo "selected";} ?> value = "Food Categories">Food Categories</option>
-            <option <?php if($feedback=="Food Menu"){echo "selected";} ?> value = "Food Menu">Food Menu</option>
-            <option <?php if($feedback=="Order Delivery"){echo "selected";} ?> value = "Order Delivery">Order Delivery</option>
-            <option <?php if($feedback=="Other"){echo "selected";} ?> value = "Others">Others</option>
+
+            <option <?php {echo "selected";} ?> value = "Food Categories">Food Categories</option>
+            <option <?php {echo "selected";} ?> value = "Food Menu">Food Menu</option>
+            <option <?php {echo "selected";} ?> value = "Order Delivery">Order Delivery</option>
+            <option <?php {echo "selected";} ?> value = "Others">Others</option>
             </select><br> <br>
+
         <textarea name="message" placeholder = "Message"> </textarea>
 
             <br> <br> <br> 
@@ -71,34 +61,31 @@ if(isset($_GET['id']))
                 $sql1 = "INSERT INTO tbl_feedback SET
                 subject = '$subject' ,
                 feedback = '$feedback' ,
-                message ='$message'
+                message ='$message' ,
                 customer_name = '$first_name',
                 customer_phone = $mobile ,
                 customer_email = '$email' 
                 ";
          
+
                 $result1 = mysqli_query($conn, $sql1);
          
                 if($result1==true)
                 {
          
-                 $_SESSION['feedback'] = "<div class = 'success' >Thanks for your feedback.</div>";
+                 $_SESSION['feedback'] = "<div class = 'text-center success' >Thanks for your feedback.</div>";
                  header('location:'.SITEURL.'feedback.php');
                 }
                 else
                 {
-                 $_SESSION['feedback'] = "<div class = 'failed' >Failed to send your feedback.</div>";
+                 $_SESSION['feedback'] = "<div class = 'text-center failed' >Failed to send your feedback.</div>";
                  header('location:'.SITEURL.'feedback.php');
                 }
              }
-
-                    if(isset($_SESSION['feedback']))
-                    {
-                        echo $_SESSION['feedback'];
-                        unset($_SESSION['feedback']);
-                    }
-
-        ?>   
+       
+         
+        ?>  
+        
 
     </div>
     </form>
