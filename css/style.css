@@ -107,6 +107,13 @@ h2{
     margin-bottom: 2%;
     font-style: oblique;
 }
+
+h2.p{
+    font-size: 1.5rem;
+    padding:0vw;
+    color:rgba(201, 115, 58, 0.781);
+}
+
 h3{
     font-size: 1.5rem;
     padding:0vw;
@@ -279,6 +286,10 @@ select{
     border-radius: 05px;
 }
 
+span.emoji{
+   font-size: 35px;
+   text-align: center;
+}
 
 .food-order{
     background-image: url(../Images/Order\ background2.jpg);
