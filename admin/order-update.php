@@ -17,7 +17,7 @@ include('fixed/menu.php');
     if(isset($_GET['id']))
     {
         $id = $_GET['id'];
-        $sql = "SELECT *FROM tbl_order WHERE id=$id";
+        $sql = "SELECT * FROM tbl_order WHERE id=$id";
         $result = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($result);
 
@@ -79,10 +79,11 @@ include('fixed/menu.php');
 
 <?php
 
+// When submitted 
     if(isset($_POST['submit']))
     {
        $id = $_POST['id'];
-       $status = $_POST['status'];
+       $status = $_POST['order_status'];
        $waitress = $_POST['waitress'];
 
        $sql1 = "UPDATE tbl_order SET

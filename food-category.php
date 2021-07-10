@@ -102,7 +102,8 @@
      
 <!-- Food Menu as per Category ends here-->
 
-        <!-- Footer-->
+        <!-- Footer starts here-->
         
         <?php include('fixed - front/footer.php'); ?>
         
+        <!-- Footer ends here-->

@@ -69,6 +69,7 @@
             <td><?php echo $customer_phone ; ?></td>
             <td><?php echo $department ; ?></td>
             <td><?php echo $floor ; ?></td>
+            <td><?php echo $waitress ; ?></td>
             
             <td></td>
             <td>

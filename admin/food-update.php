@@ -208,9 +208,6 @@ if(isset($_POST['submit']))
         WHERE id =$id 
         ";
 
-
-
-
     // To run the query 
     $result4 = mysqli_query($conn, $sql);
 
@@ -234,4 +231,8 @@ if(isset($_POST['submit']))
 
 <!--- Main ends here -->
 
+<!--- Footer starts here -->
+
 <?php include('fixed/footer.php') ?>
+
+<!--- Footer ends here -->

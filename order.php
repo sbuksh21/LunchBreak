@@ -178,6 +178,7 @@ include('fixed - front/login-check.php');
                 $status = "Order Confirmed";
                 $department = $_POST['department'];
                 $floor = $_POST['floor'];
+                $waitress = "";
                 
                 
 
@@ -196,6 +197,7 @@ include('fixed - front/login-check.php');
                     customer_email = '$email' , 
                     department = '$department' , 
                     floor = '$floor' , 
+                    waitress = '$waitress'
                     ";
                     
             
@@ -228,5 +230,8 @@ include('fixed - front/login-check.php');
 
      <!--Food Ordering ends here -->
 
-     <!-- Footer-->
+     <!-- Footer starts here-->
+
      <?php include('fixed - front/footer.php'); ?>
+
+     <!-- Footer ends here-->
