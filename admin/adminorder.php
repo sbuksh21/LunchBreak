@@ -70,8 +70,6 @@
             <td><?php echo $department ; ?></td>
             <td><?php echo $floor ; ?></td>
             <td><?php echo $waitress ; ?></td>
-            
-            <td></td>
             <td>
             <a href = "<?php echo SITEURL; ?>admin/order-update.php?id=<?php echo $id; ?>" class = "btn-secondary">Update</a>  
             </td>
